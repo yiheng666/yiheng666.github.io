@@ -7,17 +7,13 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1003.我要通过 | YiHeng</title>
+    <title>PAT-乙级-1008.数组元素循环右移问题 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1003 我要通过！
-“答案正确”是自动判题系统给出的最令人欢喜的回复。本题属于 PAT 的“答案正确”大派送 —— 只要读入的字符串满足下列条件，系统就输出“答案正确”，否则输出“答案错误”。
-得到“答案正确”的条件是：
-
-字符串中必须仅有 P、 A、 T这三种字符，不可以包含其它字符；
-任意形如">
+    <meta name="description" content="1008 数组元素循环右移问题 （20 分)
+一个数组A中存有N（&amp;gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A0A1⋯AN−1）变换为（AN−M⋯AN−1A0A1⋯AN−M−1）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移">
     
     
     
@@ -83,15 +79,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/12/PAT-乙级-1003-我要通过/" title="PAT-乙级-1003.我要通过" itemprop="url">PAT-乙级-1003.我要通过</a>
+      <a href="/2019/03/17/PAT-乙级-1008-数组元素循环右移问题/" title="PAT-乙级-1008.数组元素循环右移问题" itemprop="url">PAT-乙级-1008.数组元素循环右移问题</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-12T03:32:14.000Z" itemprop="datePublished">2019-03-12</time>
-    Updated:<time datetime="2019-03-18T11:14:51.504Z" itemprop="dateModified">2019-03-18</time>
+    <time datetime="2019-03-17T10:01:25.000Z" itemprop="datePublished">2019-03-17</time>
+    Updated:<time datetime="2019-03-18T11:15:22.480Z" itemprop="dateModified">2019-03-18</time>
     
   </p>
 </header>
@@ -100,28 +96,17 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式"><span class="toc-number">1.</span> <span class="toc-text">输入格式:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式"><span class="toc-number">2.</span> <span class="toc-text">输出格式:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例"><span class="toc-number">3.</span> <span class="toc-text">输入样例:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例"><span class="toc-number">4.</span> <span class="toc-text">输出样例:</span></a></li></ol>
 		</div>
 		
-		<p>1003 我要通过！</p>
-<p>“<strong>答案正确</strong>”是自动判题系统给出的最令人欢喜的回复。本题属于 PAT 的“<strong>答案正确</strong>”大派送 —— 只要读入的字符串满足下列条件，系统就输出“<strong>答案正确</strong>”，否则输出“<strong>答案错误</strong>”。</p>
-<p>得到“<strong>答案正确</strong>”的条件是：</p>
-<ol>
-<li>字符串中必须仅有 <code>P</code>、 <code>A</code>、 <code>T</code>这三种字符，不可以包含其它字符；</li>
-<li>任意形如 <code>xPATx</code> 的字符串都可以获得“<strong>答案正确</strong>”，其中 <code>x</code> 或者是空字符串，或者是仅由字母 <code>A</code> 组成的字符串；</li>
-<li>如果 <code>aPbTc</code> 是正确的，那么 <code>aPbATca</code> 也是正确的，其中 <code>a</code>、 <code>b</code>、 <code>c</code> 均或者是空字符串，或者是仅由字母 <code>A</code> 组成的字符串。</li>
-</ol>
-<p>现在就请你为 PAT 写一个自动裁判程序，判定哪些字符串是可以获得“<strong>答案正确</strong>”的。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个测试输入包含 1 个测试用例。第 1 行给出一个正整数 n (&lt;10)，是需要检测的字符串个数。接下来每个字符串占一行，字符串长度不超过 100，且不包含空格。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>每个字符串的检测结果占一行，如果该字符串可以获得“<strong>答案正确</strong>”，则输出 <code>YES</code>，否则输出 <code>NO</code>。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>8<br>PAT<br>PAAT<br>AAPATAA<br>AAPAATAAAA<br>xPATx<br>PT<br>Whatever<br>APAAATAA</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>YES<br>YES<br>YES<br>YES<br>NO<br>NO<br>NO<br>NO</p>
-<p>分析：</p>
-<p>1.包含且仅包含P,A,T三个字母。</p>
-<p>2.PAT,APATA,AAPATAA等中间是PAT，左右含有数量相同的A的形式是正确的。</p>
-<p>3.假如<strong>（x个A）PAT（x个A）</strong>是正确的，中间加n个A，后面要加x * n个A，变成（x个A）PA（n个A）T（x + x * n个A）    也是正确的。</p>
-<p>仔细观察，发现3的情况已经包含了1和2，也就仅考虑3的情况即可。计算出P之前的A数目为a，P和T之间的A数目为b，T之后的A数目为c，则满足a*b=c的字符串是正确的。（当然还要考虑P，T的数目只有1；含有且仅含有P、A、T；A的数目不小于1；P在T前等情况）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string s;</span><br><span class="line">    int n,p,t;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    for (int i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; s;</span><br><span class="line">        map&lt;char,int&gt; m;</span><br><span class="line">        for(int j=0;j&lt;s.size();j++)</span><br><span class="line">        &#123;</span><br><span class="line">            m[s[j]]++;</span><br><span class="line">            if (s[j] == &apos;P&apos;) p = j;</span><br><span class="line">            if (s[j] == &apos;T&apos;) t = j;</span><br><span class="line">        &#125;</span><br><span class="line">        if (m[&apos;P&apos;] == 1 &amp;&amp; m[&apos;T&apos;] == 1 &amp;&amp; m[&apos;A&apos;]!=0 &amp;&amp; m.size() == 3 &amp;&amp; t-p&gt;1 &amp;&amp; (p*(t-p-1) == s.size()-t -1 ))</span><br><span class="line">            cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;</span><br><span class="line">        else cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>1008 数组元素循环右移问题 （20 分)</p>
+<p>一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A<sub>0</sub>A<sub>1</sub>⋯A<sub>N−1</sub>）变换为（A<sub>N−M</sub>⋯A<sub>N−1</sub>A<sub>0</sub>A<sub>1</sub>⋯A<sub>N−M−1</sub>）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>每个输入包含一个测试用例，第1行输入N（1≤N≤100）和M（≥0）；第2行输入N个整数，之间用空格分隔。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>在一行中输出循环右移M位以后的整数序列，之间用空格分隔，序列结尾不能有多余空格。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>6 2<br>1 2 3 4 5 6</p>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>5 6 1 2 3 4</p>
+<p>分析：一共n个数字，要将每个整数循环右移M个位置且使数据移动次数最少，则先将A<sub>0</sub>到A<sub>n-M-1</sub>做reverse操作（操作后这部分变成A<sub>n-M-1</sub>A<sub>n-M-2</sub>….A<sub>0</sub>)，再将A<sub>n-M</sub>到A<sub>n-1</sub>做reverse操作（操作后这部分变成A<sub>n-1</sub>A<sub>n-2</sub>…A<sub>n-M</sub>），最后A<sub>0</sub>到A<sub>n-1</sub>做reverse操作，得到最后的结果。需要注意的是vector使用reverse的时候是左闭右开的，例如reverse(v.begin(),v.begin()+4)是对v[0]到v[3]四个数字进行reverse操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    vector&lt;int&gt; v;</span><br><span class="line">    int n,deviation,i,temp;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; deviation;</span><br><span class="line">    if (deviation &gt;= n ) deviation = deviation % n;</span><br><span class="line">    for (i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; temp;</span><br><span class="line">        v.push_back(temp);</span><br><span class="line">    &#125;</span><br><span class="line">    reverse(v.begin(),v.begin()+n-deviation);</span><br><span class="line">    reverse(v.begin()+n-deviation,v.end());</span><br><span class="line">    reverse(v.begin(),v.end());</span><br><span class="line">    cout &lt;&lt; v[0];</span><br><span class="line">    for (i=1;i&lt;n;i++)</span><br><span class="line">        cout &lt;&lt; &quot; &quot; &lt;&lt; v[i];</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -141,7 +126,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/12/PAT-乙级-1003-我要通过/" data-title="PAT-乙级-1003.我要通过 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/03/17/PAT-乙级-1008-数组元素循环右移问题/" data-title="PAT-乙级-1008.数组元素循环右移问题 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -151,18 +136,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev">
- <a href="/2019/03/13/PAT-乙级-1004-成绩排名/" title="PAT-乙级-1004.成绩排名">
+ <a href="/2019/03/18/PAT-乙级-1009-说反话/" title="PAT-乙级-1009.说反话">
   <strong>PREVIOUS:</strong><br>
   <span>
-  PAT-乙级-1004.成绩排名</span>
+  PAT-乙级-1009.说反话</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2019/03/11/PAT-乙级-1002-写出这个数/" title="PAT-乙级-1002.写出这个数">
+<a href="/2019/03/16/PAT-乙级-1007-素数对猜想/" title="PAT-乙级-1007.素数对猜想">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1002.写出这个数
+ <span>PAT-乙级-1007.素数对猜想
 </span>
 </a>
 </div>
@@ -172,7 +157,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1003.我要通过" data-thread-key="PAT-乙级-1003-我要通过" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1003-我要通过"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1008.数组元素循环右移问题" data-thread-key="PAT-乙级-1008-数组元素循环右移问题" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1008-数组元素循环右移问题"></div>
 	
 </section>
 
@@ -182,7 +167,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式"><span class="toc-number">1.</span> <span class="toc-text">输入格式:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式"><span class="toc-number">2.</span> <span class="toc-text">输出格式:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例"><span class="toc-number">3.</span> <span class="toc-text">输入样例:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例"><span class="toc-number">4.</span> <span class="toc-text">输出样例:</span></a></li></ol>
   </div>
 
 <div id="asidepart">

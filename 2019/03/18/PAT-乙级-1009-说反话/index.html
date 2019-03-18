@@ -7,13 +7,14 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PTA-乙级-1008.数组元素循环右移问题 | YiHeng</title>
+    <title>PAT-乙级-1009.说反话 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1008 数组元素循环右移问题 （20 分)
-一个数组A中存有N（&amp;gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A0A1⋯AN−1）变换为（AN−M⋯AN−1A0A1⋯AN−M−1）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移">
+    <meta name="description" content="1009 说反话 （20 分)
+给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。
+输入格式：测试输入包含一个测试用例，在一行内给出总长度不超过 80 的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用 1 个空格分开，输入保证句子末尾没">
     
     
     
@@ -79,15 +80,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/17/PTA-乙级-1008-数组元素循环右移问题/" title="PTA-乙级-1008.数组元素循环右移问题" itemprop="url">PTA-乙级-1008.数组元素循环右移问题</a>
+      <a href="/2019/03/18/PAT-乙级-1009-说反话/" title="PAT-乙级-1009.说反话" itemprop="url">PAT-乙级-1009.说反话</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-17T10:01:25.000Z" itemprop="datePublished">2019-03-17</time>
-    Updated:<time datetime="2019-03-17T10:01:25.119Z" itemprop="dateModified">2019-03-17</time>
+    <time datetime="2019-03-18T11:12:14.000Z" itemprop="datePublished">2019-03-18</time>
+    Updated:<time datetime="2019-03-18T11:24:24.667Z" itemprop="dateModified">2019-03-18</time>
     
   </p>
 </header>
@@ -96,24 +97,28 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式"><span class="toc-number">1.</span> <span class="toc-text">输入格式:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式"><span class="toc-number">2.</span> <span class="toc-text">输出格式:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例"><span class="toc-number">3.</span> <span class="toc-text">输入样例:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例"><span class="toc-number">4.</span> <span class="toc-text">输出样例:</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
 		</div>
 		
-		<p>1008 数组元素循环右移问题 （20 分)</p>
-<p>一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A<sub>0</sub>A<sub>1</sub>⋯A<sub>N−1</sub>）变换为（A<sub>N−M</sub>⋯A<sub>N−1</sub>A<sub>0</sub>A<sub>1</sub>⋯A<sub>N−M−1</sub>）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>每个输入包含一个测试用例，第1行输入N（1≤N≤100）和M（≥0）；第2行输入N个整数，之间用空格分隔。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>在一行中输出循环右移M位以后的整数序列，之间用空格分隔，序列结尾不能有多余空格。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><p>6 2<br>1 2 3 4 5 6</p>
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><p>5 6 1 2 3 4</p>
-<p>分析：一共n个数字，要将每个整数循环右移M个位置且使数据移动次数最少，则先将A<sub>0</sub>到A<sub>n-M-1</sub>做reverse操作（操作后这部分变成A<sub>n-M-1</sub>A<sub>n-M-2</sub>….A<sub>0</sub>)，再将A<sub>n-M</sub>到A<sub>n-1</sub>做reverse操作（操作后这部分变成A<sub>n-1</sub>A<sub>n-2</sub>…A<sub>n-M</sub>），最后A<sub>0</sub>到A<sub>n-1</sub>做reverse操作，得到最后的结果。需要注意的是vector使用reverse的时候是左闭右开的，例如reverse(v.begin(),v.begin()+4)是对v[0]到v[3]四个数字进行reverse操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    vector&lt;int&gt; v;</span><br><span class="line">    int n,deviation,i,temp;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; deviation;</span><br><span class="line">    if (deviation &gt;= n ) deviation = deviation % n;</span><br><span class="line">    for (i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; temp;</span><br><span class="line">        v.push_back(temp);</span><br><span class="line">    &#125;</span><br><span class="line">    reverse(v.begin(),v.begin()+n-deviation);</span><br><span class="line">    reverse(v.begin()+n-deviation,v.end());</span><br><span class="line">    reverse(v.begin(),v.end());</span><br><span class="line">    cout &lt;&lt; v[0];</span><br><span class="line">    for (i=1;i&lt;n;i++)</span><br><span class="line">        cout &lt;&lt; &quot; &quot; &lt;&lt; v[i];</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>1009 说反话 （20 分)</p>
+<p>给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>测试输入包含一个测试用例，在一行内给出总长度不超过 80 的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用 1 个空格分开，输入保证句子末尾没有多余的空格。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>每个测试用例的输出占一行，输出倒序后的句子。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>Hello World Here I Come</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>Come I Here World Hello</p>
+<p>分析：可以用istringstream输入流分割已有的字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;sstream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string temp,in;</span><br><span class="line">    vector&lt;string&gt; word;</span><br><span class="line">    int count=0,i;</span><br><span class="line">    //整行获取</span><br><span class="line">    getline(cin,in);</span><br><span class="line">    //根据获取的字符串创建流</span><br><span class="line">    istringstream ss(in);</span><br><span class="line">    //把分割的单词放进vector中</span><br><span class="line">    while (ss &gt;&gt; temp)</span><br><span class="line">        word.push_back(temp);</span><br><span class="line">    cout &lt;&lt; word[word.size()-1];</span><br><span class="line">    for (i=word.size()-2;i&gt;=0;i--)</span><br><span class="line">        cout &lt;&lt; &quot; &quot;&lt;&lt; word[i];</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改进：1.输入的时候直接用while (cin &gt;&gt; word)输入每一个单词，不用字符串流。但是调试的时候一行敲完了回车并不能出结果，需要ctrl+z结束才能出结果，不过oj上可以通过，并不影响。oj上应该是有专门的结束标识。</p>
+<p>2.用栈输入输出，逻辑上更容易接受。</p>
+<p>改进代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stack&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">    stack&lt;string&gt; v;</span><br><span class="line">    string s;</span><br><span class="line">    while(cin &gt;&gt; s) </span><br><span class="line">        v.push(s);</span><br><span class="line">    cout &lt;&lt; v.top();</span><br><span class="line">    v.pop();</span><br><span class="line">    while(!v.empty()) &#123;</span><br><span class="line">        cout &lt;&lt; &quot; &quot; &lt;&lt; v.top();</span><br><span class="line">        v.pop();    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PTA/">PTA</a><a href="/tags/乙级/">乙级</a>
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
   </div>
 
 
@@ -126,7 +131,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/17/PTA-乙级-1008-数组元素循环右移问题/" data-title="PTA-乙级-1008.数组元素循环右移问题 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/03/18/PAT-乙级-1009-说反话/" data-title="PAT-乙级-1009.说反话 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -137,9 +142,9 @@
  
 
 <div class="next">
-<a href="/2019/03/16/PTA-乙级-1007-素数对猜想/" title="PTA-乙级-1007.素数对猜想">
+<a href="/2019/03/17/PAT-乙级-1008-数组元素循环右移问题/" title="PAT-乙级-1008.数组元素循环右移问题">
  <strong>NEXT:</strong><br> 
- <span>PTA-乙级-1007.素数对猜想
+ <span>PAT-乙级-1008.数组元素循环右移问题
 </span>
 </a>
 </div>
@@ -149,7 +154,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PTA-乙级-1008.数组元素循环右移问题" data-thread-key="PTA-乙级-1008-数组元素循环右移问题" data-author-key="YiHeng" data-url="http://yoursite.com/post/PTA-乙级-1008-数组元素循环右移问题"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1009.说反话" data-thread-key="PAT-乙级-1009-说反话" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1009-说反话"></div>
 	
 </section>
 
@@ -159,7 +164,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式"><span class="toc-number">1.</span> <span class="toc-text">输入格式:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式"><span class="toc-number">2.</span> <span class="toc-text">输出格式:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例"><span class="toc-number">3.</span> <span class="toc-text">输入样例:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例"><span class="toc-number">4.</span> <span class="toc-text">输出样例:</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -183,7 +188,7 @@
 	<p class="asidetitle">Categories</p>
 		<ul>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>8</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>9</sup></a></li>
 		
 		</ul>
 </div>
@@ -194,9 +199,9 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PTA/" title="PTA">PTA<sup>8</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>9</sup></a></li>
 		
-			<li><a href="/tags/乙级/" title="乙级">乙级<sup>8</sup></a></li>
+			<li><a href="/tags/乙级/" title="乙级">乙级<sup>9</sup></a></li>
 		
 		</ul>
 </div>
@@ -219,7 +224,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PTA/" style="font-size: 10px;">PTA</a> <a href="/tags/乙级/" style="font-size: 10px;">乙级</a>
+       <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/乙级/" style="font-size: 10px;">乙级</a>
     </div>
   </div>
 

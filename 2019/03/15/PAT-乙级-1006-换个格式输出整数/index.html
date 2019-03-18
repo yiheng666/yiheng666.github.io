@@ -7,12 +7,13 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PTA-乙级-1001.害死人不偿命的(3n+1)猜想 | YiHeng</title>
+    <title>PAT-乙级-1006.换个格式输出整数 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="卡拉兹(Callatz)猜想：对任何⼀一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这 样一直反复砍下去后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生">
+    <meta name="description" content="1006 换个格式输出整数 （15 分)
+让我们用字母 B 来表示“百”、字母 S 表示“十”，用 12...n 来表示不为零的个位数字 n（&amp;lt;10），换个格式来输出任一个不超过 3 位的正整数。例如 234 应该被输出为 BBSSS1234，因为它有 2 个“百”、3 个“十”、以及个位的 ">
     
     
     
@@ -78,15 +79,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/10/PTA-乙级-1001-害死人不偿命的(3n+1)猜想/" title="PTA-乙级-1001.害死人不偿命的(3n+1)猜想" itemprop="url">PTA-乙级-1001.害死人不偿命的(3n+1)猜想</a>
+      <a href="/2019/03/15/PAT-乙级-1006-换个格式输出整数/" title="PAT-乙级-1006.换个格式输出整数" itemprop="url">PAT-乙级-1006.换个格式输出整数</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-10T13:59:29.000Z" itemprop="datePublished">2019-03-10</time>
-    Updated:<time datetime="2019-03-13T08:45:29.555Z" itemprop="dateModified">2019-03-13</time>
+    <time datetime="2019-03-15T00:20:19.000Z" itemprop="datePublished">2019-03-15</time>
+    Updated:<time datetime="2019-03-18T11:15:09.931Z" itemprop="dateModified">2019-03-18</time>
     
   </p>
 </header>
@@ -95,18 +96,26 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li></ol>
 		</div>
 		
-		<p>卡拉兹(Callatz)猜想：<br>对任何⼀一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这 样一直反复砍下去后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……<br>我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过1000的正整数n，简单地数一下，需要多少步（砍几下）才能得到n=1？<br>输入格式：<br>每个测试输入包含1个测试用例，即给出自然数n的值。<br>输出格式：<br>输出从n计算到1需要的步数。<br>输入样例：<br>3<br>输出样例例：<br>5<br>分析：count初始值为0，用于记录砍掉的次数。用while(n!=1)语句控制是否结束，偶数则n/=2，奇数则n=(3*n+1)/2,每一次while操作结束后对count加1，表示次数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int count=0,n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    while (n!=1)</span><br><span class="line">    &#123;</span><br><span class="line">        if (n%2) n = (n*3+1)/2;</span><br><span class="line">        else n/=2;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; count;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>1006 换个格式输出整数 （15 分)</p>
+<p>让我们用字母 <code>B</code> 来表示“百”、字母 <code>S</code> 表示“十”，用 <code>12...n</code> 来表示不为零的个位数字 <code>n</code>（&lt;10），换个格式来输出任一个不超过 3 位的正整数。例如 <code>234</code> 应该被输出为 <code>BBSSS1234</code>，因为它有 2 个“百”、3 个“十”、以及个位的 4。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个测试输入包含 1 个测试用例，给出正整数 n（&lt;1000）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>每个测试用例的输出占一行，用规定的格式输出 n。</p>
+<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>234</p>
+<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>BBSSS1234</p>
+<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>23</p>
+<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>SS123</p>
+<p>分析：先判断整数的位数，分别输出即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string in;</span><br><span class="line">    int i;</span><br><span class="line">    cin &gt;&gt; in;</span><br><span class="line">    if (in.size() == 3)</span><br><span class="line">    &#123;</span><br><span class="line">        for (i=0;i &lt; in[0] - &apos;0&apos;;i++)</span><br><span class="line">            cout &lt;&lt; &quot;B&quot;;</span><br><span class="line">        for (i=0;i&lt;in[1] - &apos;0&apos;;i++)</span><br><span class="line">            cout &lt;&lt; &quot;S&quot;;</span><br><span class="line">        for (i=0;i&lt;in[2] - &apos;0&apos;;i++)</span><br><span class="line">            cout &lt;&lt; i+1;</span><br><span class="line">    &#125;</span><br><span class="line">    if (in.size() == 2)</span><br><span class="line">    &#123;</span><br><span class="line">        for (i=0;i&lt;in[0] - &apos;0&apos;;i++)</span><br><span class="line">            cout &lt;&lt; &quot;S&quot;;</span><br><span class="line">        for (i=0;i&lt;in[1] - &apos;0&apos;;i++)</span><br><span class="line">            cout &lt;&lt; i+1;</span><br><span class="line">    &#125;</span><br><span class="line">    if (in.size() == 1)</span><br><span class="line">        for (i=0;i&lt;in[0] - &apos;0&apos;;i++)</span><br><span class="line">            cout &lt;&lt; i+1;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PTA/">PTA</a><a href="/tags/乙级/">乙级</a>
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
   </div>
 
 
@@ -119,7 +128,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/10/PTA-乙级-1001-害死人不偿命的(3n+1)猜想/" data-title="PTA-乙级-1001.害死人不偿命的(3n+1)猜想 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/03/15/PAT-乙级-1006-换个格式输出整数/" data-title="PAT-乙级-1006.换个格式输出整数 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -129,18 +138,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev">
- <a href="/2019/03/11/PTA-乙级-1002-写出这个数/" title="PTA-乙级-1002.写出这个数">
+ <a href="/2019/03/16/PAT-乙级-1007-素数对猜想/" title="PAT-乙级-1007.素数对猜想">
   <strong>PREVIOUS:</strong><br>
   <span>
-  PTA-乙级-1002.写出这个数</span>
+  PAT-乙级-1007.素数对猜想</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2019/03/08/hello-world/" title="Hello World">
+<a href="/2019/03/14/PAT-乙级-1005.继续(3n+1)猜想/" title="PAT-乙级-1005.继续(3n+1)猜想">
  <strong>NEXT:</strong><br> 
- <span>Hello World
+ <span>PAT-乙级-1005.继续(3n+1)猜想
 </span>
 </a>
 </div>
@@ -150,7 +159,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PTA-乙级-1001.害死人不偿命的(3n+1)猜想" data-thread-key="PTA-乙级-1001-害死人不偿命的(3n+1)猜想" data-author-key="YiHeng" data-url="http://yoursite.com/post/PTA-乙级-1001-害死人不偿命的(3n+1)猜想"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1006.换个格式输出整数" data-thread-key="PAT-乙级-1006-换个格式输出整数" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1006-换个格式输出整数"></div>
 	
 </section>
 
@@ -160,7 +169,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -184,7 +193,7 @@
 	<p class="asidetitle">Categories</p>
 		<ul>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>8</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>9</sup></a></li>
 		
 		</ul>
 </div>
@@ -195,9 +204,9 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PTA/" title="PTA">PTA<sup>8</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>9</sup></a></li>
 		
-			<li><a href="/tags/乙级/" title="乙级">乙级<sup>8</sup></a></li>
+			<li><a href="/tags/乙级/" title="乙级">乙级<sup>9</sup></a></li>
 		
 		</ul>
 </div>
@@ -220,7 +229,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PTA/" style="font-size: 10px;">PTA</a> <a href="/tags/乙级/" style="font-size: 10px;">乙级</a>
+       <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/乙级/" style="font-size: 10px;">乙级</a>
     </div>
   </div>
 
