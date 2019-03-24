@@ -7,14 +7,15 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1009.说反话 | YiHeng</title>
+    <title>PAT-乙级-1015.德才论 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1009 说反话 （20 分)
-给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。
-输入格式：测试输入包含一个测试用例，在一行内给出总长度不超过 80 的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用 1 个空格分开，输入保证句子末尾没">
+    <meta name="description" content="1015 德才论 （25 分)
+宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。”
+现给出一批考生的德才分数，请根据司马光的理论给出录取排名。
+输入格式：输入">
     
     
     
@@ -82,15 +83,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/18/PAT-乙级-1009-说反话/" title="PAT-乙级-1009.说反话" itemprop="url">PAT-乙级-1009.说反话</a>
+      <a href="/2019/03/24/PAT-乙级-1015-德才论/" title="PAT-乙级-1015.德才论" itemprop="url">PAT-乙级-1015.德才论</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-18T11:12:14.000Z" itemprop="datePublished">2019-03-18</time>
-    Updated:<time datetime="2019-03-18T11:24:24.667Z" itemprop="dateModified">2019-03-18</time>
+    <time datetime="2019-03-24T10:18:30.000Z" itemprop="datePublished">2019-03-24</time>
+    Updated:<time datetime="2019-03-24T10:18:30.961Z" itemprop="dateModified">2019-03-24</time>
     
   </p>
 </header>
@@ -102,18 +103,17 @@
 		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
 		</div>
 		
-		<p>1009 说反话 （20 分)</p>
-<p>给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>测试输入包含一个测试用例，在一行内给出总长度不超过 80 的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用 1 个空格分开，输入保证句子末尾没有多余的空格。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>每个测试用例的输出占一行，输出倒序后的句子。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>Hello World Here I Come</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>Come I Here World Hello</p>
-<p>分析：可以用istringstream输入流分割已有的字符串。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;sstream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string temp,in;</span><br><span class="line">    vector&lt;string&gt; word;</span><br><span class="line">    int count=0,i;</span><br><span class="line">    //整行获取</span><br><span class="line">    getline(cin,in);</span><br><span class="line">    //根据获取的字符串创建流</span><br><span class="line">    istringstream ss(in);</span><br><span class="line">    //把分割的单词放进vector中</span><br><span class="line">    while (ss &gt;&gt; temp)</span><br><span class="line">        word.push_back(temp);</span><br><span class="line">    cout &lt;&lt; word[word.size()-1];</span><br><span class="line">    for (i=word.size()-2;i&gt;=0;i--)</span><br><span class="line">        cout &lt;&lt; &quot; &quot;&lt;&lt; word[i];</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>改进：1.输入的时候直接用while (cin &gt;&gt; word)输入每一个单词，不用字符串流。但是调试的时候一行敲完了回车并不能出结果，需要ctrl+z结束才能出结果，不过oj上可以通过，并不影响。oj上应该是有专门的结束标识。</p>
-<p>2.用栈输入输出，逻辑上更容易接受。</p>
-<p>改进代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stack&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">    stack&lt;string&gt; v;</span><br><span class="line">    string s;</span><br><span class="line">    while(cin &gt;&gt; s) </span><br><span class="line">        v.push(s);</span><br><span class="line">    cout &lt;&lt; v.top();</span><br><span class="line">    v.pop();</span><br><span class="line">    while(!v.empty()) &#123;</span><br><span class="line">        cout &lt;&lt; &quot; &quot; &lt;&lt; v.top();</span><br><span class="line">        v.pop();    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>1015 德才论 （25 分)</p>
+<p>宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。”</p>
+<p>现给出一批考生的德才分数，请根据司马光的理论给出录取排名。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出 3 个正整数，分别为：N（≤105），即考生总数；L（≥60），为录取最低分数线，即德分和才分均不低于 L 的考生才有资格被考虑录取；H（&lt;100），为优先录取线——德分和才分均不低于此线的被定义为“才德全尽”，此类考生按德才总分从高到低排序；才分不到但德分到线的一类考生属于“德胜才”，也按总分排序，但排在第一类考生之后；德才分均低于 H，但是德分不低于才分的考生属于“才德兼亡”但尚有“德胜才”者，按总分排序，但排在第二类考生之后；其他达到最低线 L 的考生也按总分排序，但排在第三类考生之后。</p>
+<p>随后 N 行，每行给出一位考生的信息，包括：<code>准考证号 德分 才分</code>，其中<code>准考证号</code>为 8 位整数，德才分为区间 [0, 100] 内的整数。数字间以空格分隔。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出第一行首先给出达到最低分数线的考生人数 M，随后 M 行，每行按照输入格式输出一位考生的信息，考生按输入中说明的规则从高到低排序。当某类考生中有多人总分相同时，按其德分降序排列；若德分也并列，则按准考证号的升序输出。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>14 60 80<br>10000001 64 90<br>10000002 90 60<br>10000011 85 80<br>10000003 85 80<br>10000004 80 85<br>10000005 82 77<br>10000006 83 76<br>10000007 90 78<br>10000008 75 79<br>10000009 59 90<br>10000010 88 45<br>10000012 80 100<br>10000013 90 99<br>10000014 66 60</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>12<br>10000013 90 99<br>10000012 80 100<br>10000003 85 80<br>10000011 85 80<br>10000004 80 85<br>10000007 90 78<br>10000006 83 76<br>10000005 82 77<br>10000002 90 60<br>10000014 66 60<br>10000008 75 79<br>10000001 64 90</p>
+<p>分析：这题目主要是考察结构体的运用和根据自己的需要通过改写cmp进行排序。先定义一个结构体，把输入的参数通过结构体的形式存储起来。在cmp中，函数返回的是bool类型，return A.id &lt; B.id表示根据id升序排列（从小到大）；return A.moral_score &gt; B.moral_score;表示根据德分降序排列（从大到小）。在输入的时候就要判断该考生属于哪一类，放到对应的vector中，如果考生德分或者才分没有达到最底线，用count记录下来，n-count就是被录取的考生人数。最需要注意的一点是在输出的时候不能用cout，一定要用printf，否则会超时。</p>
+<p>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">int</span> moral_score;</span><br><span class="line">    <span class="keyword">int</span> tal_score;</span><br><span class="line">&#125;Student;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Student A,Student B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (A.moral_score + A.tal_score != B.moral_score + B.tal_score)</span><br><span class="line">        <span class="keyword">return</span> A.moral_score + A.tal_score &gt; B.moral_score + B.tal_score;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (A.moral_score != B.moral_score )</span><br><span class="line">            <span class="keyword">return</span> A.moral_score &gt; B.moral_score;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> A.id &lt; B.id;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,low,high,i,j,score1,score2,count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="built_in">vector</span>&lt;Student&gt;v[<span class="number">4</span>];</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; low &gt;&gt; high;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; id &gt;&gt; score1 &gt;&gt; score2;</span><br><span class="line">        Student s;</span><br><span class="line">        s.id = id;</span><br><span class="line">        s.moral_score = score1;</span><br><span class="line">        s.tal_score = score2;</span><br><span class="line">        <span class="keyword">if</span> (score1 &gt;= high &amp;&amp; score2 &gt;= high)</span><br><span class="line">            v[<span class="number">0</span>].push_back(s);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> ((score2&gt;=low &amp;&amp; score2&lt;=high)  &amp;&amp; score1 &gt;= high)</span><br><span class="line">            v[<span class="number">1</span>].push_back(s);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (score1&gt;=low &amp;&amp; score2 &gt;= low &amp;&amp; score1 &gt;= score2)</span><br><span class="line">            v[<span class="number">2</span>].push_back(s);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (score1&gt;=low &amp;&amp; score2 &gt;= low)</span><br><span class="line">            v[<span class="number">3</span>].push_back(s);</span><br><span class="line">        <span class="keyword">else</span> count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; n-count &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sort(v[i].begin(),v[i].end(),cmp);</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;v[i].size();j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,v[i][j].id,v[i][j].moral_score,v[i][j].tal_score);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -133,7 +133,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/18/PAT-乙级-1009-说反话/" data-title="PAT-乙级-1009.说反话 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/03/24/PAT-乙级-1015-德才论/" data-title="PAT-乙级-1015.德才论 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -142,19 +142,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/03/19/PAT-乙级-1010-一元多项式求导/" title="PAT-乙级-1010.一元多项式求导">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1010.一元多项式求导</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/03/17/PAT-乙级-1008-数组元素循环右移问题/" title="PAT-乙级-1008.数组元素循环右移问题">
+<a href="/2019/03/23/PAT-乙级-1014-福尔摩斯的约会/" title="PAT-乙级-1014.福尔摩斯的约会">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1008.数组元素循环右移问题
+ <span>PAT-乙级-1014.福尔摩斯的约会
 </span>
 </a>
 </div>
@@ -164,7 +156,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1009.说反话" data-thread-key="PAT-乙级-1009-说反话" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1009-说反话"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1015.德才论" data-thread-key="PAT-乙级-1015-德才论" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1015-德才论"></div>
 	
 </section>
 
