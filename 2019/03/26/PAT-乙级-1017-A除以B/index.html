@@ -7,14 +7,15 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1013.数素数 | YiHeng</title>
+    <title>PAT-乙级-1017.A除以B | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1013 数素数 （20 分)令 Pi 表示第 i 个素数。现任给两个正整数 M≤N≤104，请输出 PM 到 PN 的所有素数。
-输入格式：输入在一行中给出 M 和 N，其间以空格分隔。
-输出格式：输出从 PM 到 PN 的所有素数，每 10 个数字占 1 行，其间以空格分隔，但行末不得有多余空格">
+    <meta name="description" content="1017 A除以B （20 分)
+本题要求计算 A/B，其中 A 是不超过 1000 位的正整数，B 是 1 位正整数。你需要输出商数 Q 和余数 R，使得 A=B×Q+R 成立。
+输入格式：输入在一行中依次给出 A 和 B，中间以 1 空格分隔。
+输出格式：在一行中依次输出 Q 和 R，中间以 1">
     
     
     
@@ -82,15 +83,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/22/PAT-乙级-1013-数素数/" title="PAT-乙级-1013.数素数" itemprop="url">PAT-乙级-1013.数素数</a>
+      <a href="/2019/03/26/PAT-乙级-1017-A除以B/" title="PAT-乙级-1017.A除以B" itemprop="url">PAT-乙级-1017.A除以B</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-21T16:04:10.000Z" itemprop="datePublished">2019-03-22</time>
-    Updated:<time datetime="2019-03-21T16:04:10.216Z" itemprop="dateModified">2019-03-22</time>
+    <time datetime="2019-03-26T10:29:46.000Z" itemprop="datePublished">2019-03-26</time>
+    Updated:<time datetime="2019-03-26T10:29:46.926Z" itemprop="dateModified">2019-03-26</time>
     
   </p>
 </header>
@@ -102,11 +103,18 @@
 		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
 		</div>
 		
-		<p>1013 数素数 （20 分)<br>令 P<sub>i</sub> 表示第 i 个素数。现任给两个正整数 M≤N≤10<sup>4</sup>，请输出 P<sub>M</sub> 到 P<sub>N</sub> 的所有素数。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出 M 和 N，其间以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出从 P<sub>M</sub> 到 P<sub>N</sub> 的所有素数，每 10 个数字占 1 行，其间以空格分隔，但行末不得有多余空格。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>5 27</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>11 13 17 19 23 29 31 37 41 43<br>47 53 59 61 67 71 73 79 83 89<br>97 101 103<br>分析：直接把素数表打出来存到vector中，然后按格式输出。需要注意的是判断素数的时候只要判断到根号m就可以了，因为m = ab，则必然至少有一个数字小于等于根号m。如果全部判断的话很可能会超时。<br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">bool IsPrimeNumber(int m)</span><br><span class="line">&#123;</span><br><span class="line">    if (m&lt;=1) return false;</span><br><span class="line">    for (int i=2;i*i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (m%i == 0)</span><br><span class="line">            return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int count=1,m,n;</span><br><span class="line">    vector&lt;int&gt; v;</span><br><span class="line">    v.push_back(2);</span><br><span class="line">    cin &gt;&gt; m &gt;&gt; n;</span><br><span class="line">    for (int i=3;i&lt;105000;i+=2)</span><br><span class="line">    &#123;</span><br><span class="line">        if (IsPrimeNumber(i))</span><br><span class="line">            v.push_back(i);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i=m-1;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (count == 1) cout &lt;&lt; v[i];</span><br><span class="line">        else cout &lt;&lt; &quot; &quot; &lt;&lt; v[i];</span><br><span class="line">        if (count == 10 &amp;&amp; i!=n-1)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; endl;</span><br><span class="line">            count = 0;</span><br><span class="line">        &#125;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+		<p>1017 A除以B （20 分)</p>
+<p>本题要求计算 A/B，其中 A 是不超过 1000 位的正整数，B 是 1 位正整数。你需要输出商数 Q 和余数 R，使得 A=B×Q+R 成立。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中依次给出 A 和 B，中间以 1 空格分隔。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中依次输出 Q 和 R，中间以 1 空格分隔。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>123456789050987654321 7</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>17636684150141093474 3</p>
+<p>分析：把前面的A用字符串输入，然后仿照除法的运算过程：</p>
+<p>1.先用div存储A的第一个数字除以B后的结果，mod存储它的余数，当A只有一位或者A不知一位但是得到的余数不为0的时候，直接输出div(也就是结果Q的第一位)。</p>
+<p>2.进行len-1（len是A的长度）次循环（因为第一步处理已经处理了一位）。在每一步，当前被除数x = mod ×10 + 当前循环得到的数字，除数为B，则当前输出的结果为div = x / B，当前的余数为mod 为 x % B。</p>
+<p>3.输出最后的余数。</p>
+<p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string A;</span><br><span class="line">    int len,div,mod,B;</span><br><span class="line">    cin &gt;&gt; A &gt;&gt; B;</span><br><span class="line">    len = A.size();</span><br><span class="line">    div = (A[0] - &apos;0&apos;) / B;</span><br><span class="line">    mod = (A[0] - &apos;0&apos;) % B;</span><br><span class="line">    if ( (div!=0&amp;&amp;len &gt;1) || len == 1)</span><br><span class="line">        cout &lt;&lt; div;</span><br><span class="line">    for (int i=1;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        div = (A[i] - &apos;0&apos; + mod*10) / B;</span><br><span class="line">        cout &lt;&lt; div ;</span><br><span class="line">        mod = (A[i] - &apos;0&apos; + mod*10) % B;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot; &quot; &lt;&lt; mod ;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -126,7 +134,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/22/PAT-乙级-1013-数素数/" data-title="PAT-乙级-1013.数素数 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/03/26/PAT-乙级-1017-A除以B/" data-title="PAT-乙级-1017.A除以B | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -135,19 +143,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/03/23/PAT-乙级-1014-福尔摩斯的约会/" title="PAT-乙级-1014.福尔摩斯的约会">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1014.福尔摩斯的约会</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/03/21/PAT-乙级-1012-数字分类/" title="PAT-乙级-1012.数字分类">
+<a href="/2019/03/25/PAT-乙级-1016-部分A-B/" title="PAT-乙级-1016.部分A+B">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1012.数字分类
+ <span>PAT-乙级-1016.部分A+B
 </span>
 </a>
 </div>
@@ -157,7 +157,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1013.数素数" data-thread-key="PAT-乙级-1013-数素数" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1013-数素数"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1017.A除以B" data-thread-key="PAT-乙级-1017-A除以B" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1017-A除以B"></div>
 	
 </section>
 
