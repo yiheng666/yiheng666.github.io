@@ -7,15 +7,14 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1016.部分A+B | YiHeng</title>
+    <title>PTA-乙级-1021.个位数统计 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1016 部分A+B （15 分)
-正整数 A 的“DA（为 1 位整数）部分”定义为由 A 中所有 DA 组成的新整数 PA。例如：给定 A=3862767，DA=6，则 A 的“6 部分”PA 是 66，因为 A 中有 2 个 6。
-现给定 A、DA、B、DB，请编写程序计算 PA+PB。
-输入">
+    <meta name="description" content="1021 个位数统计 （15 分)
+给定一个 k 位整数 N=dk−110k−1+⋯+d1101+d0 (0≤di≤9, i=0,⋯,k−1, dk−1&amp;gt;0)，请编写程序统计每种不同的个位数字出现的次数。例如：给定 N=100311，则有 2 个 0，3 个 1，和 1 个 3。
+输入格式：每">
     
     
     
@@ -83,15 +82,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/25/PAT-乙级-1016-部分A-B/" title="PAT-乙级-1016.部分A+B" itemprop="url">PAT-乙级-1016.部分A+B</a>
+      <a href="/2019/03/30/PTA-乙级-1021-个位数统计/" title="PTA-乙级-1021.个位数统计" itemprop="url">PTA-乙级-1021.个位数统计</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-25T14:23:19.000Z" itemprop="datePublished">2019-03-25</time>
-    Updated:<time datetime="2019-03-25T14:23:19.505Z" itemprop="dateModified">2019-03-25</time>
+    <time datetime="2019-03-30T15:51:12.000Z" itemprop="datePublished">2019-03-30</time>
+    Updated:<time datetime="2019-03-30T15:51:12.211Z" itemprop="dateModified">2019-03-30</time>
     
   </p>
 </header>
@@ -100,21 +99,18 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
 		</div>
 		
-		<p>1016 部分A+B （15 分)</p>
-<p>正整数 A 的“D<sub>A</sub>（为 1 位整数）部分”定义为由 A 中所有 D<sub>A</sub> 组成的新整数 P<sub>A</sub>。例如：给定 A=3862767，D<sub>A</sub>=6，则 A 的“6 部分”P<sub>A</sub> 是 66，因为 A 中有 2 个 6。</p>
-<p>现给定 A、D<sub>A</sub>、B、D<sub>B</sub>，请编写程序计算 P<sub>A</sub>+P<sub>B</sub>。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中依次给出 A、D<sub>A</sub>、B、D<sub>B</sub>，中间以空格分隔，其中 0&lt;A,B&lt;1010。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出 P<sub>A</sub>+P<sub>B</sub> 的值。</p>
-<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>3862767 6 13530293 3</p>
-<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>399</p>
-<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>3862767 1 13530293 8</p>
-<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>0</p>
-<p>分析：直接匹配得到各自的P值 ，相加就可以了。没有那么多花里胡哨的。</p>
+		<p>1021 个位数统计 （15 分)</p>
+<p>给定一个 k 位整数 N=d<sub>k−1</sub>10<sup>k−1</sup>+⋯+d<sub>1</sub>10<sup>1</sup>+d<sub>0</sub> (0≤d<sub>i</sub>≤9, i=0,⋯,k−1, d<sub>k−1</sub>&gt;0)，请编写程序统计每种不同的个位数字出现的次数。例如：给定 N=100311，则有 2 个 0，3 个 1，和 1 个 3。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个输入包含 1 个测试用例，即一个不超过 1000 位的正整数 N。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对 N 中每一种不同的个位数字，以 <code>D:M</code> 的格式在一行中输出该位数字 <code>D</code> 及其在 N 中出现的次数 <code>M</code>。要求按 <code>D</code> 的升序输出。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>100311</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>0:2<br>1:3<br>3:1</p>
+<p>分析：直接用map函数,map函数内部根据key自动升序排列。</p>
 <p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string s1,s2;</span><br><span class="line">    char a,b;</span><br><span class="line">    int temp1=0,temp2=0,i;</span><br><span class="line">    cin &gt;&gt; s1 &gt;&gt; a &gt;&gt; s2 &gt;&gt; b;</span><br><span class="line">    for (i=0;i&lt;s1.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (s1[i] == a)</span><br><span class="line">            temp1 = temp1*10 + a - &apos;0&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    for (i=0;i&lt;s2.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (s2[i] == b)</span><br><span class="line">            temp2 = temp2*10 + b - &apos;0&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; temp1 + temp2 ;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string s;</span><br><span class="line">    map&lt;char,int&gt; m;</span><br><span class="line">    map&lt;char,int&gt;::iterator it;</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    for (int i=0;i&lt;s.size();i++)&#123;</span><br><span class="line">        m[s[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line">    it = m.begin();</span><br><span class="line">    while ( it!= m.end() )&#123;</span><br><span class="line">        cout &lt;&lt; it-&gt;first &lt;&lt; &quot;:&quot; &lt;&lt; it-&gt;second ;</span><br><span class="line">        it++;</span><br><span class="line">        if (it != m.end()) cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -134,7 +130,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/25/PAT-乙级-1016-部分A-B/" data-title="PAT-乙级-1016.部分A+B | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/03/30/PTA-乙级-1021-个位数统计/" data-title="PTA-乙级-1021.个位数统计 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -143,19 +139,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/03/26/PAT-乙级-1017-A除以B/" title="PAT-乙级-1017.A除以B">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1017.A除以B</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/03/24/PAT-乙级-1015-德才论/" title="PAT-乙级-1015.德才论">
+<a href="/2019/03/29/PTA-乙级-1020-月饼/" title="PTA-乙级-1020.月饼">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1015.德才论
+ <span>PTA-乙级-1020.月饼
 </span>
 </a>
 </div>
@@ -165,7 +153,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1016.部分A+B" data-thread-key="PAT-乙级-1016-部分A-B" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1016-部分A-B"></div>
+	<div class="ds-thread" data-title="PTA-乙级-1021.个位数统计" data-thread-key="PTA-乙级-1021-个位数统计" data-author-key="YiHeng" data-url="http://yoursite.com/post/PTA-乙级-1021-个位数统计"></div>
 	
 </section>
 
@@ -175,7 +163,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
