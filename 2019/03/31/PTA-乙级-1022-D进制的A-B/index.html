@@ -7,18 +7,17 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1012.数字分类 | YiHeng</title>
+    <title>PTA-乙级-1022.D进制的A+B | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1012 数字分类 （20 分)
-给定一系列正整数，请按要求对数字进行分类，并输出以下 5 个数字：
-
-A1 = 能被 5 整除的数字中所有偶数的和；
-A2 = 将被 5 除后余 1 的数字按给出顺序进行交错求和，即计算 n1−n2+n3−n4⋯；
-A3 = 被 5 除后余 2 的数字的个数；
-A4">
+    <meta name="description" content="1022 D进制的A+B （20 分)
+输入两个非负 10 进制整数 A 和 B (≤230−1)，输出 A+B 的 D (1&amp;lt;D≤10)进制数。
+输入格式：输入在一行中依次给出 3 个整数 A、B 和 D。
+输出格式：输出 A+B 的 D 进制数。
+输入样例：123 456 8
+输出样例：1">
     
     
     
@@ -86,15 +85,15 @@ A4">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/21/PAT-乙级-1012-数字分类/" title="PAT-乙级-1012.数字分类" itemprop="url">PAT-乙级-1012.数字分类</a>
+      <a href="/2019/03/31/PTA-乙级-1022-D进制的A-B/" title="PTA-乙级-1022.D进制的A+B" itemprop="url">PTA-乙级-1022.D进制的A+B</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-21T02:41:25.000Z" itemprop="datePublished">2019-03-21</time>
-    Updated:<time datetime="2019-03-21T02:41:25.521Z" itemprop="dateModified">2019-03-21</time>
+    <time datetime="2019-03-31T02:10:23.000Z" itemprop="datePublished">2019-03-31</time>
+    Updated:<time datetime="2019-03-31T02:10:23.723Z" itemprop="dateModified">2019-03-31</time>
     
   </p>
 </header>
@@ -103,35 +102,25 @@ A4">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
 		</div>
 		
-		<p>1012 数字分类 （20 分)</p>
-<p>给定一系列正整数，请按要求对数字进行分类，并输出以下 5 个数字：</p>
-<ul>
-<li>A1 = 能被 5 整除的数字中所有偶数的和；</li>
-<li>A2 = 将被 5 除后余 1 的数字按给出顺序进行交错求和，即计算 n1−n2+n3−n4⋯；</li>
-<li>A3 = 被 5 除后余 2 的数字的个数；</li>
-<li>A4 = 被 5 除后余 3 的数字的平均数，精确到小数点后 1 位；</li>
-<li>A5 = 被 5 除后余 4 的数字中最大数字。</li>
-</ul>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个输入包含 1 个测试用例。每个测试用例先给出一个不超过 1000 的正整数 N，随后给出 N 个不超过 1000 的待分类的正整数。数字间以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对给定的 N 个正整数，按题目要求计算 A1~A5 并在一行中顺序输出。数字间以空格分隔，但行末不得有多余空格。</p>
-<p>若其中某一类数字不存在，则在相应位置输出 <code>N</code>。</p>
-<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>13 1 2 3 4 5 6 7 8 9 10 20 16 18</p>
-<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>30 11 2 9.7 9</p>
-<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>8 1 2 4 5 6 7 9 16</p>
-<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>N 11 2 N 9</p>
-<p>分析：重点说一下A1、A2和A4。A1的特点就是能被10整除，但是如果整个判断的结构是if -else if结构的话，不能直接用n%10来判断，应该还是用n%5判断，再判断是否被2整除，否则分类会出现错误，提交了几次没有AC就是卡在这里了。不然就五个if，这才可以直接判断n%10。A2可以用op变量控制符号。A4可以先记录总值和数目，最后再按要求转化格式输出，也可以一开始设置为浮点型输出。代码牺牲了一些优雅性，我觉得这样好检查（无脑）一点。其实不用五个flag的，有一些A自己可以当判断条件，可以在这里简化一下。</p>
+		<p>1022 D进制的A+B （20 分)</p>
+<p>输入两个非负 10 进制整数 A 和 B (≤230−1)，输出 A+B 的 D (1&lt;D≤10)进制数。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中依次给出 3 个整数 A、B 和 D。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出 A+B 的 D 进制数。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>123 456 8</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>1103</p>
+<p>分析：手动模拟进制转化就可以了。</p>
 <p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int A1=0,A2=0,A3=0,A4=0,A5=0,n,m,op=1,count=0;</span><br><span class="line">    bool flag_A1 = false,flag_A2 = false,flag_A3 = false,flag_A4 = false,flag_A5 = false;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    for (int i=0;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        if (n%10 == 0)</span><br><span class="line">        &#123;</span><br><span class="line">            flag_A1 = true;</span><br><span class="line">            A1+=n;</span><br><span class="line">        &#125;</span><br><span class="line">        if (n%5 == 1)&#123;</span><br><span class="line">            A2 = A2 + op*n;</span><br><span class="line">            op*=-1;</span><br><span class="line">            flag_A2 = true;</span><br><span class="line">        &#125;</span><br><span class="line">        if (n%5 == 2)</span><br><span class="line">        &#123;</span><br><span class="line">            flag_A3 = true;</span><br><span class="line">            A3++;</span><br><span class="line">        &#125;</span><br><span class="line">        if (n%5 == 3)</span><br><span class="line">        &#123;</span><br><span class="line">            A4+=n;</span><br><span class="line">            count++;</span><br><span class="line">            flag_A4 = true;</span><br><span class="line">        &#125;</span><br><span class="line">        if (n%5 == 4)</span><br><span class="line">        &#123;</span><br><span class="line">            if (n &gt; A5) A5 = n;</span><br><span class="line">            flag_A5 = true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (flag_A1) cout &lt;&lt; A1;</span><br><span class="line">    else cout &lt;&lt; &quot;N&quot;;</span><br><span class="line">    if (flag_A2) cout &lt;&lt; &quot; &quot; &lt;&lt;A2;</span><br><span class="line">    else cout &lt;&lt; &quot; N&quot;;</span><br><span class="line">    if (flag_A3) cout&lt;&lt; &quot; &quot; &lt;&lt; A3;</span><br><span class="line">    else cout &lt;&lt; &quot; N&quot;;</span><br><span class="line">    if (flag_A4) printf(&quot; %.1f&quot;, (float)A4 / count);</span><br><span class="line">    else cout &lt;&lt; &quot; N&quot;;</span><br><span class="line">    if (flag_A5) cout &lt;&lt; &quot; &quot; &lt;&lt; A5;</span><br><span class="line">    else cout &lt;&lt; &quot; N&quot;;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b,c,D,div,mod;</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b &gt;&gt; D;</span><br><span class="line">    c = a + b;</span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">        mod = c % D;</span><br><span class="line">        s += mod + &apos;0&apos;;</span><br><span class="line">        c = c / D;</span><br><span class="line">    &#125;while (c != 0);</span><br><span class="line">    reverse(s.begin(),s.end());</span><br><span class="line">    cout &lt;&lt; s;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
+  <span></span> <a href="/tags/PAT，乙级/">PAT，乙级</a>
   </div>
 
 
@@ -144,7 +133,7 @@ A4">
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/21/PAT-乙级-1012-数字分类/" data-title="PAT-乙级-1012.数字分类 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/03/31/PTA-乙级-1022-D进制的A-B/" data-title="PTA-乙级-1022.D进制的A+B | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -153,19 +142,11 @@ A4">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/03/22/PAT-乙级-1013-数素数/" title="PAT-乙级-1013.数素数">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1013.数素数</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/03/20/PAT-乙级-1011-A-B-和-C/" title="PAT-乙级-1011.A+B 和 C">
+<a href="/2019/03/30/PTA-乙级-1021-个位数统计/" title="PTA-乙级-1021.个位数统计">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1011.A+B 和 C
+ <span>PTA-乙级-1021.个位数统计
 </span>
 </a>
 </div>
@@ -175,7 +156,7 @@ A4">
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1012.数字分类" data-thread-key="PAT-乙级-1012-数字分类" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1012-数字分类"></div>
+	<div class="ds-thread" data-title="PTA-乙级-1022.D进制的A+B" data-thread-key="PTA-乙级-1022-D进制的A-B" data-author-key="YiHeng" data-url="http://yoursite.com/post/PTA-乙级-1022-D进制的A-B"></div>
 	
 </section>
 
@@ -185,7 +166,7 @@ A4">
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
