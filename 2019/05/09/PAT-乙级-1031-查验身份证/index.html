@@ -7,15 +7,14 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1016.部分A+B | YiHeng</title>
+    <title>PAT-乙级-1031-查验身份证 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1016 部分A+B （15 分)
-正整数 A 的“DA（为 1 位整数）部分”定义为由 A 中所有 DA 组成的新整数 PA。例如：给定 A=3862767，DA=6，则 A 的“6 部分”PA 是 66，因为 A 中有 2 个 6。
-现给定 A、DA、B、DB，请编写程序计算 PA+PB。
-输入">
+    <meta name="description" content="一个合法的身份证号码由17位地区、日期编号和顺序编号加1位校验码组成。校验码的计算规则如下：
+首先对前17位数字加权求和，权重分配为：{7，9，10，5，8，4，2，1，6，3，7，9，10，5，8，4，2}；然后将计算的和对11取模得到值Z；最后按照以下关系对应Z值与校验码M的值：
+12Z：0 1">
     
     
     
@@ -83,15 +82,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/25/PAT-乙级-1016-部分A-B/" title="PAT-乙级-1016.部分A+B" itemprop="url">PAT-乙级-1016.部分A+B</a>
+      <a href="/2019/05/09/PAT-乙级-1031-查验身份证/" title="PAT-乙级-1031-查验身份证" itemprop="url">PAT-乙级-1031-查验身份证</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-25T14:23:19.000Z" itemprop="datePublished">2019-03-25</time>
-    Updated:<time datetime="2019-03-25T14:23:19.505Z" itemprop="dateModified">2019-03-25</time>
+    <time datetime="2019-05-09T13:48:43.000Z" itemprop="datePublished">2019-05-09</time>
+    Updated:<time datetime="2019-05-09T13:48:43.537Z" itemprop="dateModified">2019-05-09</time>
     
   </p>
 </header>
@@ -100,28 +99,28 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例1："><span class="toc-number">3.</span> <span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例1："><span class="toc-number">4.</span> <span class="toc-text">输出样例1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例2："><span class="toc-number">5.</span> <span class="toc-text">输入样例2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例2："><span class="toc-number">6.</span> <span class="toc-text">输出样例2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">7.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">8.</span> <span class="toc-text">代码：</span></a></li></ol>
 		</div>
 		
-		<p>1016 部分A+B （15 分)</p>
-<p>正整数 A 的“D<sub>A</sub>（为 1 位整数）部分”定义为由 A 中所有 D<sub>A</sub> 组成的新整数 P<sub>A</sub>。例如：给定 A=3862767，D<sub>A</sub>=6，则 A 的“6 部分”P<sub>A</sub> 是 66，因为 A 中有 2 个 6。</p>
-<p>现给定 A、D<sub>A</sub>、B、D<sub>B</sub>，请编写程序计算 P<sub>A</sub>+P<sub>B</sub>。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中依次给出 A、D<sub>A</sub>、B、D<sub>B</sub>，中间以空格分隔，其中 0&lt;A,B&lt;1010。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出 P<sub>A</sub>+P<sub>B</sub> 的值。</p>
-<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>3862767 6 13530293 3</p>
-<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>399</p>
-<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>3862767 1 13530293 8</p>
-<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>0</p>
-<p>分析：直接匹配得到各自的P值 ，相加就可以了。没有那么多花里胡哨的。</p>
-<p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string s1,s2;</span><br><span class="line">    char a,b;</span><br><span class="line">    int temp1=0,temp2=0,i;</span><br><span class="line">    cin &gt;&gt; s1 &gt;&gt; a &gt;&gt; s2 &gt;&gt; b;</span><br><span class="line">    for (i=0;i&lt;s1.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (s1[i] == a)</span><br><span class="line">            temp1 = temp1*10 + a - &apos;0&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    for (i=0;i&lt;s2.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (s2[i] == b)</span><br><span class="line">            temp2 = temp2*10 + b - &apos;0&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; temp1 + temp2 ;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>一个合法的身份证号码由17位地区、日期编号和顺序编号加1位校验码组成。校验码的计算规则如下：</p>
+<p>首先对前17位数字加权求和，权重分配为：{7，9，10，5，8，4，2，1，6，3，7，9，10，5，8，4，2}；然后将计算的和对11取模得到值<code>Z</code>；最后按照以下关系对应<code>Z</code>值与校验码<code>M</code>的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Z：0 1 2 3 4 5 6 7 8 9 10</span><br><span class="line">M：1 0 X 9 8 7 6 5 4 3 2</span><br></pre></td></tr></table></figure>
+<p>现在给定一些身份证号码，请你验证校验码的有效性，并输出有问题的号码。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出正整数N（≤100）是输入的身份证号码的个数。随后N行，每行给出1个18位身份证号码。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>按照输入的顺序每行输出1个有问题的身份证号码。这里并不检验前17位是否合理，只检查前17位是否全为数字且最后1位校验码计算准确。如果所有号码都正常，则输出<code>All passed</code>。</p>
+<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><p>4<br>320124198808240056<br>12010X198901011234<br>110108196711301866<br>37070419881216001X</p>
+<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><p>12010X198901011234<br>110108196711301866<br>37070419881216001X</p>
+<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><p>2<br>320124198808240056<br>110108196711301862</p>
+<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><p>All passed</p>
+<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>check函数专门用来查验最后一位是否符合标准。对每一个输入的字符串，用check函数检查。符合要求则储存到动态数字v中，若动态数组v不为空，打印动态数组；否则打印“All passed”,</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">bool check(string s)&#123;</span><br><span class="line">    int sum=0,length=s.size(),weight[17]=&#123;7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2&#125;;</span><br><span class="line">    char dict[11] = &#123;&apos;1&apos;,&apos;0&apos;,&apos;X&apos;,&apos;9&apos;,&apos;8&apos;,&apos;7&apos;,&apos;6&apos;,&apos;5&apos;,&apos;4&apos;,&apos;3&apos;,&apos;2&apos;&#125;;</span><br><span class="line">    for (int i=0;i&lt;length-1;i++)&#123;</span><br><span class="line">        if (s[i]&gt;= &apos;0&apos; &amp;&amp; s[i]&lt;=&apos;9&apos;)</span><br><span class="line">            sum += weight[i]*(s[i] - &apos;0&apos;);</span><br><span class="line">        else return false;</span><br><span class="line">    &#125;</span><br><span class="line">    sum = sum%11;</span><br><span class="line">    if (s[length-1] == dict[sum])</span><br><span class="line">        return true;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,length;</span><br><span class="line">    vector&lt;string&gt; v;</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    while (n--)&#123;</span><br><span class="line">        cin &gt;&gt; s;</span><br><span class="line">        if (!check(s))</span><br><span class="line">            v.push_back(s);</span><br><span class="line">    &#125;</span><br><span class="line">    length = v.size();</span><br><span class="line">    if (length == 0)</span><br><span class="line">        cout &lt;&lt; &quot;All passed&quot;;</span><br><span class="line">    else&#123;</span><br><span class="line">        for (int i=0;i&lt;length-1;i++)</span><br><span class="line">            cout &lt;&lt; v[i] &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; v[length-1];</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
+  <span></span> <a href="/tags/PAT，乙级/">PAT，乙级</a>
   </div>
 
 
@@ -134,7 +133,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/25/PAT-乙级-1016-部分A-B/" data-title="PAT-乙级-1016.部分A+B | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/05/09/PAT-乙级-1031-查验身份证/" data-title="PAT-乙级-1031-查验身份证 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -143,19 +142,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/03/26/PAT-乙级-1017-A除以B/" title="PAT-乙级-1017.A除以B">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1017.A除以B</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/03/24/PAT-乙级-1015-德才论/" title="PAT-乙级-1015.德才论">
+<a href="/2019/05/08/PAT-乙级-1030-完美数列/" title="PAT-乙级-1030-完美数列">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1015.德才论
+ <span>PAT-乙级-1030-完美数列
 </span>
 </a>
 </div>
@@ -165,7 +156,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1016.部分A+B" data-thread-key="PAT-乙级-1016-部分A-B" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1016-部分A-B"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1031-查验身份证" data-thread-key="PAT-乙级-1031-查验身份证" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1031-查验身份证"></div>
 	
 </section>
 
@@ -175,7 +166,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例1："><span class="toc-number">3.</span> <span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例1："><span class="toc-number">4.</span> <span class="toc-text">输出样例1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例2："><span class="toc-number">5.</span> <span class="toc-text">输入样例2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例2："><span class="toc-number">6.</span> <span class="toc-text">输出样例2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">7.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">8.</span> <span class="toc-text">代码：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
