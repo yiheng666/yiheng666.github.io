@@ -7,14 +7,13 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1009.说反话 | YiHeng</title>
+    <title>PAT-乙级-1033-旧键盘打字 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1009 说反话 （20 分)
-给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。
-输入格式：测试输入包含一个测试用例，在一行内给出总长度不超过 80 的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用 1 个空格分开，输入保证句子末尾没">
+    <meta name="description" content="旧键盘上坏了几个键，于是在敲一段文字的时候，对应的字符就不会出现。现在给出应该输入的一段文字、以及坏掉的那些键，打出的结果文字会是怎样？
+输入格式：输入在 2 行中分别给出坏掉的那些键、以及应该输入的文字。其中对应英文字母的坏键以大写给出；每段文字是不超过 105 个字符的串。可用的字符包括字母 [">
     
     
     
@@ -82,15 +81,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/18/PAT-乙级-1009-说反话/" title="PAT-乙级-1009.说反话" itemprop="url">PAT-乙级-1009.说反话</a>
+      <a href="/2019/05/12/PAT-乙级-1033-旧键盘打字/" title="PAT-乙级-1033-旧键盘打字" itemprop="url">PAT-乙级-1033-旧键盘打字</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-18T11:12:14.000Z" itemprop="datePublished">2019-03-18</time>
-    Updated:<time datetime="2019-03-18T11:24:24.667Z" itemprop="dateModified">2019-03-18</time>
+    <time datetime="2019-05-12T13:51:28.000Z" itemprop="datePublished">2019-05-12</time>
+    Updated:<time datetime="2019-05-12T13:51:28.928Z" itemprop="dateModified">2019-05-12</time>
     
   </p>
 </header>
@@ -99,21 +98,17 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
 		</div>
 		
-		<p>1009 说反话 （20 分)</p>
-<p>给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>测试输入包含一个测试用例，在一行内给出总长度不超过 80 的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用 1 个空格分开，输入保证句子末尾没有多余的空格。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>每个测试用例的输出占一行，输出倒序后的句子。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>Hello World Here I Come</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>Come I Here World Hello</p>
-<p>分析：可以用istringstream输入流分割已有的字符串。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;sstream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string temp,in;</span><br><span class="line">    vector&lt;string&gt; word;</span><br><span class="line">    int count=0,i;</span><br><span class="line">    //整行获取</span><br><span class="line">    getline(cin,in);</span><br><span class="line">    //根据获取的字符串创建流</span><br><span class="line">    istringstream ss(in);</span><br><span class="line">    //把分割的单词放进vector中</span><br><span class="line">    while (ss &gt;&gt; temp)</span><br><span class="line">        word.push_back(temp);</span><br><span class="line">    cout &lt;&lt; word[word.size()-1];</span><br><span class="line">    for (i=word.size()-2;i&gt;=0;i--)</span><br><span class="line">        cout &lt;&lt; &quot; &quot;&lt;&lt; word[i];</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>改进：1.输入的时候直接用while (cin &gt;&gt; word)输入每一个单词，不用字符串流。但是调试的时候一行敲完了回车并不能出结果，需要ctrl+z结束才能出结果，不过oj上可以通过，并不影响。oj上应该是有专门的结束标识。</p>
-<p>2.用栈输入输出，逻辑上更容易接受。</p>
-<p>改进代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stack&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">    stack&lt;string&gt; v;</span><br><span class="line">    string s;</span><br><span class="line">    while(cin &gt;&gt; s) </span><br><span class="line">        v.push(s);</span><br><span class="line">    cout &lt;&lt; v.top();</span><br><span class="line">    v.pop();</span><br><span class="line">    while(!v.empty()) &#123;</span><br><span class="line">        cout &lt;&lt; &quot; &quot; &lt;&lt; v.top();</span><br><span class="line">        v.pop();    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>旧键盘上坏了几个键，于是在敲一段文字的时候，对应的字符就不会出现。现在给出应该输入的一段文字、以及坏掉的那些键，打出的结果文字会是怎样？</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在 2 行中分别给出坏掉的那些键、以及应该输入的文字。其中对应英文字母的坏键以大写给出；每段文字是不超过 105 个字符的串。可用的字符包括字母 [<code>a</code>-<code>z</code>, <code>A</code>-<code>Z</code>]、数字 <code>0</code>-<code>9</code>、以及下划线 <code>_</code>（代表空格）、<code>,</code>、<code>.</code>、<code>-</code>、<code>+</code>（代表上档键）。题目保证第 2 行输入的文字串非空。</p>
+<p>注意：如果上档键坏掉了，那么大写的英文字母无法被打出。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出能够被打出的结果文字。如果没有一个字符能被打出，则输出空行。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>7+IE.<br>7_This_is_a_test.</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>_hs_s_a_tst</p>
+<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>s1.find(s2[i]) != string::npos表示s1中包含s2[i]字符。本题需要注意的是，第一行字符串可能为空，所以一定要用getline输入，而不能用cin &gt;&gt; s1 &gt;&gt; s2。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    string s1,s2;</span><br><span class="line">    getline(cin,s1);</span><br><span class="line">    getline(cin,s2);</span><br><span class="line">    for (int i=0;i&lt;s2.size();i++)&#123;</span><br><span class="line">        if ( s1.find(toupper(s2[i])) != string::npos) continue;</span><br><span class="line">        if ( s1.find(&apos;+&apos;) != string::npos &amp;&amp; (s2[i]&gt;=&apos;A&apos; &amp;&amp; s2[i]&lt;=&apos;Z&apos;) ) continue;</span><br><span class="line">        cout &lt;&lt; s2[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -133,7 +128,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/18/PAT-乙级-1009-说反话/" data-title="PAT-乙级-1009.说反话 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/05/12/PAT-乙级-1033-旧键盘打字/" data-title="PAT-乙级-1033-旧键盘打字 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -142,19 +137,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/03/19/PAT-乙级-1010-一元多项式求导/" title="PAT-乙级-1010.一元多项式求导">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1010.一元多项式求导</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/03/17/PAT-乙级-1008-数组元素循环右移问题/" title="PAT-乙级-1008.数组元素循环右移问题">
+<a href="/2019/05/10/PAT-乙级-1032-挖掘机技术哪家强/" title="PAT-乙级-1032-挖掘机技术哪家强">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1008.数组元素循环右移问题
+ <span>PAT-乙级-1032-挖掘机技术哪家强
 </span>
 </a>
 </div>
@@ -164,7 +151,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1009.说反话" data-thread-key="PAT-乙级-1009-说反话" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1009-说反话"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1033-旧键盘打字" data-thread-key="PAT-乙级-1033-旧键盘打字" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1033-旧键盘打字"></div>
 	
 </section>
 
@@ -174,7 +161,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
