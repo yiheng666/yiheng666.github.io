@@ -12,6 +12,9 @@
     
     <meta name="author" content="YiHeng">
     
+    <meta name="description" content="给定一个常数 K 以及一个单链表 L，请编写程序将 L 中每 K 个结点反转。例如：给定 L 为 1→2→3→4→5→6，K 为 3，则输出应该为 3→2→1→6→5→4；如果 K 为 4，则输出应该为 4→3→2→1→5→6，即最后不到 K 个元素不反转。
+输入格式：每个输入包含 1 个测试用例。">
+    
     
     
     
@@ -86,7 +89,7 @@
     </p>
   <p class="article-time">
     <time datetime="2019-04-03T15:21:12.000Z" itemprop="datePublished">2019-04-03</time>
-    Updated:<time datetime="2019-04-03T15:21:12.044Z" itemprop="dateModified">2019-04-03</time>
+    Updated:<time datetime="2019-07-09T12:36:35.054Z" itemprop="dateModified">2019-07-09</time>
     
   </p>
 </header>
@@ -95,10 +98,17 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
 		</div>
 		
-		  
+		<p>给定一个常数 K 以及一个单链表 L，请编写程序将 L 中每 K 个结点反转。例如：给定 L 为 1→2→3→4→5→6，K 为 3，则输出应该为 3→2→1→6→5→4；如果 K 为 4，则输出应该为 4→3→2→1→5→6，即最后不到 K 个元素不反转。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个输入包含 1 个测试用例。每个测试用例第 1 行给出第 1 个结点的地址、结点总个数正整数 N (≤105)、以及正整数 K (≤N)，即要求反转的子链结点的个数。结点的地址是 5 位非负整数，NULL 地址用 −1 表示。<br>接下来有 N 行，每行格式为：<br>Address Data Next<br>其中 <code>Address</code> 是结点地址，<code>Data</code> 是该结点保存的整数数据，<code>Next</code> 是下一结点的地址。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每个测试用例，顺序输出反转后的链表，其上每个结点占一行，格式与输入相同。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>00100 6 4<br>00000 4 99999<br>00100 1 12309<br>68237 6 -1<br>33218 3 00000<br>99999 5 68237<br>12309 2 33218</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>00000 4 33218<br>33218 3 12309<br>12309 2 00100<br>00100 1 99999<br>99999 5 68237<br>68237 6 -1</p>
+<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>需要三个数组：data、next和list。data数组的下标是地址，值是数据。next数组的下标是地址，值是当前地址的下一位地址。list是反转前的链表，由next数组构造。第12-14行构造list链表。sum记录有效的节点数目。第16-17行进行反转。sum-sum%k保证了最后不足k位的数组不进行反转。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int data[100010],list[100010],next[100010],n,k,address,sum,first;</span><br><span class="line">    cin &gt;&gt; first &gt;&gt; n &gt;&gt; k ;</span><br><span class="line">    for (int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        cin &gt;&gt; address;</span><br><span class="line">        cin &gt;&gt; data[address] &gt;&gt; next[address];</span><br><span class="line">    &#125;</span><br><span class="line">    sum = 0;</span><br><span class="line">    while (first != -1)&#123;</span><br><span class="line">        list[sum++] = first;</span><br><span class="line">        first = next[first];</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i=0;i&lt;(sum - sum % k);i+=k)</span><br><span class="line">        reverse(list+i,list+i+k);</span><br><span class="line">    for (int i=0;i&lt;sum-1;i++)</span><br><span class="line">        printf(&quot;%05d %d %05d\n&quot;,list[i],data[list[i]],list[i+1]);</span><br><span class="line">    printf(&quot;%05d %d -1&quot;,list[sum-1],data[list[sum-1]]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -158,7 +168,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -182,7 +192,7 @@
 	<p class="asidetitle">Categories</p>
 		<ul>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>34</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>35</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -195,7 +205,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>29</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>30</sup></a></li>
 		
 			<li><a href="/tags/PAT，乙级/" title="PAT，乙级">PAT，乙级<sup>4</sup></a></li>
 		
@@ -203,7 +213,7 @@
 		
 			<li><a href="/tags/PTA，乙级/" title="PTA，乙级">PTA，乙级<sup>1</sup></a></li>
 		
-			<li><a href="/tags/乙级/" title="乙级">乙级<sup>30</sup></a></li>
+			<li><a href="/tags/乙级/" title="乙级">乙级<sup>31</sup></a></li>
 		
 			<li><a href="/tags/千与千寻/" title="千与千寻">千与千寻<sup>1</sup></a></li>
 		

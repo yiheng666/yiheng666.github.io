@@ -7,13 +7,14 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1032-挖掘机技术哪家强 | YiHeng</title>
+    <title>PAT-乙级-1038-统计同成绩学生 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。
-输入格式：输入在第 1 行给出不超过 105 的正整数 N，即参赛人数。随后 N 行，每行给出一位参赛者的信息和成绩，包括其所代表的学校的编号（从 1 开始连续编号）、及其比赛成绩（百">
+    <meta name="description" content="本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。
+输入格式：输入在第 1 行给出不超过 105 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。
+输出">
     
     
     
@@ -81,15 +82,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/05/10/PAT-乙级-1032-挖掘机技术哪家强/" title="PAT-乙级-1032-挖掘机技术哪家强" itemprop="url">PAT-乙级-1032-挖掘机技术哪家强</a>
+      <a href="/2019/07/09/PAT-乙级-1038-统计同成绩学生/" title="PAT-乙级-1038-统计同成绩学生" itemprop="url">PAT-乙级-1038-统计同成绩学生</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-05-10T13:44:31.000Z" itemprop="datePublished">2019-05-10</time>
-    Updated:<time datetime="2019-05-10T13:44:31.076Z" itemprop="dateModified">2019-05-10</time>
+    <time datetime="2019-07-09T12:26:20.000Z" itemprop="datePublished">2019-07-09</time>
+    Updated:<time datetime="2019-07-09T12:26:20.460Z" itemprop="dateModified">2019-07-09</time>
     
   </p>
 </header>
@@ -98,16 +99,16 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li></ol>
 		</div>
 		
-		<p>为了用事实说明挖掘机技术到底哪家强，PAT 组织了一场挖掘机技能大赛。现请你根据比赛结果统计出技术最强的那个学校。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第 1 行给出不超过 105 的正整数 N，即参赛人数。随后 N 行，每行给出一位参赛者的信息和成绩，包括其所代表的学校的编号（从 1 开始连续编号）、及其比赛成绩（百分制），中间以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中给出总得分最高的学校的编号、及其总分，中间以空格分隔。题目保证答案唯一，没有并列。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>6<br>3 65<br>2 80<br>1 100<br>2 70<br>3 40<br>3 0</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>2 150</p>
-<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>map键值对中键是唯一的，所以根据键去增加值，然后找到其中最大值即可。</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int n,id,score,max_id,max_score=0;</span><br><span class="line">    map&lt;int,int&gt; m;</span><br><span class="line">    map&lt;int,int&gt;::iterator it;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    while (n--)&#123;</span><br><span class="line">        cin &gt;&gt; id &gt;&gt; score;</span><br><span class="line">        m[id]+=score;</span><br><span class="line">    &#125;</span><br><span class="line">    for (it=m.begin();it!=m.end();it++)&#123;</span><br><span class="line">        if (max_score &lt; it-&gt;second)&#123;</span><br><span class="line">            max_id = it-&gt;first;</span><br><span class="line">            max_score = it-&gt;second;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; max_id &lt;&lt; &quot; &quot; &lt;&lt; max_score;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第 1 行给出不超过 105 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中按查询顺序给出得分等于指定分数的学生人数，中间以空格分隔，但行末不得有多余空格。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>10<br>60 75 90 55 75 99 82 90 75 50<br>3 75 90 88</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3 2 0</p>
+<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>本题目主要考察对map的应用。以分数为key，人数为value即可直接获得结果。map的int类型的value默认值为0，在此基础上可以直接对其运算。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int N,K,temp;</span><br><span class="line">    map&lt;int,int&gt; m;</span><br><span class="line">    cin &gt;&gt; N;</span><br><span class="line">    for (int i=0;i&lt;N;i++)&#123;</span><br><span class="line">        cin &gt;&gt; temp;</span><br><span class="line">        m[temp]++;</span><br><span class="line">    &#125;</span><br><span class="line">    cin &gt;&gt; K;</span><br><span class="line">    for (int i=0;i&lt;K;i++)&#123;</span><br><span class="line">        cin &gt;&gt; temp;</span><br><span class="line">        if (i == 0) cout &lt;&lt; m[temp];</span><br><span class="line">        else cout &lt;&lt; &quot; &quot; &lt;&lt; m[temp];</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -127,7 +128,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/05/10/PAT-乙级-1032-挖掘机技术哪家强/" data-title="PAT-乙级-1032-挖掘机技术哪家强 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/07/09/PAT-乙级-1038-统计同成绩学生/" data-title="PAT-乙级-1038-统计同成绩学生 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -136,19 +137,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/05/12/PAT-乙级-1033-旧键盘打字/" title="PAT-乙级-1033-旧键盘打字">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1033-旧键盘打字</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/05/09/PAT-乙级-1031-查验身份证/" title="PAT-乙级-1031-查验身份证">
+<a href="/2019/05/27/PAT-乙级-1037-在霍格沃茨找零钱/" title="PAT-乙级-1037-在霍格沃茨找零钱">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1031-查验身份证
+ <span>PAT-乙级-1037-在霍格沃茨找零钱
 </span>
 </a>
 </div>
@@ -158,7 +151,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1032-挖掘机技术哪家强" data-thread-key="PAT-乙级-1032-挖掘机技术哪家强" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1032-挖掘机技术哪家强"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1038-统计同成绩学生" data-thread-key="PAT-乙级-1038-统计同成绩学生" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1038-统计同成绩学生"></div>
 	
 </section>
 
@@ -168,7 +161,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
