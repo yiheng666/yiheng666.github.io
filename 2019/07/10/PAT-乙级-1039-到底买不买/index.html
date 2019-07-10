@@ -7,15 +7,13 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1017.A除以B | YiHeng</title>
+    <title>PAT-乙级-1039-到底买不买 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1017 A除以B （20 分)
-本题要求计算 A/B，其中 A 是不超过 1000 位的正整数，B 是 1 位正整数。你需要输出商数 Q 和余数 R，使得 A=B×Q+R 成立。
-输入格式：输入在一行中依次给出 A 和 B，中间以 1 空格分隔。
-输出格式：在一行中依次输出 Q 和 R，中间以 1">
+    <meta name="description" content="小红想买些珠子做一串自己喜欢的珠串。卖珠子的摊主有很多串五颜六色的珠串，但是不肯把任何一串拆散了卖。于是小红要你帮忙判断一下，某串珠子里是否包含了全部自己想要的珠子？如果是，那么告诉她有多少多余的珠子；如果不是，那么告诉她缺了多少珠子。
+为方便起见，我们用[0-9]、[a-z]、[A-Z]范围内的字">
     
     
     
@@ -83,15 +81,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/26/PAT-乙级-1017-A除以B/" title="PAT-乙级-1017.A除以B" itemprop="url">PAT-乙级-1017.A除以B</a>
+      <a href="/2019/07/10/PAT-乙级-1039-到底买不买/" title="PAT-乙级-1039-到底买不买" itemprop="url">PAT-乙级-1039-到底买不买</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-26T10:29:46.000Z" itemprop="datePublished">2019-03-26</time>
-    Updated:<time datetime="2019-03-26T10:29:46.926Z" itemprop="dateModified">2019-03-26</time>
+    <time datetime="2019-07-10T13:27:25.000Z" itemprop="datePublished">2019-07-10</time>
+    Updated:<time datetime="2019-07-10T13:27:25.370Z" itemprop="dateModified">2019-07-10</time>
     
   </p>
 </header>
@@ -100,41 +98,36 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">7.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">8.</span> <span class="toc-text">代码：</span></a></li></ol>
 		</div>
 		
-		<p>1017 A除以B （20 分)</p>
-<p>本题要求计算 A/B，其中 A 是不超过 1000 位的正整数，B 是 1 位正整数。你需要输出商数 Q 和余数 R，使得 A=B×Q+R 成立。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中依次给出 A 和 B，中间以 1 空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中依次输出 Q 和 R，中间以 1 空格分隔。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>123456789050987654321 7</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>17636684150141093474 3</p>
-<p>分析：把前面的A用字符串输入，然后仿照除法的运算过程：</p>
-<p>1.先用div存储A的第一个数字除以B后的结果，mod存储它的余数，当A只有一位或者A不知一位但是得到的余数不为0的时候，直接输出div(也就是结果Q的第一位)。</p>
-<p>2.进行len-1（len是A的长度）次循环（因为第一步处理已经处理了一位）。在每一步，当前被除数x = mod ×10 + 当前循环得到的数字，除数为B，则当前输出的结果为div = x / B，当前的余数为mod 为 x % B。</p>
-<p>3.输出最后的余数。</p>
-<p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string A;</span><br><span class="line">    int len,div,mod,B;</span><br><span class="line">    cin &gt;&gt; A &gt;&gt; B;</span><br><span class="line">    len = A.size();</span><br><span class="line">    div = (A[0] - &apos;0&apos;) / B;</span><br><span class="line">    mod = (A[0] - &apos;0&apos;) % B;</span><br><span class="line">    if ( (div!=0&amp;&amp;len &gt;1) || len == 1)</span><br><span class="line">        cout &lt;&lt; div;</span><br><span class="line">    for (int i=1;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        div = (A[i] - &apos;0&apos; + mod*10) / B;</span><br><span class="line">        cout &lt;&lt; div ;</span><br><span class="line">        mod = (A[i] - &apos;0&apos; + mod*10) % B;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot; &quot; &lt;&lt; mod ;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>小红想买些珠子做一串自己喜欢的珠串。卖珠子的摊主有很多串五颜六色的珠串，但是不肯把任何一串拆散了卖。于是小红要你帮忙判断一下，某串珠子里是否包含了全部自己想要的珠子？如果是，那么告诉她有多少多余的珠子；如果不是，那么告诉她缺了多少珠子。</p>
+<p>为方便起见，我们用[0-9]、[a-z]、[A-Z]范围内的字符来表示颜色。例如在图1中，第3串是小红想做的珠串；那么第1串可以买，因为包含了全部她想要的珠子，还多了8颗不需要的珠子；第2串不能买，因为没有黑色珠子，并且少了一颗红色的珠子。</p>
+<p><img src="https://images.ptausercontent.com/b7e2ffa6-8819-436d-ad79-a41263abe914.jpg" alt="figbuy.jpg"></p>
+<p>​                                                                 图 1</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个输入包含 1 个测试用例。每个测试用例分别在 2 行中先后给出摊主的珠串和小红想做的珠串，两串都不超过 1000 个珠子。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>如果可以买，则在一行中输出 <code>Yes</code> 以及有多少多余的珠子；如果不可以买，则在一行中输出 <code>No</code> 以及缺了多少珠子。其间以 1 个空格分隔。</p>
+<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>ppRYYGrrYBR2258<br>YrR8RrY</p>
+<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>Yes 8</p>
+<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>ppRYYGrrYB225<br>YrR8RrY</p>
+<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>No 2</p>
+<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>本题考查对map的应用。以char为key，int为value的map类型m1、m2可以统计摊主和小红珠串中不同颜色珠子的数量。将小红珠串m2中的key值拿去和摊主珠串中的键值对值进行比较，若m2中key所得到的值k2小于等于该key值在m1中对应的value值k1，则摊主可以满足小红对该颜色珠子的要求，否则该颜色珠子有k2-k1的缺口，用count记录下来。将小红珠串中珠子的颜色遍历完以后，若count为0，则表示摊主可以满足小红的要求，多余珠子数目为第一行字符串长度减去第二行字符串长度；否则不能满足小红的要求，缺了count个珠子。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    string s1,s2;</span><br><span class="line">    map&lt;char,int&gt; m1,m2;</span><br><span class="line">    int count=0,s1_length,s2_length;</span><br><span class="line">    cin &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">    s1_length = s1.size();s2_length = s2.size();</span><br><span class="line">    for (int i=0;i&lt;s1_length;i++)</span><br><span class="line">        m1[s1[i]]++;</span><br><span class="line">    for (int i=0;i&lt;s2_length;i++)</span><br><span class="line">        m2[s2[i]]++;</span><br><span class="line">    for (auto i = m2.begin();i!=m2.end();i++)&#123;</span><br><span class="line">        if (m1[i-&gt;first] &lt; m2[i-&gt;first])&#123;</span><br><span class="line">            count += m2[i-&gt;first] - m1[i-&gt;first];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (count==0) cout &lt;&lt; &quot;Yes &quot; &lt;&lt; s1_length - s2_length;</span><br><span class="line">    else cout &lt;&lt; &quot;No &quot; &lt;&lt; count ;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
+  <span></span> <a href="/tags/PAT，乙级/">PAT，乙级</a>
   </div>
 
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/每日一题/">每日一题</a>
-</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/26/PAT-乙级-1017-A除以B/" data-title="PAT-乙级-1017.A除以B | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/07/10/PAT-乙级-1039-到底买不买/" data-title="PAT-乙级-1039-到底买不买 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -143,19 +136,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/03/27/PAT-乙级-1018-锤子剪刀布/" title="PTA-乙级-1018.锤子剪刀布">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PTA-乙级-1018.锤子剪刀布</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/03/25/PAT-乙级-1016-部分A-B/" title="PAT-乙级-1016.部分A+B">
+<a href="/2019/07/09/PAT-乙级-1038-统计同成绩学生/" title="PAT-乙级-1038-统计同成绩学生">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1016.部分A+B
+ <span>PAT-乙级-1038-统计同成绩学生
 </span>
 </a>
 </div>
@@ -165,7 +150,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1017.A除以B" data-thread-key="PAT-乙级-1017-A除以B" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1017-A除以B"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1039-到底买不买" data-thread-key="PAT-乙级-1039-到底买不买" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1039-到底买不买"></div>
 	
 </section>
 
@@ -175,7 +160,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">7.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">8.</span> <span class="toc-text">代码：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
