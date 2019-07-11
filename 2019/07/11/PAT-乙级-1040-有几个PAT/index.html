@@ -7,16 +7,14 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PTA-乙级-1018.锤子剪刀布 | YiHeng</title>
+    <title>PAT-乙级-1040-有几个PAT | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1018 锤子剪刀布 （20 分)
-大家应该都会玩“锤子剪刀布”的游戏：两人同时给出手势，胜负规则如图所示：
-
-现给出两人的交锋记录，请统计双方的胜、平、负次数，并且给出双方分别出什么手势的胜算最大。
-输入格式：输入第 1 行给出正整数 N（≤105），即双方交锋的次数。随后 N 行，每行给出一次交">
+    <meta name="description" content="字符串 APPAPT 中包含了两个单词 PAT，其中第一个 PAT 是第 2 位(P)，第 4 位(A)，第 6 位(T)；第二个 PAT 是第 3 位(P)，第 4 位(A)，第 6 位(T)。
+现给定字符串，问一共可以形成多少个 PAT？
+输入格式：输入只有一行，包含一个字符串，长度不超过105">
     
     
     
@@ -84,15 +82,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/03/27/PAT-乙级-1018-锤子剪刀布/" title="PTA-乙级-1018.锤子剪刀布" itemprop="url">PTA-乙级-1018.锤子剪刀布</a>
+      <a href="/2019/07/11/PAT-乙级-1040-有几个PAT/" title="PAT-乙级-1040-有几个PAT" itemprop="url">PAT-乙级-1040-有几个PAT</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-03-27T13:37:23.000Z" itemprop="datePublished">2019-03-27</time>
-    Updated:<time datetime="2019-03-27T13:37:23.755Z" itemprop="dateModified">2019-03-27</time>
+    <time datetime="2019-07-11T14:45:46.000Z" itemprop="datePublished">2019-07-11</time>
+    Updated:<time datetime="2019-07-11T14:45:46.976Z" itemprop="dateModified">2019-07-11</time>
     
   </p>
 </header>
@@ -101,27 +99,24 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
 		</div>
 		
-		<p>1018 锤子剪刀布 （20 分)</p>
-<p>大家应该都会玩“锤子剪刀布”的游戏：两人同时给出手势，胜负规则如图所示：</p>
-<p><img src="https://images.ptausercontent.com/724da598-b37f-4f1f-99b4-71459654ce3a.jpg" alt="FigCJB.jpg"></p>
-<p>现给出两人的交锋记录，请统计双方的胜、平、负次数，并且给出双方分别出什么手势的胜算最大。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第 1 行给出正整数 N（≤105），即双方交锋的次数。随后 N 行，每行给出一次交锋的信息，即甲、乙双方同时给出的的手势。<code>C</code> 代表“锤子”、<code>J</code> 代表“剪刀”、<code>B</code> 代表“布”，第 1 个字母代表甲方，第 2 个代表乙方，中间有 1 个空格。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出第 1、2 行分别给出甲、乙的胜、平、负次数，数字间以 1 个空格分隔。第 3 行给出两个字母，分别代表甲、乙获胜次数最多的手势，中间有 1 个空格。如果解不唯一，则输出按字母序最小的解。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>10<br>C J<br>J B<br>C B<br>B B<br>B C<br>C C<br>C B<br>J B<br>B C<br>J J</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>5 3 2<br>2 3 5<br>B B</p>
-<p>分析：一共有九种情况，其中三种情况平局，三种情况甲胜，三种情况乙胜。平局可以合并成一种情况，其余情况都单列出来分类讨论，因为结果不止是甲乙的胜、平、负情况，还要统计甲乙胜利概率最大的手势。记录甲乙的胜负平情况用三个整形变量a,b,c就可以了。因为甲的胜、平、负对应乙的负、平、胜。统计甲乙胜利概率最大的情况可以map&lt;char,int&gt;记录，而且很好的一点是map里根据key升序自动排序，正好符合题意。</p>
-<p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">void EasyToWin(map&lt;char,int&gt;m)</span><br><span class="line">&#123;</span><br><span class="line">    int max = -1;</span><br><span class="line">    map&lt;char,int&gt;::iterator it;</span><br><span class="line">    it = m.begin();</span><br><span class="line">    while (it != m.end())</span><br><span class="line">    &#123;</span><br><span class="line">        if (it-&gt;second &gt; max)</span><br><span class="line">            max = it-&gt;second;</span><br><span class="line">        it++;</span><br><span class="line">    &#125;</span><br><span class="line">    it = m.begin();</span><br><span class="line">    while (it != m.end())</span><br><span class="line">    &#123;</span><br><span class="line">        if (it-&gt;second == max)&#123;</span><br><span class="line">            cout &lt;&lt; it-&gt;first ;break;&#125;</span><br><span class="line">        it++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    map&lt;char,int&gt; map_jia,map_yi;</span><br><span class="line">    map&lt;char,int&gt;::iterator it;</span><br><span class="line">    map_jia[&apos;C&apos;]=0;map_jia[&apos;J&apos;]=0;map_jia[&apos;B&apos;]=0;</span><br><span class="line">    map_yi[&apos;C&apos;]=0;map_yi[&apos;J&apos;]=0;map_yi[&apos;B&apos;]=0;</span><br><span class="line">    char jia,yi;</span><br><span class="line">    //a,b,c分别代表甲的胜、平、负</span><br><span class="line">    //也代表乙的负，平、胜</span><br><span class="line">    int a=0,b=0,c=0,n,i;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    for (i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; jia &gt;&gt; yi;</span><br><span class="line">        if ( jia == yi)&#123;</span><br><span class="line">            b++;&#125;</span><br><span class="line">        else if (jia==&apos;C&apos;&amp;&amp; yi==&apos;J&apos;)&#123;</span><br><span class="line">            map_jia[&apos;C&apos;]++;a++;&#125;</span><br><span class="line">        else if (jia==&apos;J&apos;&amp;&amp; yi==&apos;B&apos;)&#123;</span><br><span class="line">            map_jia[&apos;J&apos;]++;a++;&#125;</span><br><span class="line">        else if (jia==&apos;B&apos;&amp;&amp; yi==&apos;C&apos;)&#123;</span><br><span class="line">            map_jia[&apos;B&apos;]++;a++;&#125;</span><br><span class="line">        else if (jia==&apos;J&apos;&amp;&amp; yi==&apos;C&apos;)&#123;</span><br><span class="line">            map_yi[&apos;C&apos;]++;c++;&#125;</span><br><span class="line">        else if (jia==&apos;B&apos;&amp;&amp; yi==&apos;J&apos;)&#123;</span><br><span class="line">            map_yi[&apos;J&apos;]++;c++;&#125;</span><br><span class="line">        else &#123;</span><br><span class="line">        	//（jia==&apos;C&apos;&amp;&amp; yi==&apos;B&apos;)</span><br><span class="line">            map_yi[&apos;B&apos;]++;c++;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; c &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt; &quot; &quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">    EasyToWin(map_jia);</span><br><span class="line">    cout &lt;&lt; &quot; &quot;;</span><br><span class="line">    EasyToWin(map_yi);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>字符串 <code>APPAPT</code> 中包含了两个单词 <code>PAT</code>，其中第一个 <code>PAT</code> 是第 2 位(<code>P</code>)，第 4 位(<code>A</code>)，第 6 位(<code>T</code>)；第二个 <code>PAT</code> 是第 3 位(<code>P</code>)，第 4 位(<code>A</code>)，第 6 位(<code>T</code>)。</p>
+<p>现给定字符串，问一共可以形成多少个 <code>PAT</code>？</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入只有一行，包含一个字符串，长度不超过105，只包含 <code>P</code>、<code>A</code>、<code>T</code> 三种字母。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出给定字符串中包含多少个 <code>PAT</code>。由于结果可能比较大，只输出对 1000000007 取余数的结果。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>APPAPT</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>2</p>
+<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>本题最关键的是找到每一个A的位置以及数清楚它左边P的数量left和右边T的数量right。对每一个A来说，由它形成的PAT数量为left <em> right。具体做法是从左向右先找到第一个A，数清楚它左边的P数量left，右边T的数量right，记录下由它行程的PAT数量count，count=left </em> right。从第一个A移动到字符串最后一位的过程中，遇到P则left减1，遇到A则计算此时的left * right并把结果加到count上，遇到T则right减1。循环完毕，count值即为所求。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    long long int count=0,i=0,j=0,pos=0,length=0,left=0,right=0;</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    length = s.size();</span><br><span class="line">    for (i=0;i&lt;length;i++)&#123;</span><br><span class="line">        if (s[i] == &apos;P&apos;) left++;</span><br><span class="line">        if (s[i] == &apos;A&apos;)&#123;</span><br><span class="line">            pos = i;</span><br><span class="line">            for (j=i+1;j&lt;length;j++)</span><br><span class="line">                if (s[j] == &apos;T&apos;) right++;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (i=pos;i&lt;length;i++)&#123;</span><br><span class="line">        if (s[i] == &apos;P&apos;) left++;</span><br><span class="line">        if (s[i] == &apos;A&apos;) count += left * right;</span><br><span class="line">        if (s[i] == &apos;T&apos;) right--;</span><br><span class="line">    &#125;</span><br><span class="line">    count = count % 1000000007;</span><br><span class="line">    cout &lt;&lt; count ;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/乙级/">乙级</a><a href="/tags/PTA/">PTA</a>
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
   </div>
 
 
@@ -134,7 +129,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/03/27/PAT-乙级-1018-锤子剪刀布/" data-title="PTA-乙级-1018.锤子剪刀布 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/07/11/PAT-乙级-1040-有几个PAT/" data-title="PAT-乙级-1040-有几个PAT | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -143,19 +138,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/03/28/PAT-乙级-1019-数字黑洞/" title="PTA-乙级-1019.数字黑洞">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PTA-乙级-1019.数字黑洞</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/03/26/PAT-乙级-1017-A除以B/" title="PAT-乙级-1017.A除以B">
+<a href="/2019/07/10/PAT-乙级-1039-到底买不买/" title="PAT-乙级-1039-到底买不买">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1017.A除以B
+ <span>PAT-乙级-1039-到底买不买
 </span>
 </a>
 </div>
@@ -165,7 +152,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PTA-乙级-1018.锤子剪刀布" data-thread-key="PAT-乙级-1018-锤子剪刀布" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1018-锤子剪刀布"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1040-有几个PAT" data-thread-key="PAT-乙级-1040-有几个PAT" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1040-有几个PAT"></div>
 	
 </section>
 
@@ -175,7 +162,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
