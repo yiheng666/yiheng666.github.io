@@ -7,14 +7,10 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PTA-乙级-1024.科学计数法 | YiHeng</title>
+    <title>PAT-乙级-1043-输出PATest | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
-    
-    <meta name="description" content="1024 科学计数法 （20 分)
-科学计数法是科学家用来表示很大或很小的数字的一种方便的方法，其满足正则表达式 [+-][1-9].[0-9]+E[+-][0-9]+，即数字的整数部分只有 1 位，小数部分至少有 1 位，该数字及其指数部分的正负号即使对正数也必定明确给出。
-现以科学计数法的格式给">
     
     
     
@@ -82,15 +78,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/04/02/PAT-乙级-1024-科学计数法/" title="PTA-乙级-1024.科学计数法" itemprop="url">PTA-乙级-1024.科学计数法</a>
+      <a href="/2019/07/15/PAT-乙级-1043-输出PATest/" title="PAT-乙级-1043-输出PATest" itemprop="url">PAT-乙级-1043-输出PATest</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-04-02T03:26:57.000Z" itemprop="datePublished">2019-04-02</time>
-    Updated:<time datetime="2019-04-03T15:22:41.846Z" itemprop="dateModified">2019-04-03</time>
+    <time datetime="2019-07-15T13:12:56.000Z" itemprop="datePublished">2019-07-15</time>
+    Updated:<time datetime="2019-07-15T13:12:56.378Z" itemprop="dateModified">2019-07-15</time>
     
   </p>
 </header>
@@ -99,41 +95,19 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li></ol>
+		
 		</div>
 		
-		<p>1024 科学计数法 （20 分)</p>
-<p>科学计数法是科学家用来表示很大或很小的数字的一种方便的方法，其满足正则表达式 [+-][1-9]<code>.</code>[0-9]+E[+-][0-9]+，即数字的整数部分只有 1 位，小数部分至少有 1 位，该数字及其指数部分的正负号即使对正数也必定明确给出。</p>
-<p>现以科学计数法的格式给出实数 A，请编写程序按普通数字表示法输出 A，并保证所有有效位都被保留。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个输入包含 1 个测试用例，即一个以科学计数法表示的实数 A。该数字的存储长度不超过 9999 字节，且其指数的绝对值不超过 9999。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每个测试用例，在一行中按普通数字表示法输出 A，并保证所有有效位都被保留，包括末尾的 0。</p>
-<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>+1.23400E-03</p>
-<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>0.00123400</p>
-<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>-1.2E+10</p>
-<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>-12000000000</p>
-<p>分析：op1，op2分别对应底数和指数的符号正负。底数为正不用特意输出“+”号，底数为负需要输出”-“号，这没什么问题。op2的正负号会比较麻烦，把它分为三种情况：1.op2为正且结果有小数点。2.op2为正且结果没有小数点 3.op2为负(此结果必有小数点)</p>
-<p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    //sub为指数的字符型，exp为指数的整型，op1是底数符号，op2是指数符号</span><br><span class="line">    //v_size是底数含有的整数数目</span><br><span class="line">    vector&lt;char&gt; v;</span><br><span class="line">    string s,sub;</span><br><span class="line">    int exp,v_size;</span><br><span class="line">    char op1,op2;</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    op1 = s[0];</span><br><span class="line">    for (int i=1;i&lt;s.size();i++)&#123;</span><br><span class="line">        if (s[i] == &apos;E&apos;)&#123;</span><br><span class="line">            op2 = s[i+1];</span><br><span class="line">            sub = s.substr(i+2);</span><br><span class="line">            exp = stoi(sub);</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        if (s[i] &gt;= &apos;0&apos; &amp;&amp; s[i] &lt;= &apos;9&apos;)</span><br><span class="line">            v.push_back(s[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    v_size = v.size();</span><br><span class="line">    if (op1 == &apos;-&apos;) cout &lt;&lt; op1 ;</span><br><span class="line">    //指数为0的时候直接按a.bcde输出</span><br><span class="line">    if (exp == 0)&#123;</span><br><span class="line">        for (int i=0;i&lt;v_size;i++)&#123;</span><br><span class="line">            cout &lt;&lt; v[i];</span><br><span class="line">            if (i==0) cout &lt;&lt; &quot;.&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    if (op2 == &apos;+&apos;)&#123;</span><br><span class="line">        //指数为正且结果有小数点</span><br><span class="line">        if (v_size &gt; exp + 1)&#123;</span><br><span class="line">            for (int i=0;i&lt;v_size;i++)&#123;</span><br><span class="line">                cout &lt;&lt; v[i];</span><br><span class="line">                if (i == exp) cout &lt;&lt; &quot;.&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;//指数为负，结果没有小数点且根据需要添0</span><br><span class="line">            for (int i=0;i&lt;v_size;i++)</span><br><span class="line">                cout &lt;&lt; v[i];</span><br><span class="line">            for (int i=0;i&lt;exp-v_size+1;i++)</span><br><span class="line">                cout &lt;&lt; &quot;0&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;//指数为负，必为&quot;0.&quot;开头，其后跟着底数的全部数字</span><br><span class="line">        cout &lt;&lt; &quot;0.&quot;;</span><br><span class="line">        for (int i=0;i&lt;exp-1;i++)</span><br><span class="line">            cout &lt;&lt; &quot;0&quot;;</span><br><span class="line">        for (int i=0;i&lt;v_size;i++)</span><br><span class="line">                cout &lt;&lt; v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  
+		  
 	</div>
 		<footer class="article-footer clearfix">
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
-  </div>
-
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/每日一题/">每日一题</a>
-</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/04/02/PAT-乙级-1024-科学计数法/" data-title="PTA-乙级-1024.科学计数法 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/07/15/PAT-乙级-1043-输出PATest/" data-title="PAT-乙级-1043-输出PATest | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -143,18 +117,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev">
- <a href="/2019/04/03/PAT-乙级-1025-反转链表/" title="PTA-乙级-1025.反转链表">
+ <a href="/2019/07/16/PAT-乙级-1044-火星数字/" title="PAT-乙级-1044-火星数字">
   <strong>PREVIOUS:</strong><br>
   <span>
-  PTA-乙级-1025.反转链表</span>
+  PAT-乙级-1044-火星数字</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2019/04/01/PAT-乙级-1023-组个最小数/" title="PTA-乙级-1023.组个最小数">
+<a href="/2019/07/14/PAT-乙级-1042-字符统计/" title="PAT-乙级-1042-字符统计">
  <strong>NEXT:</strong><br> 
- <span>PTA-乙级-1023.组个最小数
+ <span>PAT-乙级-1042-字符统计
 </span>
 </a>
 </div>
@@ -164,7 +138,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PTA-乙级-1024.科学计数法" data-thread-key="PAT-乙级-1024-科学计数法" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1024-科学计数法"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1043-输出PATest" data-thread-key="PAT-乙级-1043-输出PATest" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1043-输出PATest"></div>
 	
 </section>
 
@@ -174,7 +148,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
