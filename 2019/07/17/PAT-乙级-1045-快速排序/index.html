@@ -12,6 +12,11 @@
     
     <meta name="author" content="YiHeng">
     
+    <meta name="description" content="著名的快速排序算法里有一个经典的划分过程：我们通常采用某种方法取一个元素作为主元，通过交换，把比主元小的元素放到它的左边，比主元大的元素放到它的右边。 给定划分后的 N 个互不相同的正整数的排列，请问有多少个元素可能是划分前选取的主元？
+例如给定 $N = 5$, 排列是1、3、2、4、5。则：
+
+">
+    
     
     
     
@@ -86,7 +91,7 @@
     </p>
   <p class="article-time">
     <time datetime="2019-07-17T02:28:42.000Z" itemprop="datePublished">2019-07-17</time>
-    Updated:<time datetime="2019-07-17T02:28:42.839Z" itemprop="dateModified">2019-07-17</time>
+    Updated:<time datetime="2019-07-31T08:12:03.106Z" itemprop="dateModified">2019-07-31</time>
     
   </p>
 </header>
@@ -95,13 +100,38 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
 		</div>
 		
-		  
+		<p>著名的快速排序算法里有一个经典的划分过程：我们通常采用某种方法取一个元素作为主元，通过交换，把比主元小的元素放到它的左边，比主元大的元素放到它的右边。 给定划分后的 N 个互不相同的正整数的排列，请问有多少个元素可能是划分前选取的主元？</p>
+<p>例如给定 $N = 5$, 排列是1、3、2、4、5。则：</p>
+<ul>
+<li>1 的左边没有元素，右边的元素都比它大，所以它可能是主元；</li>
+<li>尽管 3 的左边元素都比它小，但其右边的 2 比它小，所以它不能是主元；</li>
+<li>尽管 2 的右边元素都比它大，但其左边的 3 比它大，所以它不能是主元；</li>
+<li>类似原因，4 和 5 都可能是主元。</li>
+</ul>
+<p>因此，有 3 个元素可能是主元。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第 1 行中给出一个正整数 N（≤105）； 第 2 行是空格分隔的 N 个不同的正整数，每个数不超过 109。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在第 1 行中输出有可能是主元的元素个数；在第 2 行中按递增顺序输出这些元素，其间以 1 个空格分隔，行首尾不得有多余空格。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>5<br>1 3 2 4 5</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3<br>1 4 5</p>
+<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>快速排序主元的特点总结有：①所在位置同排好序的位置相同；②左边最大的数字比它小。所以用a数组存放排好序的情况，b数组存放输入顺序，进行对比。相对位置相同且当前数字大于左边最大值，就是主元。在这道题里面的测试点2应该是个0个主元，第二行要用空行处理，不然格式错误。测试点1有很多数据，如果用O（n<sup>2</sup>）去做会超时。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int n,left_max=0;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    vector&lt;int&gt; a(n),b(n),v;</span><br><span class="line">    for (int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">        b[i] = a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a.begin(),a.end());</span><br><span class="line">    for (int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        if (a[i] == b[i] &amp;&amp; b[i] &gt; left_max)</span><br><span class="line">            v.push_back(b[i]);</span><br><span class="line">        if (b[i] &gt; left_max)</span><br><span class="line">            left_max = b[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; v.size() &lt;&lt; endl;</span><br><span class="line">    if (v.size())&#123;</span><br><span class="line">        cout &lt;&lt; v[0];</span><br><span class="line">        for (int i=1;i&lt;v.size();i++)</span><br><span class="line">            cout &lt;&lt; &quot; &quot; &lt;&lt; v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    else cout &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/每日一题/">每日一题</a>
+</div>
 
 
 
@@ -116,6 +146,14 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev">
+ <a href="/2019/07/31/PAT-乙级-1046-划拳/" title="PAT-乙级-1046-划拳">
+  <strong>PREVIOUS:</strong><br>
+  <span>
+  PAT-乙级-1046-划拳</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2019/07/16/PAT-乙级-1044-火星数字/" title="PAT-乙级-1044-火星数字">
@@ -140,7 +178,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -164,7 +202,7 @@
 	<p class="asidetitle">Categories</p>
 		<ul>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>36</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>38</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -177,7 +215,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>33</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>35</sup></a></li>
 		
 			<li><a href="/tags/PAT，乙级/" title="PAT，乙级">PAT，乙级<sup>5</sup></a></li>
 		
@@ -185,7 +223,7 @@
 		
 			<li><a href="/tags/PTA，乙级/" title="PTA，乙级">PTA，乙级<sup>1</sup></a></li>
 		
-			<li><a href="/tags/乙级/" title="乙级">乙级<sup>34</sup></a></li>
+			<li><a href="/tags/乙级/" title="乙级">乙级<sup>36</sup></a></li>
 		
 			<li><a href="/tags/千与千寻/" title="千与千寻">千与千寻<sup>1</sup></a></li>
 		
