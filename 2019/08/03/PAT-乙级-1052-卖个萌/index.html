@@ -7,13 +7,15 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PTA-乙级-1025.反转链表 | YiHeng</title>
+    <title>PAT-乙级-1051-卖个萌 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="给定一个常数 K 以及一个单链表 L，请编写程序将 L 中每 K 个结点反转。例如：给定 L 为 1→2→3→4→5→6，K 为 3，则输出应该为 3→2→1→6→5→4；如果 K 为 4，则输出应该为 4→3→2→1→5→6，即最后不到 K 个元素不反转。
-输入格式：每个输入包含 1 个测试用例。">
+    <meta name="description" content="萌萌哒表情符号通常由“手”、“眼”、“口”三个主要部分组成。简单起见，我们假设一个表情符号是按下列格式输出的：
+1[左手]([左眼][口][右眼])[右手]
+现给出可选用的符号集合，请你按用户的要求输出表情。
+输入格式：输入首先在前三行顺序对应给出手、眼、口的可选符号集。每个符号括在一对方括号 []">
     
     
     
@@ -81,15 +83,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/04/03/PAT-乙级-1025-反转链表/" title="PTA-乙级-1025.反转链表" itemprop="url">PTA-乙级-1025.反转链表</a>
+      <a href="/2019/08/03/PAT-乙级-1052-卖个萌/" title="PAT-乙级-1051-卖个萌" itemprop="url">PAT-乙级-1051-卖个萌</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-04-03T15:21:12.000Z" itemprop="datePublished">2019-04-03</time>
-    Updated:<time datetime="2019-07-09T12:36:35.054Z" itemprop="dateModified">2019-07-09</time>
+    <time datetime="2019-08-03T04:52:05.000Z" itemprop="datePublished">2019-08-03</time>
+    Updated:<time datetime="2019-08-03T04:52:05.908Z" itemprop="dateModified">2019-08-03</time>
     
   </p>
 </header>
@@ -101,13 +103,16 @@
 		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
 		</div>
 		
-		<p>给定一个常数 K 以及一个单链表 L，请编写程序将 L 中每 K 个结点反转。例如：给定 L 为 1→2→3→4→5→6，K 为 3，则输出应该为 3→2→1→6→5→4；如果 K 为 4，则输出应该为 4→3→2→1→5→6，即最后不到 K 个元素不反转。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>每个输入包含 1 个测试用例。每个测试用例第 1 行给出第 1 个结点的地址、结点总个数正整数 N (≤105)、以及正整数 K (≤N)，即要求反转的子链结点的个数。结点的地址是 5 位非负整数，NULL 地址用 −1 表示。<br>接下来有 N 行，每行格式为：<br>Address Data Next<br>其中 <code>Address</code> 是结点地址，<code>Data</code> 是该结点保存的整数数据，<code>Next</code> 是下一结点的地址。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每个测试用例，顺序输出反转后的链表，其上每个结点占一行，格式与输入相同。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>00100 6 4<br>00000 4 99999<br>00100 1 12309<br>68237 6 -1<br>33218 3 00000<br>99999 5 68237<br>12309 2 33218</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>00000 4 33218<br>33218 3 12309<br>12309 2 00100<br>00100 1 99999<br>99999 5 68237<br>68237 6 -1</p>
-<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>需要三个数组：data、next和list。data数组的下标是地址，值是数据。next数组的下标是地址，值是当前地址的下一位地址。list是反转前的链表，由next数组构造。第12-14行构造list链表。sum记录有效的节点数目。第16-17行进行反转。sum-sum%k保证了最后不足k位的数组不进行反转。</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int data[100010],list[100010],next[100010],n,k,address,sum,first;</span><br><span class="line">    cin &gt;&gt; first &gt;&gt; n &gt;&gt; k ;</span><br><span class="line">    for (int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        cin &gt;&gt; address;</span><br><span class="line">        cin &gt;&gt; data[address] &gt;&gt; next[address];</span><br><span class="line">    &#125;</span><br><span class="line">    sum = 0;</span><br><span class="line">    while (first != -1)&#123;</span><br><span class="line">        list[sum++] = first;</span><br><span class="line">        first = next[first];</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i=0;i&lt;(sum - sum % k);i+=k)</span><br><span class="line">        reverse(list+i,list+i+k);</span><br><span class="line">    for (int i=0;i&lt;sum-1;i++)</span><br><span class="line">        printf(&quot;%05d %d %05d\n&quot;,list[i],data[list[i]],list[i+1]);</span><br><span class="line">    printf(&quot;%05d %d -1&quot;,list[sum-1],data[list[sum-1]]);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>萌萌哒表情符号通常由“手”、“眼”、“口”三个主要部分组成。简单起见，我们假设一个表情符号是按下列格式输出的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[左手]([左眼][口][右眼])[右手]</span><br></pre></td></tr></table></figure>
+<p>现给出可选用的符号集合，请你按用户的要求输出表情。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入首先在前三行顺序对应给出手、眼、口的可选符号集。每个符号括在一对方括号 <code>[]</code>内。题目保证每个集合都至少有一个符号，并不超过 10 个符号；每个符号包含 1 到 4 个非空字符。</p>
+<p>之后一行给出一个正整数 K，为用户请求的个数。随后 K 行，每行给出一个用户的符号选择，顺序为左手、左眼、口、右眼、右手——这里只给出符号在相应集合中的序号（从 1 开始），数字间以空格分隔。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每个用户请求，在一行中输出生成的表情。若用户选择的序号不存在，则输出 <code>Are you kidding me? @\/@</code>。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[╮][╭][o][~\][/~]  [&lt;][&gt;]</span><br><span class="line"> [╯][╰][^][-][=][&gt;][&lt;][@][⊙]</span><br><span class="line">[Д][▽][_][ε][^]  ...</span><br><span class="line">4</span><br><span class="line">1 1 2 2 2</span><br><span class="line">6 8 1 5 5</span><br><span class="line">3 3 4 3 3</span><br><span class="line">2 10 3 9 3</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">╮(╯▽╰)╭</span><br><span class="line">&lt;(@Д=)/~</span><br><span class="line">o(^ε^)o</span><br><span class="line">Are you kidding me? @\/@</span><br></pre></td></tr></table></figure>
+<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>需要注意的点：①Are you kidding me? @\/@的“\”是需要转义的，代码里面写成\\才能在打印出\。②应该用getline进行输入输入，否则无法可能存在的空格。③在对表情序号进行判断的时候，序号的合理范围是1~n。（n为某一行的表情个数，一定要判断大于等于1！！！）。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    string str[3],temp;</span><br><span class="line">    int left=0,right=0,left_hand,left_eye,mouth,right_eye ,right_hand,length[3],n;</span><br><span class="line">    for (int i=0;i&lt;3;i++) </span><br><span class="line">        getline(cin,str[i]);</span><br><span class="line">    vector&lt;string&gt; v[3];</span><br><span class="line">    for (int i=0;i&lt;3;i++)&#123;</span><br><span class="line">        for (int j=0;j&lt;str[i].size();j++)&#123;</span><br><span class="line">            if (str[i][j] == &apos;[&apos;) left = j;</span><br><span class="line">            if (str[i][j] == &apos;]&apos;)&#123;</span><br><span class="line">                right = j;</span><br><span class="line">                temp = str[i].substr(left+1,right-left-1);</span><br><span class="line">                v[i].push_back(temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cin &gt;&gt; n ;</span><br><span class="line">    for (int i=0;i&lt;3;i++)</span><br><span class="line">        length[i] = v[i].size();</span><br><span class="line"></span><br><span class="line">    for (int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        cin &gt;&gt; left_hand &gt;&gt; left_eye  &gt;&gt; mouth &gt;&gt; right_eye &gt;&gt; right_hand;</span><br><span class="line">        if (left_hand  &lt;= length[0] &amp;&amp; left_eye &lt;= length[1] &amp;&amp; mouth &lt;= length[2] &amp;&amp; right_eye &lt;= length[1] &amp;&amp; right_hand &lt;= length[0] &amp;&amp; left_hand &gt;=1 &amp;&amp; left_eye &gt;=1 &amp;&amp; mouth &gt;= 1 &amp;&amp; right_eye&gt;=1 &amp;&amp; right_hand&gt;=1)</span><br><span class="line">            cout &lt;&lt; v[0][left_hand-1] &lt;&lt; &quot;(&quot; &lt;&lt; v[1][left_eye-1]  &lt;&lt; v[2][mouth-1] &lt;&lt; v[1][right_eye-1] &lt;&lt; &quot;)&quot;&lt;&lt;  v[0][right_hand-1];</span><br><span class="line">        else cout &lt;&lt; &quot;Are you kidding me? @\\/@&quot; ;</span><br><span class="line">        if (i!=n-1) cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -127,7 +132,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/04/03/PAT-乙级-1025-反转链表/" data-title="PTA-乙级-1025.反转链表 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/08/03/PAT-乙级-1052-卖个萌/" data-title="PAT-乙级-1051-卖个萌 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -136,19 +141,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/04/04/PAT-乙级-1026-程序运行时间/" title="PTA-乙级-1026.程序运行时间">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PTA-乙级-1026.程序运行时间</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/04/02/PAT-乙级-1024-科学计数法/" title="PTA-乙级-1024.科学计数法">
+<a href="/2019/08/02/PAT-乙级-1051-复数乘法/" title="PAT-乙级-1051-复数乘法">
  <strong>NEXT:</strong><br> 
- <span>PTA-乙级-1024.科学计数法
+ <span>PAT-乙级-1051-复数乘法
 </span>
 </a>
 </div>
@@ -158,7 +155,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PTA-乙级-1025.反转链表" data-thread-key="PAT-乙级-1025-反转链表" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1025-反转链表"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1051-卖个萌" data-thread-key="PAT-乙级-1052-卖个萌" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1052-卖个萌"></div>
 	
 </section>
 
