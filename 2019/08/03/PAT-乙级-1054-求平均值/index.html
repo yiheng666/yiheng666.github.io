@@ -7,13 +7,13 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1037-在霍格沃茨找零钱 | YiHeng</title>
+    <title>PAT-乙级-1054-求平均值 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="如果你是哈利·波特迷，你会知道魔法世界有它自己的货币系统 —— 就如海格告诉哈利的：“十七个银西可(Sickle)兑一个加隆(Galleon)，二十九个纳特(Knut)兑一个西可，很容易。”现在，给定哈利应付的价钱 P 和他实付的钱 A，你的任务是写一个程序来计算他应该被找的零钱。
-输入格式：输入在">
+    <meta name="description" content="本题的基本要求非常简单：给定 N 个实数，计算它们的平均值。但复杂的是有些输入数据可能是非法的。一个“合法”的输入是 [−1000,1000] 区间内的实数，并且最多精确到小数点后 2 位。当你计算平均值的时候，不能把那些非法的数据算在内。
+输入格式：输入第一行给出正整数 N（≤100）。随后一行给">
     
     
     
@@ -81,15 +81,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/05/27/PAT-乙级-1037-在霍格沃茨找零钱/" title="PAT-乙级-1037-在霍格沃茨找零钱" itemprop="url">PAT-乙级-1037-在霍格沃茨找零钱</a>
+      <a href="/2019/08/03/PAT-乙级-1054-求平均值/" title="PAT-乙级-1054-求平均值" itemprop="url">PAT-乙级-1054-求平均值</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-05-27T14:17:01.000Z" itemprop="datePublished">2019-05-27</time>
-    Updated:<time datetime="2019-05-27T14:17:01.712Z" itemprop="dateModified">2019-05-27</time>
+    <time datetime="2019-08-03T13:33:05.000Z" itemprop="datePublished">2019-08-03</time>
+    Updated:<time datetime="2019-08-03T13:33:05.737Z" itemprop="dateModified">2019-08-03</time>
     
   </p>
 </header>
@@ -101,15 +101,15 @@
 		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">7.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">8.</span> <span class="toc-text">代码：</span></a></li></ol>
 		</div>
 		
-		<p>如果你是哈利·波特迷，你会知道魔法世界有它自己的货币系统 —— 就如海格告诉哈利的：“十七个银西可(Sickle)兑一个加隆(Galleon)，二十九个纳特(Knut)兑一个西可，很容易。”现在，给定哈利应付的价钱 P 和他实付的钱 A，你的任务是写一个程序来计算他应该被找的零钱。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在 1 行中分别给出 P 和 A，格式为 <code>Galleon.Sickle.Knut</code>，其间用 1 个空格分隔。这里 <code>Galleon</code> 是 [0, 107] 区间内的整数，<code>Sickle</code> 是 [0, 17) 区间内的整数，<code>Knut</code> 是 [0, 29) 区间内的整数。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中用与输入同样的格式输出哈利应该被找的零钱。如果他没带够钱，那么输出的应该是负数。</p>
-<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>10.16.27 14.1.28</p>
-<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>3.2.1</p>
-<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>14.1.28 10.16.27</p>
-<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>-3.2.1</p>
-<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>具体思路是先将魔法世界中的数字转换为整数进行运算，再将运算后的整数转换为魔法世界中的数字。</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">string fun(int a,int b)&#123;</span><br><span class="line">    string s;</span><br><span class="line">    int n;</span><br><span class="line">    if (a&gt;b)&#123;</span><br><span class="line">        s=&quot;-&quot;;</span><br><span class="line">        swap(a,b);</span><br><span class="line">    &#125;</span><br><span class="line">    n = b - a;</span><br><span class="line">    s += to_string(n/17/29) + &quot;.&quot; + to_string(n/29%17) + &quot;.&quot;+to_string(n%29);</span><br><span class="line">    return s;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int a,b,c,d,e,f,x,y;</span><br><span class="line">    scanf(&quot;%d.%d.%d%d.%d.%d&quot;,&amp;a,&amp;b,&amp;c,&amp;d,&amp;e,&amp;f);</span><br><span class="line">    x = a*17*29 + b*29 + c;</span><br><span class="line">    y = d*17*29 + e*29 + f;</span><br><span class="line">    cout &lt;&lt; fun(x,y);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>本题的基本要求非常简单：给定 N 个实数，计算它们的平均值。但复杂的是有些输入数据可能是非法的。一个“合法”的输入是 [−1000,1000] 区间内的实数，并且最多精确到小数点后 2 位。当你计算平均值的时候，不能把那些非法的数据算在内。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出正整数 N（≤100）。随后一行给出 N 个实数，数字间以一个空格分隔。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每个非法输入，在一行中输出 <code>ERROR: X is not a legal number</code>，其中 <code>X</code> 是输入。最后在一行中输出结果：<code>The average of K numbers is Y</code>，其中 <code>K</code> 是合法输入的个数，<code>Y</code> 是它们的平均值，精确到小数点后 2 位。如果平均值无法计算，则用 <code>Undefined</code> 替换 <code>Y</code>。如果 <code>K</code> 为 1，则输出 <code>The average of 1 number is Y</code>。</p>
+<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>7<br>5 -3.2 aaa 9999 2.3.4 7.123 2.35</p>
+<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>ERROR: aaa is not a legal number<br>ERROR: 9999 is not a legal number<br>ERROR: 2.3.4 is not a legal number<br>ERROR: 7.123 is not a legal number<br>The average of 3 numbers is 1.38</p>
+<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>2<br>aaa -9999</p>
+<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>ERROR: aaa is not a legal number<br>ERROR: -9999 is not a legal number<br>The average of 0 numbers is Undefined</p>
+<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>sscanf函数从字符串读取格式化输入，sprintf函数发送格式化输出到str所指向的字符串。注意读取字符串的时候无&amp;符号。ssacnf（a，”%lf”，&amp;temp）是temp以双精度浮点数的形式从字符串a中读数据。sprintf（b,”%lf”,temp）是双精度浮点数temp将数据写入到字符串b中。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    double temp,sum=0.0;</span><br><span class="line">    char a[60],b[60];</span><br><span class="line">    int n,cnt=0;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    for (int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        bool flag=false;</span><br><span class="line">        scanf(&quot;%s&quot;,a);</span><br><span class="line">        sscanf(a,&quot;%lf&quot;,&amp;temp);</span><br><span class="line">        sprintf(b,&quot;%.2f&quot;,temp);</span><br><span class="line">        for (int j=0;j&lt;strlen(a);j++)&#123;</span><br><span class="line">            if (a[j] != b[j])&#123;</span><br><span class="line">                flag = true;break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if ( flag || temp &gt; 1000 || temp &lt;- 1000)&#123;</span><br><span class="line">            printf(&quot;ERROR: %s is not a legal number\n&quot;,a);</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            sum += temp;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (cnt == 0) printf(&quot;The average of 0 numbers is Undefined\n&quot;);</span><br><span class="line">    else if (cnt == 1) printf(&quot;The average of 1 number is %.2f\n&quot;,sum);</span><br><span class="line">    else printf(&quot;The average of %d numbers is %.2f\n&quot;,cnt,sum/cnt);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -129,7 +129,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/05/27/PAT-乙级-1037-在霍格沃茨找零钱/" data-title="PAT-乙级-1037-在霍格沃茨找零钱 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/08/03/PAT-乙级-1054-求平均值/" data-title="PAT-乙级-1054-求平均值 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -138,19 +138,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/07/09/PAT-乙级-1038-统计同成绩学生/" title="PAT-乙级-1038-统计同成绩学生">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1038-统计同成绩学生</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/05/27/PAT-乙级-1035-插入与归并/" title="PAT-乙级-1035-插入与归并">
+<a href="/2019/08/03/PAT-乙级-1053-住房空置率/" title="PAT-乙级-1053-住房空置率">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1035-插入与归并
+ <span>PAT-乙级-1053-住房空置率
 </span>
 </a>
 </div>
@@ -160,7 +152,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1037-在霍格沃茨找零钱" data-thread-key="PAT-乙级-1037-在霍格沃茨找零钱" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1037-在霍格沃茨找零钱"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1054-求平均值" data-thread-key="PAT-乙级-1054-求平均值" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1054-求平均值"></div>
 	
 </section>
 
