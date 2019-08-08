@@ -7,13 +7,12 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PTA-乙级-1026.程序运行时间 | YiHeng</title>
+    <title>PAT-乙级-1094-谷歌的招聘 | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="1026 程序运行时间 （15 分)
-要获得一个 C 语言程序的运行时间，常用的方法是调用头文件 time.h，其中提供了 clock() 函数，可以捕捉从程序开始运行到 clock() 被调用时所耗费的时间。这个时间单位是 clock tick，即“时钟打点”。同时还有一个常数 CLK_TCK，给">
+    <meta name="description" content="2004 年 7 月，谷歌在硅谷的 101 号公路边竖立了一块巨大的广告牌（如下图）用于招聘。内容超级简单，就是一个以 .com 结尾的网址，而前面的网址是一个 10 位素数，这个素数是自然常数 e 中最早出现的 10 位连续数字。能找出这个素数的人，就可以通过访问谷歌的这个网站进入招聘流程的下一步">
     
     
     
@@ -81,15 +80,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/04/04/PAT-乙级-1026-程序运行时间/" title="PTA-乙级-1026.程序运行时间" itemprop="url">PTA-乙级-1026.程序运行时间</a>
+      <a href="/2019/06/11/PAT-乙级-1094-谷歌的招聘/" title="PAT-乙级-1094-谷歌的招聘" itemprop="url">PAT-乙级-1094-谷歌的招聘</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-04-03T22:16:19.000Z" itemprop="datePublished">2019-04-04</time>
-    Updated:<time datetime="2019-08-07T10:17:08.717Z" itemprop="dateModified">2019-08-07</time>
+    <time datetime="2019-06-11T10:44:00.000Z" itemprop="datePublished">2019-06-11</time>
+    Updated:<time datetime="2019-08-08T05:51:08.923Z" itemprop="dateModified">2019-08-08</time>
     
   </p>
 </header>
@@ -98,19 +97,21 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">7.</span> <span class="toc-text">分析：</span></a></li></ol>
 		</div>
 		
-		<p>1026 程序运行时间 （15 分)</p>
-<p>要获得一个 C 语言程序的运行时间，常用的方法是调用头文件 time.h，其中提供了 clock() 函数，可以捕捉从程序开始运行到 clock() 被调用时所耗费的时间。这个时间单位是 clock tick，即“时钟打点”。同时还有一个常数 CLK_TCK，给出了机器时钟每秒所走的时钟打点数。于是为了获得一个函数 f 的运行时间，我们只要在调用 f 之前先调用 clock()，获得一个时钟打点数 C1；在 f 执行完成后再调用 clock()，获得另一个时钟打点数 C2；两次获得的时钟打点数之差 (C2-C1) 就是 f 运行所消耗的时钟打点数，再除以常数 CLK_TCK，就得到了以秒为单位的运行时间。</p>
-<p>这里不妨简单假设常数 CLK_TCK 为 100。现给定被测函数前后两次获得的时钟打点数，请你给出被测函数运行的时间。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中顺序给出 2 个整数 C1 和 C2。注意两次获得的时钟打点数肯定不相同，即 C1 &lt; C2，并且取值在 [0,107]。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出被测函数运行的时间。运行时间必须按照 <code>hh:mm:ss</code>（即2位的 <code>时:分:秒</code>）格式输出；不足 1 秒的时间四舍五入到秒。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>123 4577973</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>12:42:59</p>
-<p>分析：输入a，b（都是整数），间隔的秒数为浮点型d=(b-a)/100。强制转化的时候四舍五入可以用(int)(d+0.5)。因为强制转化的时候是直接砍小数点后面的数字，哪怕是1.98也转为1。加上一个0.5就可以实现四舍五入了。</p>
-<p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+		<p>2004 年 7 月，谷歌在硅谷的 101 号公路边竖立了一块巨大的广告牌（如下图）用于招聘。内容超级简单，就是一个以 .com 结尾的网址，而前面的网址是一个 10 位素数，这个素数是自然常数 e 中最早出现的 10 位连续数字。能找出这个素数的人，就可以通过访问谷歌的这个网站进入招聘流程的下一步。</p>
+<p><img src="https://images.ptausercontent.com/57148679-d574-4f49-b048-775c6c07791c.jpg" alt="prime.jpg"></p>
+<p>自然常数 e 是一个著名的超越数，前面若干位写出来是这样的：e = 2.71828182845904523536028747135266249775724709369995957496696762772407663035354759457138217852516642<strong>7427466391</strong>932003059921… 其中粗体标出的 10 位数就是答案。</p>
+<p>本题要求你编程解决一个更通用的问题：从任一给定的长度为 L 的数字中，找出最早出现的 K 位连续数字所组成的素数。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第一行给出 2 个正整数，分别是 L（不超过 1000 的正整数，为数字长度）和 K（小于 10 的正整数）。接下来一行给出一个长度为 L 的正整数 N。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出 N 中最早出现的 K 位连续数字所组成的素数。如果这样的素数不存在，则输出 <code>404</code>。注意，原始数字中的前导零也计算在位数之内。例如在 200236 中找 4 位素数，0023 算是解；但第一位 2 不能被当成 0002 输出，因为在原始数字中不存在这个 2 的前导零。</p>
+<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>20 5<br>23654987725541023819</p>
+<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>49877</p>
+<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>10 3<br>2468024680</p>
+<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>404</p>
+<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>将字符串s中的K位数字分割出来，进行素数判断就好了。这里需要注意的是①分割的有效首位下标范围是0~N-K②string类型转换成int型的时候一定要在字符串后加.c_str()③进行素数判断只需要判断到根号n即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">bool IsPrime(string s)&#123;</span><br><span class="line">    int n = stoi(s.c_str());</span><br><span class="line">    for (int i=2;i&lt;=sqrt(n);i++)</span><br><span class="line">        if (n % i == 0) return false;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int L,K;</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; L &gt;&gt; K;</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    for (int i=0;i&lt;=L-K;i++)&#123;</span><br><span class="line">        string temp = s.substr(i,K);</span><br><span class="line">        if (IsPrime(temp))&#123;</span><br><span class="line">            cout &lt;&lt; temp;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;404&quot;;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -130,7 +131,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/04/04/PAT-乙级-1026-程序运行时间/" data-title="PTA-乙级-1026.程序运行时间 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/06/11/PAT-乙级-1094-谷歌的招聘/" data-title="PAT-乙级-1094-谷歌的招聘 | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -139,19 +140,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/04/05/PAT-乙级-1027-打印沙漏/" title="PTA-乙级-1027.打印沙漏">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PTA-乙级-1027.打印沙漏</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/04/03/PAT-乙级-1025-反转链表/" title="PTA-乙级-1025.反转链表">
+<a href="/2019/06/10/PAT-乙级-1093-字符串A+B/" title="PAT-乙级-1093-字符串A+B">
  <strong>NEXT:</strong><br> 
- <span>PTA-乙级-1025.反转链表
+ <span>PAT-乙级-1093-字符串A+B
 </span>
 </a>
 </div>
@@ -161,7 +154,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PTA-乙级-1026.程序运行时间" data-thread-key="PAT-乙级-1026-程序运行时间" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1026-程序运行时间"></div>
+	<div class="ds-thread" data-title="PAT-乙级-1094-谷歌的招聘" data-thread-key="PAT-乙级-1094-谷歌的招聘" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1094-谷歌的招聘"></div>
 	
 </section>
 
@@ -171,7 +164,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-1："><span class="toc-number">3.</span> <span class="toc-text">输入样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-1："><span class="toc-number">4.</span> <span class="toc-text">输出样例 1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例-2："><span class="toc-number">5.</span> <span class="toc-text">输入样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例-2："><span class="toc-number">6.</span> <span class="toc-text">输出样例 2：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">7.</span> <span class="toc-text">分析：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
