@@ -66,7 +66,7 @@
 					
 					<li>
 					
-                                            <form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+                                            <form class="search" action="https://mijisou.com/?q=" target="_blank">
                                             <label>Search</label>
                                         <input name="s" type="hidden" value><input type="text" name="q" size="30" placeholder="Search"><br>
 					
@@ -89,8 +89,8 @@
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-05-10T09:03:53.000Z" itemprop="datePublished">2019-05-10</time>
-    Updated:<time datetime="2019-08-07T10:31:55.925Z" itemprop="dateModified">2019-08-07</time>
+    <time datetime="2019-05-10T09:23:08.000Z" itemprop="datePublished">2019-05-10</time>
+    Updated:<time datetime="2019-08-10T11:11:36.688Z" itemprop="dateModified">2019-08-10</time>
     
   </p>
 </header>
@@ -109,7 +109,7 @@
 <h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>7/18 13/20 12</p>
 <h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>5/12 7/12</p>
 <h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>一开始尝试用双精度浮点数算出结果比较，但是精度不够，不能AC。题目思路是想找出i,使i/K&gt;n1/m1。然后在i不断增长b并保持i/K &lt; n2/m2的过程中用gcd函数判断此时的i，K是否符合条件。gcd函数递可以归求最大公约数。</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int gcd(int a,int b)&#123;</span><br><span class="line">    return b==0?a:gcd(b,a%b);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int a,b,c,d,K,flag=0,i=1;</span><br><span class="line">    scanf(&quot;%d/%d %d/%d %d&quot;,&amp;a,&amp;b,&amp;c,&amp;d,&amp;K);</span><br><span class="line">    if (a*d &gt; b*c)&#123;</span><br><span class="line">        swap(a,c);swap(b,d);</span><br><span class="line">    &#125;</span><br><span class="line">    while (a*K &gt;= b*i) i++;</span><br><span class="line">    while (c*K &gt; d*i &amp;&amp; i&lt;K)&#123;</span><br><span class="line">        if (gcd(i,K) == 1)&#123;</span><br><span class="line">            if (flag == 0)&#123;</span><br><span class="line">                printf(&quot;%d/%d&quot;,i,K);</span><br><span class="line">                flag = 1;</span><br><span class="line">            &#125;</span><br><span class="line">            else printf(&quot; %d/%d&quot;,i,K);</span><br><span class="line">        &#125;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b==<span class="number">0</span>?a:gcd(b,a%b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,c,d,K,flag=<span class="number">0</span>,i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d/%d %d/%d %d"</span>,&amp;a,&amp;b,&amp;c,&amp;d,&amp;K);</span><br><span class="line">    <span class="keyword">if</span> (a*d &gt; b*c)&#123;</span><br><span class="line">        swap(a,c);swap(b,d);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (a*K &gt;= b*i) i++;</span><br><span class="line">    <span class="keyword">while</span> (c*K &gt; d*i &amp;&amp; i&lt;K)&#123;</span><br><span class="line">        <span class="keyword">if</span> (gcd(i,K) == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (flag == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d/%d"</span>,i,K);</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">" %d/%d"</span>,i,K);</span><br><span class="line">        &#125;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -196,7 +196,7 @@
 		
 			<li><a href="/categories/其他/" title="其他">其他<sup>0</sup></a></li>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>95</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>96</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -209,7 +209,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>95</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>96</sup></a></li>
 		
 			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
@@ -217,7 +217,7 @@
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
-			<li><a href="/tags/甲级/" title="甲级">甲级<sup>0</sup></a></li>
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>1</sup></a></li>
 		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
 		
@@ -244,7 +244,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 20px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 15px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/甲级/" style="font-size: 10px;">甲级</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
     </div>
   </div>
 

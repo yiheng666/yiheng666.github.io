@@ -67,7 +67,7 @@
 					
 					<li>
 					
-                                            <form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+                                            <form class="search" action="https://mijisou.com/?q=" target="_blank">
                                             <label>Search</label>
                                         <input name="s" type="hidden" value><input type="text" name="q" size="30" placeholder="Search"><br>
 					
@@ -105,7 +105,7 @@
 		
 		<p>1027 打印沙漏 （20 分)</p>
 <p>本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“<em>”，要求按下列格式打印（”</em>“号在渲染的时候会转义，所以用代码格式了，实际输出没有前面的行号）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*****</span><br><span class="line"> ***</span><br><span class="line">  *</span><br><span class="line"> ***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">****<span class="strong">*</span></span><br><span class="line"><span class="strong"> *</span>*<span class="strong">*</span></span><br><span class="line"><span class="strong">  *</span></span><br><span class="line"><span class="code"> ***</span></span><br><span class="line">****<span class="strong">*</span></span><br></pre></td></tr></table></figure>
 <p>所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。</p>
 <p>给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。</p>
 <h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入在一行给出1个正整数N（≤1000）和一个符号，中间以空格分隔。</p>
@@ -114,7 +114,7 @@
 <h3 id="输出样例-（”-”号在渲染的时候会转义，所以用代码格式了，实际输出没有前面的行号）"><a href="#输出样例-（”-”号在渲染的时候会转义，所以用代码格式了，实际输出没有前面的行号）" class="headerlink" title="输出样例:（”*”号在渲染的时候会转义，所以用代码格式了，实际输出没有前面的行号）"></a>输出样例:（”*”号在渲染的时候会转义，所以用代码格式了，实际输出没有前面的行号）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*****</span><br><span class="line"> ***</span><br><span class="line">  *</span><br><span class="line"> ***</span><br><span class="line">*****</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 <p>分析：每一次打印图形的行数都是奇数行n，这里规定倒三角行数row = (n+1)/2。这样规定的好处是把问题拆分成正三角和倒三角的时候可以直接用row进行思考。首先我们考虑需要用到多少个符号，仅考虑倒三角的话：(1+2×row-1)×row/2。其余部分需要用到的符号数为倒三角符号数-1，故总符号数为2×row×row - 1。遍历查找，当有row满足2×i×i-1 &gt; n时，row=i-1（带入边界条件看是否符合，这里是符合的）。在输出倒三角的时候，从i=row开始遍历，行号从上往下为为i ,i-1,i-2…..2,1方便打印符号个数，每一行的空格个数为row-i，其每一行的符号个数为2×i-1。输出正三角（没有尖）的时候也是如此思考，行号和打印的符号数字对应起来。此时最后一行是row，余下需要打印row-1行，从i=2开始打印，每一行的空格数是row-i，每一行的符号数是2*i-1。这里符号数和空格数除了逻辑分析，我还用了具体的实例去凑，心里有底一些。最后需要注意的是row和rest在循环之前需要赋初值，不赋初值的话n=1或n=2的时候会疯狂报错。</p>
 <p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,j,n,rest,row=1;</span><br><span class="line">    char c;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; c;</span><br><span class="line">    rest = n - 1;</span><br><span class="line">    for (i=1;i&lt;n;i++)&#123;</span><br><span class="line">        if (2*i*i-1 &gt; n)&#123;</span><br><span class="line">            row = i-1;</span><br><span class="line">            rest = n - 2*row*row + 1;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for (i=row;i&gt;=1;i--)&#123;</span><br><span class="line">        for (j=row-i;j&gt;0;j--)  printf(&quot; &quot;);</span><br><span class="line">        for (j=0;j&lt;2*i-1;j++) printf(&quot;%c&quot;,c);</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    for (i=2;i&lt;=row;i++)&#123;</span><br><span class="line">        for (j=row-i;j&gt;0;j--)  printf(&quot; &quot;);</span><br><span class="line">        for (j=0;j&lt;2*i-1;j++) printf(&quot;%c&quot;,c);</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; rest;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i,j,n,<span class="built_in">rest</span>,<span class="built_in">row</span>=<span class="number">1</span>;</span><br><span class="line">    char c;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; c;</span><br><span class="line">    <span class="built_in">rest</span> = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">2</span>*i*i-<span class="number">1</span> &gt; n)&#123;</span><br><span class="line">            <span class="built_in">row</span> = i-<span class="number">1</span>;</span><br><span class="line">            <span class="built_in">rest</span> = n - <span class="number">2</span>*<span class="built_in">row</span>*<span class="built_in">row</span> + <span class="number">1</span>;</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="built_in">row</span>;i&gt;=<span class="number">1</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="built_in">row</span>-i;j&gt;<span class="number">0</span>;j--)  <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;<span class="number">2</span>*i-<span class="number">1</span>;j++) <span class="built_in">printf</span>(<span class="string">"%c"</span>,c);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">2</span>;i&lt;=<span class="built_in">row</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="built_in">row</span>-i;j&gt;<span class="number">0</span>;j--)  <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;<span class="number">2</span>*i-<span class="number">1</span>;j++) <span class="built_in">printf</span>(<span class="string">"%c"</span>,c);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">rest</span>;</span><br><span class="line">    <span class="built_in">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -201,7 +201,7 @@
 		
 			<li><a href="/categories/其他/" title="其他">其他<sup>0</sup></a></li>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>95</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>96</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -214,7 +214,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>95</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>96</sup></a></li>
 		
 			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
@@ -222,7 +222,7 @@
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
-			<li><a href="/tags/甲级/" title="甲级">甲级<sup>0</sup></a></li>
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>1</sup></a></li>
 		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
 		
@@ -249,7 +249,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 20px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 15px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/甲级/" style="font-size: 10px;">甲级</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
     </div>
   </div>
 

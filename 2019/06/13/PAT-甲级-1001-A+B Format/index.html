@@ -7,10 +7,12 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1043-输出PATest | YiHeng</title>
+    <title>PAT-甲级-1001-A+B Format(20) | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
+    
+    <meta name="description" content="Calculate a+b and output the sum in standard format – that is, the digits must be separated into groups of three by commas (unless there are less than">
     
     
     
@@ -62,7 +64,7 @@
 					
 					<li>
 					
-                                            <form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+                                            <form class="search" action="https://mijisou.com/?q=" target="_blank">
                                             <label>Search</label>
                                         <input name="s" type="hidden" value><input type="text" name="q" size="30" placeholder="Search"><br>
 					
@@ -78,15 +80,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/07/15/PAT-乙级-1043-输出PATest/" title="PAT-乙级-1043-输出PATest" itemprop="url">PAT-乙级-1043-输出PATest</a>
+      <a href="/2019/06/13/PAT-甲级-1001-A+B Format/" title="PAT-甲级-1001-A+B Format(20)" itemprop="url">PAT-甲级-1001-A+B Format(20)</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-07-15T13:12:56.000Z" itemprop="datePublished">2019-07-15</time>
-    Updated:<time datetime="2019-07-15T13:12:56.378Z" itemprop="dateModified">2019-07-15</time>
+    <time datetime="2019-06-13T09:47:30.000Z" itemprop="datePublished">2019-06-13</time>
+    Updated:<time datetime="2019-08-11T12:20:14.918Z" itemprop="dateModified">2019-08-11</time>
     
   </p>
 </header>
@@ -95,19 +97,37 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Specification"><span class="toc-number">1.</span> <span class="toc-text">Input Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-Specification"><span class="toc-number">2.</span> <span class="toc-text">Output Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Input"><span class="toc-number">3.</span> <span class="toc-text">Sample Input:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Output"><span class="toc-number">4.</span> <span class="toc-text">Sample Output:</span></a></li></ol>
 		</div>
 		
-		  
+		<p>Calculate a+b and output the sum in standard format – that is, the digits must be separated into groups of three by commas (unless there are less than four digits).</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case contains a pair of integers a and b where −106≤a,b≤106. The numbers are separated by a space.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, you should output the sum of a and b in one line. The sum must be written in the standard format.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><p>-1000000 9</p>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><p>-999,991</p>
+<p>题目大意：给两个数并求和，将求和结果按三个一组输出并用逗号分隔。</p>
+<p>分析：将和用to_string转化为字符串，遍历输出字符串。如果下标 (i+1)%3 == length % 3且该字符不为最后一个字符，说明该字符后面需要加逗号。符号直接continue处理即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,length;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    s = to_string(a+b);</span><br><span class="line">    length = s.size();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s[i];</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">'-'</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> ( (i+<span class="number">1</span>)%<span class="number">3</span> == length%<span class="number">3</span> &amp;&amp; i!= length<span class="number">-1</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">","</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/甲级/">甲级</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/每日一题/">每日一题</a>
+</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/07/15/PAT-乙级-1043-输出PATest/" data-title="PAT-乙级-1043-输出PATest | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/06/13/PAT-甲级-1001-A+B Format/" data-title="PAT-甲级-1001-A+B Format(20) | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -116,19 +136,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/07/16/PAT-乙级-1044-火星数字/" title="PAT-乙级-1044-火星数字">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1044-火星数字</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/07/14/PAT-乙级-1042-字符统计/" title="PAT-乙级-1042-字符统计">
+<a href="/2019/06/12/PAT-乙级-1095-解码PAT准考证/" title="PAT-乙级-1095.解码PAT准考证">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1042-字符统计
+ <span>PAT-乙级-1095.解码PAT准考证
 </span>
 </a>
 </div>
@@ -138,7 +150,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1043-输出PATest" data-thread-key="PAT-乙级-1043-输出PATest" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1043-输出PATest"></div>
+	<div class="ds-thread" data-title="PAT-甲级-1001-A+B Format(20)" data-thread-key="PAT-甲级-1001-A+B Format" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-甲级-1001-A+B Format"></div>
 	
 </section>
 
@@ -148,7 +160,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Specification"><span class="toc-number">1.</span> <span class="toc-text">Input Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-Specification"><span class="toc-number">2.</span> <span class="toc-text">Output Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Input"><span class="toc-number">3.</span> <span class="toc-text">Sample Input:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Output"><span class="toc-number">4.</span> <span class="toc-text">Sample Output:</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -172,7 +184,9 @@
 	<p class="asidetitle">Categories</p>
 		<ul>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>49</sup></a></li>
+			<li><a href="/categories/其他/" title="其他">其他<sup>0</sup></a></li>
+		
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>96</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -185,21 +199,19 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>46</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>96</sup></a></li>
 		
-			<li><a href="/tags/PAT，乙级/" title="PAT，乙级">PAT，乙级<sup>5</sup></a></li>
-		
-			<li><a href="/tags/PTA/" title="PTA">PTA<sup>1</sup></a></li>
-		
-			<li><a href="/tags/PTA，乙级/" title="PTA，乙级">PTA，乙级<sup>1</sup></a></li>
-		
-			<li><a href="/tags/乙级/" title="乙级">乙级<sup>47</sup></a></li>
+			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
 			<li><a href="/tags/千与千寻/" title="千与千寻">千与千寻<sup>1</sup></a></li>
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>1</sup></a></li>
+		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
+		
+			<li><a href="/tags/算法笔记/" title="算法笔记">算法笔记<sup>0</sup></a></li>
 		
 		</ul>
 </div>
@@ -222,7 +234,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PAT/" style="font-size: 16.67px;">PAT</a> <a href="/tags/PAT，乙级/" style="font-size: 13.33px;">PAT，乙级</a> <a href="/tags/PTA/" style="font-size: 10px;">PTA</a> <a href="/tags/PTA，乙级/" style="font-size: 10px;">PTA，乙级</a> <a href="/tags/乙级/" style="font-size: 20px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 15px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/甲级/" style="font-size: 10px;">甲级</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
     </div>
   </div>
 

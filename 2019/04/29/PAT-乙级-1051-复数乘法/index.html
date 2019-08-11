@@ -65,7 +65,7 @@
 					
 					<li>
 					
-                                            <form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+                                            <form class="search" action="https://mijisou.com/?q=" target="_blank">
                                             <label>Search</label>
                                         <input name="s" type="hidden" value><input type="text" name="q" size="30" placeholder="Search"><br>
 					
@@ -108,7 +108,7 @@
 <h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>2.3 3.5 5.2 0.4</p>
 <h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>-8.68-8.23i</p>
 <h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>这题考察浮点数舍入规则。</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;iomanip&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    double r1,p1,r2,p2,A,B;</span><br><span class="line">    cin &gt;&gt; r1 &gt;&gt; p1 &gt;&gt; r2 &gt;&gt; p2;</span><br><span class="line">    A = r1*r2*(cos(p1)*cos(p2) - sin(p1)*sin(p2));</span><br><span class="line">    B = r1*r2*(cos(p1)*sin(p2) + sin(p1)*cos(p2));</span><br><span class="line">    if (A + 0.005 &gt;=0 &amp;&amp; A &lt; 0)</span><br><span class="line">        printf(&quot;0.00&quot;);</span><br><span class="line">    else printf(&quot;%.2f&quot;,A);</span><br><span class="line">    if (B&gt;=0) printf(&quot;+%.2fi&quot;,B);</span><br><span class="line">    else if (B + 0.005 &gt;=0 &amp;&amp; B &lt; 0) printf(&quot;+0.00i&quot;,B);</span><br><span class="line">    else printf(&quot;%.2fi&quot;,B);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> r1,p1,r2,p2,A,B;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; r1 &gt;&gt; p1 &gt;&gt; r2 &gt;&gt; p2;</span><br><span class="line">    A = r1*r2*(<span class="built_in">cos</span>(p1)*<span class="built_in">cos</span>(p2) - <span class="built_in">sin</span>(p1)*<span class="built_in">sin</span>(p2));</span><br><span class="line">    B = r1*r2*(<span class="built_in">cos</span>(p1)*<span class="built_in">sin</span>(p2) + <span class="built_in">sin</span>(p1)*<span class="built_in">cos</span>(p2));</span><br><span class="line">    <span class="keyword">if</span> (A + <span class="number">0.005</span> &gt;=<span class="number">0</span> &amp;&amp; A &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"0.00"</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%.2f"</span>,A);</span><br><span class="line">    <span class="keyword">if</span> (B&gt;=<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"+%.2fi"</span>,B);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (B + <span class="number">0.005</span> &gt;=<span class="number">0</span> &amp;&amp; B &lt; <span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"+0.00i"</span>,B);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%.2fi"</span>,B);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -195,7 +195,7 @@
 		
 			<li><a href="/categories/其他/" title="其他">其他<sup>0</sup></a></li>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>95</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>96</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -208,7 +208,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>95</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>96</sup></a></li>
 		
 			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
@@ -216,7 +216,7 @@
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
-			<li><a href="/tags/甲级/" title="甲级">甲级<sup>0</sup></a></li>
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>1</sup></a></li>
 		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
 		
@@ -243,7 +243,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 20px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 15px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/甲级/" style="font-size: 10px;">甲级</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
     </div>
   </div>
 

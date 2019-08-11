@@ -66,7 +66,7 @@
 					
 					<li>
 					
-                                            <form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+                                            <form class="search" action="https://mijisou.com/?q=" target="_blank">
                                             <label>Search</label>
                                         <input name="s" type="hidden" value><input type="text" name="q" size="30" placeholder="Search"><br>
 					
@@ -89,8 +89,8 @@
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-06-08T09:10:58.000Z" itemprop="datePublished">2019-06-08</time>
-    Updated:<time datetime="2019-08-07T10:36:12.540Z" itemprop="dateModified">2019-08-07</time>
+    <time datetime="2019-06-08T09:30:58.000Z" itemprop="datePublished">2019-06-08</time>
+    Updated:<time datetime="2019-08-10T11:06:17.147Z" itemprop="dateModified">2019-08-10</time>
     
   </p>
 </header>
@@ -109,7 +109,7 @@
 <h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>3<br>92 5 233</p>
 <h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3 25392<br>1 25<br>No</p>
 <h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>将k和nk<sup>2</sup>分别转换为字符串s1,s2，都翻转之后取出s2中前s1.size()长度的字符串temp，temp和s1相等则符合条件，并做标记flag=1。1~9都不符合自守数的要求，则flag=0，此时输出“No”。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int n,k,x;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    for (int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        cin &gt;&gt; k;</span><br><span class="line">        int flag = 0;</span><br><span class="line">        string s1,s2,temp;</span><br><span class="line">        s1 = to_string(k);</span><br><span class="line">        reverse(s1.begin(),s1.end());</span><br><span class="line">        for (int j=1;j&lt;=9;j++)&#123;</span><br><span class="line">            s2 = to_string(j * k * k);</span><br><span class="line">            temp = s2;</span><br><span class="line">            reverse(temp.begin(),temp.end());</span><br><span class="line">            temp = temp.substr(0,s1.size());</span><br><span class="line">            if (s1 == temp)&#123;</span><br><span class="line">                cout &lt;&lt; j &lt;&lt; &quot; &quot; &lt;&lt; s2 &lt;&lt; endl;</span><br><span class="line">                flag = 1;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (flag == 0) cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include&lt;algorithm&gt;</span></span><br><span class="line">using namespace std<span class="comment">;</span></span><br><span class="line">int main()&#123;</span><br><span class="line">    int n,k,x<span class="comment">;</span></span><br><span class="line">    cin &gt;&gt; n<span class="comment">;</span></span><br><span class="line">    for (int i=<span class="number">0</span><span class="comment">;i&lt;n;i++)&#123;</span></span><br><span class="line">        cin &gt;&gt; k<span class="comment">;</span></span><br><span class="line">        int flag = <span class="number">0</span><span class="comment">;</span></span><br><span class="line">        string <span class="built_in">s1</span>,<span class="built_in">s2</span>,temp<span class="comment">;</span></span><br><span class="line">        <span class="built_in">s1</span> = to_string(k)<span class="comment">;</span></span><br><span class="line">        reverse(<span class="built_in">s1</span>.<span class="keyword">begin(),s1.end());</span></span><br><span class="line"><span class="keyword"> </span>       for (int <span class="keyword">j=1;j&lt;=9;j++)&#123;</span></span><br><span class="line"><span class="keyword"> </span>           <span class="built_in">s2</span> = to_string(<span class="keyword">j </span>* k * k)<span class="comment">;</span></span><br><span class="line">            temp = <span class="built_in">s2</span><span class="comment">;</span></span><br><span class="line">            reverse(temp.<span class="keyword">begin(),temp.end());</span></span><br><span class="line"><span class="keyword"> </span>           temp = temp.<span class="keyword">substr(0,s1.size());</span></span><br><span class="line"><span class="keyword"> </span>           if (<span class="built_in">s1</span> == temp)&#123;</span><br><span class="line">                cout &lt;&lt; <span class="keyword">j </span>&lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="built_in">s2</span> &lt;&lt; endl<span class="comment">;</span></span><br><span class="line">                flag = <span class="number">1</span><span class="comment">;</span></span><br><span class="line">                <span class="keyword">break;</span></span><br><span class="line"><span class="keyword"> </span>           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (flag == <span class="number">0</span>) cout &lt;&lt; <span class="string">"No"</span> &lt;&lt; endl<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">    return <span class="number">0</span><span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -196,7 +196,7 @@
 		
 			<li><a href="/categories/其他/" title="其他">其他<sup>0</sup></a></li>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>95</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>96</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -209,7 +209,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>95</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>96</sup></a></li>
 		
 			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
@@ -217,7 +217,7 @@
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
-			<li><a href="/tags/甲级/" title="甲级">甲级<sup>0</sup></a></li>
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>1</sup></a></li>
 		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
 		
@@ -244,7 +244,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 20px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 15px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/甲级/" style="font-size: 10px;">甲级</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
     </div>
   </div>
 

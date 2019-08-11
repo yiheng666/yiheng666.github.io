@@ -65,7 +65,7 @@
 					
 					<li>
 					
-                                            <form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+                                            <form class="search" action="https://mijisou.com/?q=" target="_blank">
                                             <label>Search</label>
                                         <input name="s" type="hidden" value><input type="text" name="q" size="30" placeholder="Search"><br>
 					
@@ -88,8 +88,8 @@
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-05-29T09:08:21.000Z" itemprop="datePublished">2019-05-29</time>
-    Updated:<time datetime="2019-08-07T10:35:17.836Z" itemprop="dateModified">2019-08-07</time>
+    <time datetime="2019-05-29T10:33:21.000Z" itemprop="datePublished">2019-05-29</time>
+    Updated:<time datetime="2019-08-10T11:08:19.699Z" itemprop="dateModified">2019-08-10</time>
     
   </p>
 </header>
@@ -114,7 +114,7 @@
 <h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>5<br>123s<br>zheshi.wodepw<br>1234.5678<br>WanMei23333<br>pass*word.6</p>
 <h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>Your password is tai duan le.<br>Your password needs shu zi.<br>Your password needs zi mu.<br>Your password is wan mei.<br>Your password is tai luan le.</p>
 <h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>有测试数据带空格的，不能用cin进行输出，要用getline(cin,s)输入。我又双叒叕要说一次，一定要用getchar()把回车键处理了再用getline(cin,s)。</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int n;</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    getchar();</span><br><span class="line">    for (int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        getline(cin,s);</span><br><span class="line">        int apl_flag = 0,number_flag = 0,dot_flag = 0,other_flag = 0;</span><br><span class="line">        for (int i=0;i&lt;s.size();i++)&#123;</span><br><span class="line">            if ( (s[i] &gt;= &apos;a&apos; &amp;&amp; s[i] &lt;= &apos;z&apos;) || (s[i] &gt;= &apos;A&apos; &amp;&amp; s[i] &lt;= &apos;Z&apos;))</span><br><span class="line">                apl_flag = 1;</span><br><span class="line">            else if ( s[i] &gt;= &apos;0&apos; &amp;&amp; s[i] &lt;= &apos;9&apos;) number_flag = 1;</span><br><span class="line">            else if (s[i] == &apos;.&apos;) dot_flag = 1;</span><br><span class="line">            else other_flag = 1;</span><br><span class="line">        &#125;</span><br><span class="line">        if (s.size() &lt; 6) cout &lt;&lt; &quot;Your password is tai duan le.&quot; &lt;&lt; endl;</span><br><span class="line">        else if (other_flag == 1) cout &lt;&lt; &quot;Your password is tai luan le.&quot; &lt;&lt; endl;</span><br><span class="line">        else if (number_flag == 0 &amp;&amp; apl_flag == 1) cout &lt;&lt; &quot;Your password needs shu zi.&quot; &lt;&lt; endl;</span><br><span class="line">        else if (number_flag == 1 &amp;&amp; apl_flag == 0) cout &lt;&lt; &quot;Your password needs zi mu.&quot; &lt;&lt;endl;</span><br><span class="line">        else if (number_flag == 1 &amp;&amp; apl_flag == 1) cout &lt;&lt; &quot;Your password is wan mei.&quot; &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        getline(<span class="built_in">cin</span>,s);</span><br><span class="line">        <span class="keyword">int</span> apl_flag = <span class="number">0</span>,number_flag = <span class="number">0</span>,dot_flag = <span class="number">0</span>,other_flag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> ( (s[i] &gt;= <span class="string">'a'</span> &amp;&amp; s[i] &lt;= <span class="string">'z'</span>) || (s[i] &gt;= <span class="string">'A'</span> &amp;&amp; s[i] &lt;= <span class="string">'Z'</span>))</span><br><span class="line">                apl_flag = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> ( s[i] &gt;= <span class="string">'0'</span> &amp;&amp; s[i] &lt;= <span class="string">'9'</span>) number_flag = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (s[i] == <span class="string">'.'</span>) dot_flag = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> other_flag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (s.size() &lt; <span class="number">6</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Your password is tai duan le."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (other_flag == <span class="number">1</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Your password is tai luan le."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (number_flag == <span class="number">0</span> &amp;&amp; apl_flag == <span class="number">1</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Your password needs shu zi."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (number_flag == <span class="number">1</span> &amp;&amp; apl_flag == <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Your password needs zi mu."</span> &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (number_flag == <span class="number">1</span> &amp;&amp; apl_flag == <span class="number">1</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"Your password is wan mei."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -201,7 +201,7 @@
 		
 			<li><a href="/categories/其他/" title="其他">其他<sup>0</sup></a></li>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>95</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>96</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -214,7 +214,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>95</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>96</sup></a></li>
 		
 			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
@@ -222,7 +222,7 @@
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
-			<li><a href="/tags/甲级/" title="甲级">甲级<sup>0</sup></a></li>
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>1</sup></a></li>
 		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
 		
@@ -249,7 +249,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 20px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 15px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/甲级/" style="font-size: 10px;">甲级</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
     </div>
   </div>
 

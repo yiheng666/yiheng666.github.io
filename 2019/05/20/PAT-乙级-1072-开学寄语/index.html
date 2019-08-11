@@ -67,7 +67,7 @@
 					
 					<li>
 					
-                                            <form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+                                            <form class="search" action="https://mijisou.com/?q=" target="_blank">
                                             <label>Search</label>
                                         <input name="s" type="hidden" value><input type="text" name="q" size="30" placeholder="Search"><br>
 					
@@ -90,8 +90,8 @@
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-05-20T09:06:18.000Z" itemprop="datePublished">2019-05-20</time>
-    Updated:<time datetime="2019-08-07T10:33:54.882Z" itemprop="dateModified">2019-08-07</time>
+    <time datetime="2019-05-20T11:06:18.000Z" itemprop="datePublished">2019-05-20</time>
+    Updated:<time datetime="2019-08-10T11:09:53.841Z" itemprop="dateModified">2019-08-10</time>
     
   </p>
 </header>
@@ -113,7 +113,7 @@
 <h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>4 2<br>2333 6666<br>CYLL 3 1234 2345 3456<br>U 4 9966 6666 8888 6666<br>GG 2 2333 7777<br>JJ 3 0012 6666 2333</p>
 <h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>U: 6666 6666<br>GG: 2333<br>JJ: 6666 2333<br>3 5</p>
 <h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>先将违禁物品需要存储到MAP中，方便查询。对每一个学生，用getline进行整行输入（必须用先用getchar()处理空格），然后用输入流对其进行分割，获得动态数组v。v[0]为学生名字，其余的都是该学生拥有的物品编号。flag有两个作用，一是控制学生名字以及第一个物品格式化输出，二是控制换行输出。具体步骤①对每一行学生信息getline输入，然后用输入流得到相应的动态数组v。②遍历v[1]~v[n-1]查询是否有违规物品。如果有违规物品且flag为0（之前没有违规物品），则输出“名字：违规物品id”，改flag为1，违规学生数++，违规物品数++；如果有违规物品且flag为1输出“ 违规物品id”，违规物品数++。③打印违规学生数和违规物品数。需要注意flag和v都是在循环内部生成的，每一次循环都是新的。</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;sstream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int n,m,stu_cnt=0,item_cnt=0;</span><br><span class="line">    string id,s;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    map&lt;string,string&gt; MAP;</span><br><span class="line">    for (int i=0;i&lt;m;i++)&#123;</span><br><span class="line">        cin &gt;&gt; id;</span><br><span class="line">        MAP[id] = &quot;BAN&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    getchar();</span><br><span class="line">    for (int i=0;i&lt;n;i++)&#123;</span><br><span class="line">        int flag = 0;</span><br><span class="line">        getline(cin,s);</span><br><span class="line">        string temp;</span><br><span class="line">        vector&lt;string&gt; v;</span><br><span class="line">        stringstream ss(s);</span><br><span class="line">        while (ss &gt;&gt; temp)</span><br><span class="line">            v.push_back(temp);</span><br><span class="line">        for (int j=1;j&lt;v.size();j++)&#123;</span><br><span class="line">            if (MAP[v[j]] == &quot;BAN&quot;)&#123;</span><br><span class="line">                item_cnt++;</span><br><span class="line">                if (flag == 0)&#123;</span><br><span class="line">                    cout &lt;&lt; v[0]&lt;&lt; &quot;: &quot; &lt;&lt; v[j];</span><br><span class="line">                    flag = 1;</span><br><span class="line">                    stu_cnt++;</span><br><span class="line">                &#125;</span><br><span class="line">                else cout &lt;&lt; &quot; &quot; &lt;&lt; v[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (flag == 1) cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; stu_cnt &lt;&lt; &quot; &quot; &lt;&lt; item_cnt;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m,stu_cnt=<span class="number">0</span>,item_cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">string</span> id,s;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="built_in">string</span>&gt; MAP;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; id;</span><br><span class="line">        MAP[id] = <span class="string">"BAN"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">        getline(<span class="built_in">cin</span>,s);</span><br><span class="line">        <span class="built_in">string</span> temp;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; v;</span><br><span class="line">        <span class="function"><span class="built_in">stringstream</span> <span class="title">ss</span><span class="params">(s)</span></span>;</span><br><span class="line">        <span class="keyword">while</span> (ss &gt;&gt; temp)</span><br><span class="line">            v.push_back(temp);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;v.size();j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (MAP[v[j]] == <span class="string">"BAN"</span>)&#123;</span><br><span class="line">                item_cnt++;</span><br><span class="line">                <span class="keyword">if</span> (flag == <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="built_in">cout</span> &lt;&lt; v[<span class="number">0</span>]&lt;&lt; <span class="string">": "</span> &lt;&lt; v[j];</span><br><span class="line">                    flag = <span class="number">1</span>;</span><br><span class="line">                    stu_cnt++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; v[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag == <span class="number">1</span>) <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; stu_cnt &lt;&lt; <span class="string">" "</span> &lt;&lt; item_cnt;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -200,7 +200,7 @@
 		
 			<li><a href="/categories/其他/" title="其他">其他<sup>0</sup></a></li>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>95</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>96</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -213,7 +213,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>95</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>96</sup></a></li>
 		
 			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
@@ -221,7 +221,7 @@
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
-			<li><a href="/tags/甲级/" title="甲级">甲级<sup>0</sup></a></li>
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>1</sup></a></li>
 		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
 		
@@ -248,7 +248,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 20px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 15px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/甲级/" style="font-size: 10px;">甲级</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
     </div>
   </div>
 

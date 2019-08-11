@@ -67,7 +67,7 @@
 					
 					<li>
 					
-                                            <form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+                                            <form class="search" action="https://mijisou.com/?q=" target="_blank">
                                             <label>Search</label>
                                         <input name="s" type="hidden" value><input type="text" name="q" size="30" placeholder="Search"><br>
 					
@@ -114,7 +114,7 @@
 <p>2.进行len-1（len是A的长度）次循环（因为第一步处理已经处理了一位）。在每一步，当前被除数x = mod ×10 + 当前循环得到的数字，除数为B，则当前输出的结果为div = x / B，当前的余数为mod 为 x % B。</p>
 <p>3.输出最后的余数。</p>
 <p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string A;</span><br><span class="line">    int len,div,mod,B;</span><br><span class="line">    cin &gt;&gt; A &gt;&gt; B;</span><br><span class="line">    len = A.size();</span><br><span class="line">    div = (A[0] - &apos;0&apos;) / B;</span><br><span class="line">    mod = (A[0] - &apos;0&apos;) % B;</span><br><span class="line">    if ( (div!=0&amp;&amp;len &gt;1) || len == 1)</span><br><span class="line">        cout &lt;&lt; div;</span><br><span class="line">    for (int i=1;i&lt;len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        div = (A[i] - &apos;0&apos; + mod*10) / B;</span><br><span class="line">        cout &lt;&lt; div ;</span><br><span class="line">        mod = (A[i] - &apos;0&apos; + mod*10) % B;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot; &quot; &lt;&lt; mod ;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line">using namespace std<span class="comment">;</span></span><br><span class="line"><span class="built_in">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> A<span class="comment">;</span></span><br><span class="line">    <span class="built_in">int</span> len,div,<span class="built_in">mod</span>,B<span class="comment">;</span></span><br><span class="line">    cin &gt;&gt; A &gt;&gt; B<span class="comment">;</span></span><br><span class="line">    len = A.size()<span class="comment">;</span></span><br><span class="line">    div = (A[<span class="number">0</span>] - <span class="string">'0'</span>) / B<span class="comment">;</span></span><br><span class="line">    <span class="built_in">mod</span> = (A[<span class="number">0</span>] - <span class="string">'0'</span>) % B<span class="comment">;</span></span><br><span class="line">    <span class="keyword">if</span> ( (div!=<span class="number">0</span>&amp;&amp;len &gt;<span class="number">1</span>) || len == <span class="number">1</span>)</span><br><span class="line">        cout &lt;&lt; div<span class="comment">;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i=<span class="number">1</span><span class="comment">;i&lt;len;i++)</span></span><br><span class="line">    &#123;</span><br><span class="line">        div = (A[i] - <span class="string">'0'</span> + <span class="built_in">mod</span>*<span class="number">10</span>) / B<span class="comment">;</span></span><br><span class="line">        cout &lt;&lt; div <span class="comment">;</span></span><br><span class="line">        <span class="built_in">mod</span> = (A[i] - <span class="string">'0'</span> + <span class="built_in">mod</span>*<span class="number">10</span>) % B<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="built_in">mod</span> <span class="comment">;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span><span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -201,7 +201,7 @@
 		
 			<li><a href="/categories/其他/" title="其他">其他<sup>0</sup></a></li>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>95</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>96</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -214,7 +214,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>95</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>96</sup></a></li>
 		
 			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
@@ -222,7 +222,7 @@
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
-			<li><a href="/tags/甲级/" title="甲级">甲级<sup>0</sup></a></li>
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>1</sup></a></li>
 		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
 		
@@ -249,7 +249,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 20px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/乙级/" style="font-size: 15px;">乙级</a> <a href="/tags/千与千寻/" style="font-size: 10px;">千与千寻</a> <a href="/tags/宫崎骏/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/甲级/" style="font-size: 10px;">甲级</a> <a href="/tags/电影/" style="font-size: 10px;">电影</a>
     </div>
   </div>
 
