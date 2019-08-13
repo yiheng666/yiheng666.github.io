@@ -7,12 +7,10 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1076-Wifi密码 | YiHeng</title>
+    <title>PAT-甲级-1003-Emergency | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
-    
-    <meta name="description" content="下面是微博上流传的一张照片：“各位亲爱的同学们，鉴于大家有时需要使用 wifi，又怕耽误亲们的学习，现将 wifi 密码设置为下列数学题答案：A-1；B-2；C-3；D-4；请同学们自己作答，每两日一换。谢谢合作！！~”—— 老师们为了促进学生学习也是拼了…… 本题就要求你写程序把一系列题目的答案按">
     
     
     
@@ -80,15 +78,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/05/24/PAT-乙级-1076-Wifi密码/" title="PAT-乙级-1076-Wifi密码" itemprop="url">PAT-乙级-1076-Wifi密码</a>
+      <a href="/2019/06/15/PAT-甲级-1003-Emergency/" title="PAT-甲级-1003-Emergency" itemprop="url">PAT-甲级-1003-Emergency</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-05-24T09:31:56.000Z" itemprop="datePublished">2019-05-24</time>
-    Updated:<time datetime="2019-08-10T11:09:17.415Z" itemprop="dateModified">2019-08-10</time>
+    <time datetime="2019-06-15T10:11:30.000Z" itemprop="datePublished">2019-06-15</time>
+    Updated:<time datetime="2019-08-13T10:12:05.677Z" itemprop="dateModified">2019-08-13</time>
     
   </p>
 </header>
@@ -97,24 +95,16 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li></ol>
+		
 		</div>
 		
-		<p>下面是微博上流传的一张照片：“各位亲爱的同学们，鉴于大家有时需要使用 wifi，又怕耽误亲们的学习，现将 wifi 密码设置为下列数学题答案：A-1；B-2；C-3；D-4；请同学们自己作答，每两日一换。谢谢合作！！~”—— 老师们为了促进学生学习也是拼了…… 本题就要求你写程序把一系列题目的答案按照卷子上给出的对应关系翻译成 wifi 的密码。这里简单假设每道选择题都有 4 个选项，有且只有 1 个正确答案。</p>
-<p><img src="https://images.ptausercontent.com/7e56be3f-caba-45f1-b9cb-38a96d44de76.jpg" alt="wifi.jpg"></p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数 N（≤ 100），随后 N 行，每行按照 <code>编号-答案</code> 的格式给出一道题的 4 个选项，<code>T</code> 表示正确选项，<code>F</code> 表示错误选项。选项间用空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出 wifi 密码。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>8<br>A-T B-F C-F D-F<br>C-T B-F A-F D-F<br>A-F D-F C-F B-T<br>B-T A-F C-F D-F<br>B-F D-T A-F C-F<br>A-T C-F B-F D-F<br>D-T B-F C-F A-F<br>C-T A-F B-F D-F</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>13224143</p>
-<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>找到T所在的下标j则下标j-2就是要找的答案。将答案转化为数字的方式是先减去’A’的值，再加上’1’的值。记录并输出就好了。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">string</span> s,temp;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        getline(<span class="built_in">cin</span>,temp);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;temp.size();j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (temp[j] == <span class="string">'T'</span>)&#123;</span><br><span class="line">                s += temp[j<span class="number">-2</span>] - <span class="string">'A'</span> + <span class="string">'1'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  
+		  
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/甲级/">甲级</a>
   </div>
 
 
@@ -127,7 +117,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/05/24/PAT-乙级-1076-Wifi密码/" data-title="PAT-乙级-1076-Wifi密码 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/06/15/PAT-甲级-1003-Emergency/" data-title="PAT-甲级-1003-Emergency | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -136,19 +126,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/05/25/PAT-乙级-1077-互评成绩计算/" title="PAT-乙级-1077-互评成绩计算">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1077-互评成绩计算</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/05/23/PAT-乙级-1075-链表元素分类/" title="PAT-乙级-1075-链表元素分类">
+<a href="/2019/06/14/PAT-甲级-1002-A+B for Polynomials/" title="PAT-甲级-1002-A+B for Polynomials">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1075-链表元素分类
+ <span>PAT-甲级-1002-A+B for Polynomials
 </span>
 </a>
 </div>
@@ -158,7 +140,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1076-Wifi密码" data-thread-key="PAT-乙级-1076-Wifi密码" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1076-Wifi密码"></div>
+	<div class="ds-thread" data-title="PAT-甲级-1003-Emergency" data-thread-key="PAT-甲级-1003-Emergency" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-甲级-1003-Emergency"></div>
 	
 </section>
 
@@ -168,7 +150,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
