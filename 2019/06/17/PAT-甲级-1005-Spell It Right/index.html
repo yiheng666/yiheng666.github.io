@@ -7,14 +7,10 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1038-统计同成绩学生 | YiHeng</title>
+    <title>PAT-甲级- | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
-    
-    <meta name="description" content="本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。
-输入格式：输入在第 1 行给出不超过 105 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。
-输出">
     
     
     
@@ -82,15 +78,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/04/16/PAT-乙级-1038-统计同成绩学生/" title="PAT-乙级-1038-统计同成绩学生" itemprop="url">PAT-乙级-1038-统计同成绩学生</a>
+      <a href="/2019/06/17/PAT-甲级-1005-Spell It Right/" title="PAT-甲级-" itemprop="url">PAT-甲级-</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-04-16T12:26:20.000Z" itemprop="datePublished">2019-04-16</time>
-    Updated:<time datetime="2019-08-07T10:21:38.494Z" itemprop="dateModified">2019-08-07</time>
+    <time datetime="2019-06-17T09:47:30.000Z" itemprop="datePublished">2019-06-17</time>
+    Updated:<time datetime="2019-08-08T10:20:29.700Z" itemprop="dateModified">2019-08-08</time>
     
   </p>
 </header>
@@ -99,23 +95,16 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li></ol>
+		
 		</div>
 		
-		<p>本题要求读入 N 名学生的成绩，将获得某一给定分数的学生人数输出。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第 1 行给出不超过 105 的正整数 N，即学生总人数。随后一行给出 N 名学生的百分制整数成绩，中间以空格分隔。最后一行给出要查询的分数个数 K（不超过 N 的正整数），随后是 K 个分数，中间以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中按查询顺序给出得分等于指定分数的学生人数，中间以空格分隔，但行末不得有多余空格。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>10<br>60 75 90 55 75 99 82 90 75 50<br>3 75 90 88</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3 2 0</p>
-<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>本题目主要考察对map的应用。以分数为key，人数为value即可直接获得结果。map的int类型的value默认值为0，在此基础上可以直接对其运算。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N,K,temp;</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">        m[temp]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; K;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;K;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; m[temp];</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; m[temp];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  
+		  
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/甲级/">甲级</a>
   </div>
 
 
@@ -128,7 +117,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/04/16/PAT-乙级-1038-统计同成绩学生/" data-title="PAT-乙级-1038-统计同成绩学生 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/06/17/PAT-甲级-1005-Spell It Right/" data-title="PAT-甲级- | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -137,19 +126,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/04/17/PAT-乙级-1039-到底买不买/" title="PAT-乙级-1039-到底买不买">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1039-到底买不买</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/04/15/PAT-乙级-1037-在霍格沃茨找零钱/" title="PAT-乙级-1037-在霍格沃茨找零钱">
+<a href="/2019/06/16/PAT-甲级-1004-Counting Leaves/" title="PAT-甲级-">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1037-在霍格沃茨找零钱
+ <span>PAT-甲级-
 </span>
 </a>
 </div>
@@ -159,7 +140,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1038-统计同成绩学生" data-thread-key="PAT-乙级-1038-统计同成绩学生" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1038-统计同成绩学生"></div>
+	<div class="ds-thread" data-title="PAT-甲级-" data-thread-key="PAT-甲级-1005-Spell It Right" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-甲级-1005-Spell It Right"></div>
 	
 </section>
 
@@ -169,7 +150,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
