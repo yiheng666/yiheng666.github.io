@@ -7,12 +7,10 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1048-数字加密 | YiHeng</title>
+    <title>PAT-甲级- | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
-    
-    <meta name="description" content="本题要求实现一种数字加密方法。首先固定一个加密用正整数 A，对任一正整数 B，将其每 1 位数字与 A 的对应位置上的数字进行以下运算：对奇数位，对应位的数字相加后对 13 取余——这里用 J 代表 10、Q 代表 11、K 代表 12；对偶数位，用 B 的数字减去 A 的数字，若结果为负数，则再加">
     
     
     
@@ -80,15 +78,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/04/26/PAT-乙级-1048-数字加密/" title="PAT-乙级-1048-数字加密" itemprop="url">PAT-乙级-1048-数字加密</a>
+      <a href="/2019/06/20/PAT-甲级-1008-Elevator/" title="PAT-甲级-" itemprop="url">PAT-甲级-</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-04-26T04:10:33.000Z" itemprop="datePublished">2019-04-26</time>
-    Updated:<time datetime="2019-08-07T10:22:48.655Z" itemprop="dateModified">2019-08-07</time>
+    <time datetime="2019-06-20T09:47:30.000Z" itemprop="datePublished">2019-06-20</time>
+    Updated:<time datetime="2019-08-08T10:20:43.297Z" itemprop="dateModified">2019-08-08</time>
     
   </p>
 </header>
@@ -97,23 +95,16 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
+		
 		</div>
 		
-		<p>本题要求实现一种数字加密方法。首先固定一个加密用正整数 A，对任一正整数 B，将其每 1 位数字与 A 的对应位置上的数字进行以下运算：对奇数位，对应位的数字相加后对 13 取余——这里用 J 代表 10、Q 代表 11、K 代表 12；对偶数位，用 B 的数字减去 A 的数字，若结果为负数，则再加 10。这里令个位为第 1 位。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中依次给出 A 和 B，均为不超过 100 位的正整数，其间以空格分隔。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出加密后的结果。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>1234567 368782971</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3695Q8118</p>
-<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>首先将两个字符串对齐，用0补充较短字符串的前部。奇偶情况和较长字符串的长度max有关，如果max为奇数，则奇偶奇偶奇……否则为偶奇偶奇……</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> A,B;</span><br><span class="line">    <span class="keyword">int</span> a,b,max;</span><br><span class="line">    <span class="keyword">char</span> dict[<span class="number">13</span>] = &#123;<span class="string">'0'</span>,<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>,<span class="string">'7'</span>,<span class="string">'8'</span>,<span class="string">'9'</span>,<span class="string">'J'</span>,<span class="string">'Q'</span>,<span class="string">'K'</span>&#125;;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; A &gt;&gt; B;</span><br><span class="line">    a = A.size();b = B.size();</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b) B.insert(<span class="number">0</span>,a-b,<span class="string">'0'</span>);</span><br><span class="line">    <span class="keyword">else</span> A.insert(<span class="number">0</span>,b-a,<span class="string">'0'</span>);</span><br><span class="line">    max = (a&gt;b)?a:b;</span><br><span class="line">    <span class="keyword">if</span> (max % <span class="number">2</span> == <span class="number">1</span>) flag = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;max;i++)&#123;</span><br><span class="line">        a = A[i]-<span class="string">'0'</span>,b=B[i]-<span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">if</span> (flag)&#123;<span class="comment">//奇数</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; dict[(b+a)%<span class="number">13</span>];</span><br><span class="line">            flag = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">             b = b&lt;a?b+<span class="number">10</span>:b;</span><br><span class="line">             <span class="built_in">cout</span> &lt;&lt; b-a;</span><br><span class="line">             flag = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  
+		  
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/甲级/">甲级</a>
   </div>
 
 
@@ -126,7 +117,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/04/26/PAT-乙级-1048-数字加密/" data-title="PAT-乙级-1048-数字加密 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/06/20/PAT-甲级-1008-Elevator/" data-title="PAT-甲级- | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -135,19 +126,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/04/27/PAT-乙级-1049-数列的片段和/" title="PAT-乙级-1049-数列的片段和">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1049-数列的片段和</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/04/25/PAT-乙级-1047-编程团体赛/" title="PAT-乙级-1047-编程团体赛">
+<a href="/2019/06/19/PAT-甲级-1007-Maximum Subsequence Sum/" title="PAT-甲级-">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1047-编程团体赛
+ <span>PAT-甲级-
 </span>
 </a>
 </div>
@@ -157,7 +140,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1048-数字加密" data-thread-key="PAT-乙级-1048-数字加密" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1048-数字加密"></div>
+	<div class="ds-thread" data-title="PAT-甲级-" data-thread-key="PAT-甲级-1008-Elevator" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-甲级-1008-Elevator"></div>
 	
 </section>
 
@@ -167,7 +150,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
