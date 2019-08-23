@@ -7,10 +7,13 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-甲级- | YiHeng</title>
+    <title>PAT-甲级-1009-Product of Polynomials (25 分) | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
+    
+    <meta name="description" content="This time, you are supposed to find A×B where A and B are two polynomials.
+Input Specification:Each input file contains one test case. Each case occup">
     
     
     
@@ -78,15 +81,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/06/17/PAT-甲级-1005-Spell It Right/" title="PAT-甲级-" itemprop="url">PAT-甲级-</a>
+      <a href="/2019/06/21/PAT-甲级-1009-Product of Polynomials/" title="PAT-甲级-1009-Product of Polynomials (25 分)" itemprop="url">PAT-甲级-1009-Product of Polynomials (25 分)</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-06-17T09:47:30.000Z" itemprop="datePublished">2019-06-17</time>
-    Updated:<time datetime="2019-08-08T10:20:29.700Z" itemprop="dateModified">2019-08-08</time>
+    <time datetime="2019-06-21T09:22:55.000Z" itemprop="datePublished">2019-06-21</time>
+    Updated:<time datetime="2019-08-19T06:46:01.237Z" itemprop="dateModified">2019-08-19</time>
     
   </p>
 </header>
@@ -95,10 +98,20 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Specification"><span class="toc-number">1.</span> <span class="toc-text">Input Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-Specification"><span class="toc-number">2.</span> <span class="toc-text">Output Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Input"><span class="toc-number">3.</span> <span class="toc-text">Sample Input:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Output"><span class="toc-number">4.</span> <span class="toc-text">Sample Output:</span></a></li></ol>
 		</div>
 		
-		  
+		<p>This time, you are supposed to find A×B where A and B are two polynomials.</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case occupies 2 lines, and each line contains the information of a polynomial:</p>
+<p>K N1 aN1 N2 aN2 … NK aNK</p>
+<p>where K is the number of nonzero terms in the polynomial, Ni and aNi (i=1,2,⋯,K) are the exponents and coefficients, respectively. It is given that 1≤K≤10, 0≤NK&lt;⋯&lt;N2&lt;N1≤1000.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case you should output the product of A and B in one line, with the same format as the input. Notice that there must be <strong>NO</strong> extra space at the end of each line. Please be accurate up to 1 decimal place.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><p>2 1 2.4 0 3.2<br>2 2 1.5 1 0.5</p>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><p>3 3 3.6 2 6.0 1 1.6</p>
+<p>题目大意：给出两行代表两个多项式，每一行第一个数字代表项数，之后每对数字的是未知数指数，后一个是系数，求出两个多项式相乘后的结果。题目给出例子的第一行代表2.4x+3.2；第二行代表1.5x<sup>2</sup>+0.5x，相乘后结果为3.6x<sup>3</sup>+6x<sup>2</sup>+1.6x。答案第一个数字是结果多项式的项数，其后每一项的系数保留一位小数。</p>
+<p>分析：将两个多项式分别保存在两个double数组b[]和b[]中，将相乘后的结果保存到另一个数组c[]中。对结果c[]进行遍历，若某一项不为0则表示该项存在，下标是未知数指数，其中的数据是其系数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a[<span class="number">1010</span>]=&#123;<span class="number">0</span>&#125;,b[<span class="number">1010</span>]=&#123;<span class="number">0</span>&#125;,c[<span class="number">2010</span>]=&#123;<span class="number">0</span>&#125;,y;</span><br><span class="line">    <span class="keyword">int</span> n,x,cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        a[x] = y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        b[x] = y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1000</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1000</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">            <span class="keyword">if</span> (b[j] == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span> c[i+j] += a[i] * b[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2000</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        <span class="keyword">if</span> (c[i] != <span class="number">0</span>) cnt++;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; cnt;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2000</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        <span class="keyword">if</span> (c[i] != <span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">" %d %.1f"</span>,i,c[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -117,7 +130,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/06/17/PAT-甲级-1005-Spell It Right/" data-title="PAT-甲级- | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/06/21/PAT-甲级-1009-Product of Polynomials/" data-title="PAT-甲级-1009-Product of Polynomials (25 分) | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -127,16 +140,16 @@
 <nav class="article-nav clearfix">
  
  <div class="prev">
- <a href="/2019/06/18/PAT-甲级-1006-Sign In and Sign Out/" title="PAT-甲级-Sign In and Sign Out (25 分)">
+ <a href="/2019/06/22/PAT-甲级-1010-Radix/" title="PAT-甲级-">
   <strong>PREVIOUS:</strong><br>
   <span>
-  PAT-甲级-Sign In and Sign Out (25 分)</span>
+  PAT-甲级-</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2019/06/16/PAT-甲级-1004-Counting Leaves/" title="PAT-甲级-">
+<a href="/2019/06/20/PAT-甲级-1008-Elevator/" title="PAT-甲级-">
  <strong>NEXT:</strong><br> 
  <span>PAT-甲级-
 </span>
@@ -148,7 +161,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-甲级-" data-thread-key="PAT-甲级-1005-Spell It Right" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-甲级-1005-Spell It Right"></div>
+	<div class="ds-thread" data-title="PAT-甲级-1009-Product of Polynomials (25 分)" data-thread-key="PAT-甲级-1009-Product of Polynomials" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-甲级-1009-Product of Polynomials"></div>
 	
 </section>
 
@@ -158,7 +171,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Specification"><span class="toc-number">1.</span> <span class="toc-text">Input Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-Specification"><span class="toc-number">2.</span> <span class="toc-text">Output Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Input"><span class="toc-number">3.</span> <span class="toc-text">Sample Input:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Output"><span class="toc-number">4.</span> <span class="toc-text">Sample Output:</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -184,7 +197,7 @@
 		
 			<li><a href="/categories/其他/" title="其他">其他<sup>0</sup></a></li>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>103</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>105</sup></a></li>
 		
 			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 		
@@ -197,7 +210,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>103</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>105</sup></a></li>
 		
 			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
@@ -205,7 +218,7 @@
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
-			<li><a href="/tags/甲级/" title="甲级">甲级<sup>8</sup></a></li>
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>10</sup></a></li>
 		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
 		
