@@ -7,12 +7,10 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1074-宇宙无敌加法器 | YiHeng</title>
+    <title>PAT-甲级- | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
-    
-    <meta name="description" content="地球人习惯使用十进制数，并且默认一个数字的每一位都是十进制的。而在 PAT 星人开挂的世界里，每个数字的每一位都是不同进制的，这种神奇的数字称为“PAT数”。每个 PAT 星人都必须熟记各位数字的进制表，例如“……0527”就表示最低位是 7 进制数、第 2 位是 2 进制数、第 3 位是 5 进制">
     
     
     
@@ -80,15 +78,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/05/22/PAT-乙级-1074-宇宙无敌加法器/" title="PAT-乙级-1074-宇宙无敌加法器" itemprop="url">PAT-乙级-1074-宇宙无敌加法器</a>
+      <a href="/2019/06/25/PAT-甲级-1013-Battle Over Cities/" title="PAT-甲级-" itemprop="url">PAT-甲级-</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-05-22T12:43:00.000Z" itemprop="datePublished">2019-05-22</time>
-    Updated:<time datetime="2019-08-10T11:09:35.290Z" itemprop="dateModified">2019-08-10</time>
+    <time datetime="2019-06-25T09:47:30.000Z" itemprop="datePublished">2019-06-25</time>
+    Updated:<time datetime="2019-08-15T13:27:15.437Z" itemprop="dateModified">2019-08-15</time>
     
   </p>
 </header>
@@ -97,24 +95,16 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li></ol>
+		
 		</div>
 		
-		<p>地球人习惯使用十进制数，并且默认一个数字的每一位都是十进制的。而在 PAT 星人开挂的世界里，每个数字的每一位都是不同进制的，这种神奇的数字称为“PAT数”。每个 PAT 星人都必须熟记各位数字的进制表，例如“……0527”就表示最低位是 7 进制数、第 2 位是 2 进制数、第 3 位是 5 进制数、第 4 位是 10 进制数，等等。每一位的进制 d 或者是 0（表示十进制）、或者是 [2，9] 区间内的整数。理论上这个进制表应该包含无穷多位数字，但从实际应用出发，PAT 星人通常只需要记住前 20 位就够用了，以后各位默认为 10 进制。</p>
-<p>在这样的数字系统中，即使是简单的加法运算也变得不简单。例如对应进制表“0527”，该如何计算“6203 + 415”呢？我们得首先计算最低位：3 + 5 = 8；因为最低位是 7 进制的，所以我们得到 1 和 1 个进位。第 2 位是：0 + 1 + 1（进位）= 2；因为此位是 2 进制的，所以我们得到 0 和 1 个进位。第 3 位是：2 + 4 + 1（进位）= 7；因为此位是 5 进制的，所以我们得到 2 和 1 个进位。第 4 位是：6 + 1（进位）= 7；因为此位是 10 进制的，所以我们就得到 7。最后我们得到：6203 + 415 = 7201。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入首先在第一行给出一个 N 位的进制表（0 &lt; N ≤ 20），以回车结束。 随后两行，每行给出一个不超过 N 位的非负的 PAT 数。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出两个 PAT 数之和。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>30527<br>06203<br>415</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>7201</p>
-<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>dict记录进制信息，a，b分别是需要相加的PAT数字。result是最后的结果，length是dict的长度，flag记录进位信息，如果需要进位就为1，不需要就为0，x是当前进制。<br>①将a，b前面用’0’填充到和dict一样长。<br>②从个位数开始处理。x记录当前进制，temp 当前a[i]与b[i]数字之和。若flag为1，说明上一次运算进位了，temp++。把flag信息重置。<br>③temp&gt;=x表示需要进位，temp= temp- x使temp合法化,flag=1记录进位信息。<br>④此时的temp是int型结果的，将其转化为char并记录在result中。<br>⑤循环结束，flag==1则说明有进位信息，末尾需要加上‘1’。<br>⑥将result翻转输出。注意result前面可能带0，需要去掉。如果result为0，可能需要单独处理。（我用了flag表示，循环利用flag…）直接用stoi(result.c_str())会出现RE错误。</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> main()&#123;</span><br><span class="line">    <span class="keyword">string</span> dict,a,b,result;</span><br><span class="line">    <span class="keyword">int</span> length,flag=<span class="number">0</span>,temp,x;</span><br><span class="line">    cin &gt;&gt; dict &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    length = dict.<span class="built_in">size</span>();</span><br><span class="line">    b.insert(<span class="number">0</span>,length-b.<span class="built_in">size</span>(),<span class="string">'0'</span>);</span><br><span class="line">    a.insert(<span class="number">0</span>,length-a.<span class="built_in">size</span>(),<span class="string">'0'</span>);</span><br><span class="line">    <span class="built_in">for</span> (<span class="keyword">int</span> i=length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        x = (dict[i] == <span class="string">'0'</span>) ? <span class="number">10</span> : (dict[i] - <span class="string">'0'</span>);</span><br><span class="line">        temp = (a[i] - <span class="string">'0'</span>) + (b[i] - <span class="string">'0'</span>);</span><br><span class="line">        <span class="built_in">if</span> (flag == <span class="number">1</span>)&#123;</span><br><span class="line">            temp += <span class="number">1</span>;</span><br><span class="line">            flag = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">if</span> (temp&gt;=x)&#123;</span><br><span class="line">            temp -= x;</span><br><span class="line">            flag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        result += temp + <span class="string">'0'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">if</span> (flag == <span class="number">1</span>) result += <span class="string">'1'</span>;</span><br><span class="line">    reverse(result.<span class="built_in">begin</span>(),result.<span class="built_in">end</span>());</span><br><span class="line">    flag = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;result.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">        <span class="built_in">if</span> (flag == <span class="number">0</span> &amp;&amp; result[i] == <span class="string">'0'</span> &amp;&amp; i != result.<span class="built_in">size</span>()<span class="number">-1</span>) <span class="built_in">continue</span>;</span><br><span class="line">        <span class="built_in">else</span> &#123;</span><br><span class="line">            cout &lt;&lt; result[i];</span><br><span class="line">            flag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  
+		  
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/甲级/">甲级</a>
   </div>
 
 
@@ -127,7 +117,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/05/22/PAT-乙级-1074-宇宙无敌加法器/" data-title="PAT-乙级-1074-宇宙无敌加法器 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/06/25/PAT-甲级-1013-Battle Over Cities/" data-title="PAT-甲级- | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -136,19 +126,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/05/23/PAT-乙级-1075-链表元素分类/" title="PAT-乙级-1075-链表元素分类">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1075-链表元素分类</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/05/21/PAT-乙级-1073-多选题常见计分法/" title="PAT-乙级-1073-多选题常见计分法">
+<a href="/2019/06/24/PAT-甲级-1012-The Best Rank (25 分)/" title="PAT-甲级-1012-The Best Rank (25 分)">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1073-多选题常见计分法
+ <span>PAT-甲级-1012-The Best Rank (25 分)
 </span>
 </a>
 </div>
@@ -158,7 +140,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1074-宇宙无敌加法器" data-thread-key="PAT-乙级-1074-宇宙无敌加法器" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1074-宇宙无敌加法器"></div>
+	<div class="ds-thread" data-title="PAT-甲级-" data-thread-key="PAT-甲级-1013-Battle Over Cities" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-甲级-1013-Battle Over Cities"></div>
 	
 </section>
 
@@ -168,7 +150,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li></ol>
+  
   </div>
 
 <div id="asidepart">
