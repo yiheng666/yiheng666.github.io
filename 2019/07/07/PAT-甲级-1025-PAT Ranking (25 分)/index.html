@@ -7,13 +7,12 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8">
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88">
   
-    <title>PAT-乙级-1066-图像过滤 | YiHeng</title>
+    <title>PAT-甲级-1025-PAT Ranking (25 分) | YiHeng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="YiHeng">
     
-    <meta name="description" content="图像过滤是把图像中不重要的像素都染成背景色，使得重要部分被凸显出来。现给定一幅黑白图像，要求你将灰度值位于某指定区间内的所有像素颜色都用一种指定的颜色替换。
-输入格式：输入在第一行给出一幅图像的分辨率，即两个正整数 M 和 N（0&amp;lt;M,N≤500），另外是待过滤的灰度值区间端点 A 和 B（0">
+    <meta name="description" content="Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run sim">
     
     
     
@@ -81,15 +80,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/05/14/PAT-乙级-1066-图像过滤/" title="PAT-乙级-1066-图像过滤" itemprop="url">PAT-乙级-1066-图像过滤</a>
+      <a href="/2019/07/07/PAT-甲级-1025-PAT Ranking (25 分)/" title="PAT-甲级-1025-PAT Ranking (25 分)" itemprop="url">PAT-甲级-1025-PAT Ranking (25 分)</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-05-14T10:51:55.000Z" itemprop="datePublished">2019-05-14</time>
-    Updated:<time datetime="2019-08-10T11:10:46.104Z" itemprop="dateModified">2019-08-10</time>
+    <time datetime="2019-07-07T11:45:35.000Z" itemprop="datePublished">2019-07-07</time>
+    Updated:<time datetime="2019-08-21T11:53:45.699Z" itemprop="dateModified">2019-08-21</time>
     
   </p>
 </header>
@@ -98,23 +97,26 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Specification"><span class="toc-number">1.</span> <span class="toc-text">Input Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-Specification"><span class="toc-number">2.</span> <span class="toc-text">Output Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Input"><span class="toc-number">3.</span> <span class="toc-text">Sample Input:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Output"><span class="toc-number">4.</span> <span class="toc-text">Sample Output:</span></a></li></ol>
 		</div>
 		
-		<p>图像过滤是把图像中不重要的像素都染成背景色，使得重要部分被凸显出来。现给定一幅黑白图像，要求你将灰度值位于某指定区间内的所有像素颜色都用一种指定的颜色替换。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第一行给出一幅图像的分辨率，即两个正整数 M 和 N（0&lt;M,N≤500），另外是待过滤的灰度值区间端点 A 和 B（0≤A&lt;B≤255）、以及指定的替换灰度值。随后 M 行，每行给出 N 个像素点的灰度值，其间以空格分隔。所有灰度值都在 [0, 255] 区间内。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出按要求过滤后的图像。即输出 M 行，每行 N 个像素灰度值，每个灰度值占 3 位（例如黑色要显示为 <code>000</code>），其间以一个空格分隔。行首尾不得有多余空格。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>3 5 100 150 0<br>3 189 254 101 119<br>150 233 151 99 100<br>88 123 149 0 255</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>003 189 254 000 000<br>000 233 151 099 000<br>088 000 000 000 255</p>
-<h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>int型动态二维数组m行n列声明方式为vector&lt;vector<int> &gt; v(m,vector<int>(n))。格式化输出%03d对不足三位的数字前面补0，%3d对不足三位的补空格，%-3d左对齐。</int></int></p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m,n,a,b,r;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n &gt;&gt; a &gt;&gt; b &gt;&gt; r;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; v(m,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; v[i][j];</span><br><span class="line">            <span class="keyword">if</span> (v[i][j]&gt;=a &amp;&amp; v[i][j] &lt;= b) v[i][j] = r;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (j!=<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%03d"</span>,v[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i!=m<span class="number">-1</span>) <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several places, and the ranklists will be merged immediately after the test. Now it is your job to write a program to correctly merge all the ranklists and generate the final rank.</p>
+<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. For each case, the first line contains a positive number N (≤100), the number of test locations. Then Nranklists follow, each starts with a line containing a positive integer K (≤300), the number of testees, and then K lines containing the registration number (a 13-digit number) and the total score of each testee. All the numbers in a line are separated by a space.</p>
+<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, first print in one line the total number of testees. Then print the final ranklist in the following format:</p>
+<p>registration_number final_rank location_number local_rank</p>
+<p>The locations are numbered from 1 to N. The output must be sorted in nondecreasing order of the final ranks. The testees with the same score must have the same rank, and the output must be sorted in nondecreasing order of their registration numbers.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><p>2<br>5<br>1234567890001 95<br>1234567890005 100<br>1234567890003 95<br>1234567890002 77<br>1234567890004 85<br>4<br>1234567890013 65<br>1234567890011 25<br>1234567890014 100<br>1234567890012 85</p>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><p>9<br>1234567890005 1 1 1<br>1234567890014 1 2 1<br>1234567890001 3 1 2<br>1234567890003 3 1 2<br>1234567890004 5 1 4<br>1234567890012 5 2 2<br>1234567890002 7 1 5<br>1234567890013 8 2 3<br>1234567890011 9 2 4</p>
+<p>题目大意：给出n组数据，每一组数据中有m个考生信息（信息分编号和成绩两部分）。按考生成绩非增序（成绩一样按编号升序）打印学生编号、总排名、组内排名和组号。</p>
+<p>分析：定义结构体node，每一个node代表一个学生，其中包括编号、成绩、组内排名、总排名、组号。在每一组输入完成后，对改组内的成员排序并给出其组号和组内排名，然后将其保存动态数组v中。对v进行排序后可以得到每一个学生的总排名，按顺序打印即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="built_in">string</span> id;</span><br><span class="line">    <span class="keyword">int</span> score,final_rank,location_number,local_rank;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node a,node b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.score != b.score ? a.score &gt; b.score : a.id &lt; b.id;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="built_in">vector</span>&lt;node&gt; v;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">        <span class="built_in">vector</span>&lt;node&gt; temp(m);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; temp[j].id &gt;&gt; temp[j].score;</span><br><span class="line">            temp[j].location_number = i;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(temp.begin(),temp.end(),cmp);</span><br><span class="line">        temp[<span class="number">0</span>].local_rank = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;temp.size();j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (temp[j].score == temp[j<span class="number">-1</span>].score) temp[j].local_rank = temp[j<span class="number">-1</span>].local_rank;</span><br><span class="line">            <span class="keyword">else</span> temp[j].local_rank = j+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)</span><br><span class="line">            v.push_back(temp[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(v.begin(),v.end(),cmp);</span><br><span class="line">    v[<span class="number">0</span>].final_rank = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;v.size();i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (v[i].score == v[i<span class="number">-1</span>].score) v[i].final_rank = v[i<span class="number">-1</span>].final_rank;</span><br><span class="line">        <span class="keyword">else</span> v[i].final_rank = i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; v.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.size();i++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; v[i].id &lt;&lt; <span class="string">" "</span> &lt;&lt; v[i].final_rank &lt;&lt; <span class="string">" "</span> &lt;&lt; v[i].location_number &lt;&lt; <span class="string">" "</span> &lt;&lt; v[i].local_rank &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/甲级/">甲级</a>
   </div>
 
 
@@ -127,7 +129,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2019/05/14/PAT-乙级-1066-图像过滤/" data-title="PAT-乙级-1066-图像过滤 | YiHeng" data-tsina class="share clearfix">
+  <div data-url="http://yoursite.com/2019/07/07/PAT-甲级-1025-PAT Ranking (25 分)/" data-title="PAT-甲级-1025-PAT Ranking (25 分) | YiHeng" data-tsina class="share clearfix">
   </div>
 
 </div>
@@ -136,19 +138,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/05/15/PAT-乙级-1067-试密码/" title="PAT-乙级-1067-试密码">
-  <strong>PREVIOUS:</strong><br>
-  <span>
-  PAT-乙级-1067-试密码</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2019/05/13/PAT-乙级-1065-单身狗/" title="PAT-乙级-1065-单身狗">
+<a href="/2019/07/01/PAT-甲级-1019-General Palindromic Number (20 分)/" title="PAT-甲级-1019-General Palindromic Number (20 分)">
  <strong>NEXT:</strong><br> 
- <span>PAT-乙级-1065-单身狗
+ <span>PAT-甲级-1019-General Palindromic Number (20 分)
 </span>
 </a>
 </div>
@@ -158,7 +152,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="PAT-乙级-1066-图像过滤" data-thread-key="PAT-乙级-1066-图像过滤" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1066-图像过滤"></div>
+	<div class="ds-thread" data-title="PAT-甲级-1025-PAT Ranking (25 分)" data-thread-key="PAT-甲级-1025-PAT Ranking (25 分)" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-甲级-1025-PAT Ranking (25 分)"></div>
 	
 </section>
 
@@ -168,7 +162,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式："><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式："><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入样例："><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出样例："><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分析："><span class="toc-number">5.</span> <span class="toc-text">分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">6.</span> <span class="toc-text">代码：</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Specification"><span class="toc-number">1.</span> <span class="toc-text">Input Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-Specification"><span class="toc-number">2.</span> <span class="toc-text">Output Specification:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Input"><span class="toc-number">3.</span> <span class="toc-text">Sample Input:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Output"><span class="toc-number">4.</span> <span class="toc-text">Sample Output:</span></a></li></ol>
   </div>
 
 <div id="asidepart">
