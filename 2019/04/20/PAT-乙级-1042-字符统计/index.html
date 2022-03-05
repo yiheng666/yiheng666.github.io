@@ -12,6 +12,10 @@
     
     <meta name="author" content="YiHeng">
     
+    <meta name="description" content="请编写程序，找出一段给定文字中出现最频繁的那个英文字母。
+输入格式：输入在一行中给出一个长度不超过 1000 的字符串。字符串由 ASCII 码表中任意可见字符及空格组成，至少包含 1 个英文字母，以回车结束（回车不算在内）。
+输出格式：在一行中输出出现频率最高的那个英文字母及其出现次数，其间以空格">
+    
     
     
     
@@ -87,8 +91,8 @@
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-04-20T10:51:01.000Z" itemprop="datePublished">2019-04-20</time>
-    Updated:<time datetime="2019-08-07T10:21:59.247Z" itemprop="dateModified">2019-08-07</time>
+    <time datetime="2019-04-20T09:51:01.000Z" itemprop="datePublished">2019-04-20</time>
+    Updated:<time datetime="2022-03-05T14:07:50.187Z" itemprop="dateModified">2022-03-05</time>
     
   </p>
 </header>
@@ -97,10 +101,19 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
 		</div>
 		
-		  
+		<p>请编写程序，找出一段给定文字中出现最频繁的那个英文字母。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个长度不超过 1000 的字符串。字符串由 ASCII 码表中任意可见字符及空格组成，至少包含 1 个英文字母，以回车结束（回车不算在内）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出出现频率最高的那个英文字母及其出现次数，其间以空格分隔。如果有并列，则输出按字母序最小的那个字母。统计时不区分大小写，输出小写字母。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is a simple TEST.  There ARE numbers and other symbols 1&amp;2&amp;3...........</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e 7</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    map&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">    string s;</span><br><span class="line">    <span class="keyword">int</span> length,max = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    <span class="built_in">getline</span>(cin,s);</span><br><span class="line">    length = s.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i] &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; s[i] &lt;= <span class="string">&#x27;z&#x27;</span>) m[s[i]]++;</span><br><span class="line">        <span class="keyword">if</span> (s[i] &gt;= <span class="string">&#x27;A&#x27;</span> &amp;&amp; s[i] &lt;= <span class="string">&#x27;Z&#x27;</span>) m[s[i]+<span class="number">32</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i=m.<span class="built_in">begin</span>();i!=m.<span class="built_in">end</span>();i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (i-&gt;second &gt; max)&#123;</span><br><span class="line">            max = i-&gt;second;</span><br><span class="line">            c = i-&gt;first;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; c &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; max ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -160,7 +173,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -184,9 +197,11 @@
 	<p class="asidetitle">Categories</p>
 		<ul>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>108</sup></a></li>
+			<li><a href="/categories/其他/" title="其他">其他<sup>1</sup></a></li>
 		
-			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>107</sup></a></li>
+		
+			<li><a href="/categories/随笔/" title="随笔">随笔<sup>2</sup></a></li>
 		
 		</ul>
 </div>
@@ -197,7 +212,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>108</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>107</sup></a></li>
 		
 			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
@@ -205,9 +220,13 @@
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
-			<li><a href="/tags/甲级/" title="甲级">甲级<sup>13</sup></a></li>
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>12</sup></a></li>
 		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
+		
+			<li><a href="/tags/算法笔记/" title="算法笔记">算法笔记<sup>1</sup></a></li>
+		
+			<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
 		
 		</ul>
 </div>
@@ -230,7 +249,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/%E4%B9%99%E7%BA%A7/" style="font-size: 16.67px;">乙级</a> <a href="/tags/%E5%8D%83%E4%B8%8E%E5%8D%83%E5%AF%BB/" style="font-size: 10px;">千与千寻</a> <a href="/tags/%E5%AE%AB%E5%B4%8E%E9%AA%8F/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/%E7%94%B2%E7%BA%A7/" style="font-size: 13.33px;">甲级</a> <a href="/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a>
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/%E4%B9%99%E7%BA%A7/" style="font-size: 16.67px;">乙级</a> <a href="/tags/%E5%8D%83%E4%B8%8E%E5%8D%83%E5%AF%BB/" style="font-size: 10px;">千与千寻</a> <a href="/tags/%E5%AE%AB%E5%B4%8E%E9%AA%8F/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/%E7%94%B2%E7%BA%A7/" style="font-size: 13.33px;">甲级</a> <a href="/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a> <a href="/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">算法笔记</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
     </div>
   </div>
 
@@ -240,7 +259,7 @@
     </div>
     <footer><div id="footer" >
     
-            <p class="copyright"> © 2021 
+            <p class="copyright"> © 2022 
 		
 		<a href="http://yoursite.com" target="_blank" title="YiHeng">YiHeng</a>
 		

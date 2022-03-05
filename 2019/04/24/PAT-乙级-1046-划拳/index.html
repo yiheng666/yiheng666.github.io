@@ -12,6 +12,9 @@
     
     <meta name="author" content="YiHeng">
     
+    <meta name="description" content="划拳是古老中国酒文化的一个有趣的组成部分。酒桌上两人划拳的方法为：每人口中喊出一个数字，同时用手比划出一个数字。如果谁比划出的数字正好等于两人喊出的数字之和，谁就赢了，输家罚一杯酒。两人同赢或两人同输则继续下一轮，直到唯一的赢家出现。
+下面给出甲、乙两人的划拳记录，请你统计他们最后分别喝了多少杯酒。">
+    
     
     
     
@@ -87,8 +90,8 @@
       <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
     </p>
   <p class="article-time">
-    <time datetime="2019-04-24T06:40:45.000Z" itemprop="datePublished">2019-04-24</time>
-    Updated:<time datetime="2019-08-07T10:30:38.118Z" itemprop="dateModified">2019-08-07</time>
+    <time datetime="2019-04-24T05:40:45.000Z" itemprop="datePublished">2019-04-24</time>
+    Updated:<time datetime="2022-03-05T14:08:39.998Z" itemprop="dateModified">2022-03-05</time>
     
   </p>
 </header>
@@ -97,10 +100,23 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
 		</div>
 		
-		  
+		<p>划拳是古老中国酒文化的一个有趣的组成部分。酒桌上两人划拳的方法为：每人口中喊出一个数字，同时用手比划出一个数字。如果谁比划出的数字正好等于两人喊出的数字之和，谁就赢了，输家罚一杯酒。两人同赢或两人同输则继续下一轮，直到唯一的赢家出现。</p>
+<p>下面给出甲、乙两人的划拳记录，请你统计他们最后分别喝了多少杯酒。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行先给出一个正整数 <em>N</em>（≤100），随后 <em>N</em> 行，每行给出一轮划拳的记录，格式为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">甲喊 甲划 乙喊 乙划</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>喊</code>是喊出的数字，<code>划</code>是划出的数字，均为不超过 100 的正整数（两只手一起划）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中先后输出甲、乙两人喝酒的杯数，其间以一个空格分隔。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">8 10 9 12</span><br><span class="line">5 10 5 10</span><br><span class="line">3 8 5 12</span><br><span class="line">12 18 1 13</span><br><span class="line">4 16 12 15</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//iia、yi分别代表甲、乙的喝酒数</span></span><br><span class="line">    <span class="keyword">int</span> n,a,b,c,d,jia=<span class="number">0</span>,yi=<span class="number">0</span>,sum;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;</span><br><span class="line">        sum = a + c;</span><br><span class="line">        <span class="keyword">if</span> (sum == b &amp;&amp; sum != d) yi++;</span><br><span class="line">        <span class="keyword">if</span> (sum != b &amp;&amp; sum == d) jia++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; jia &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; yi;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -160,7 +176,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -184,9 +200,11 @@
 	<p class="asidetitle">Categories</p>
 		<ul>
 		
-			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>108</sup></a></li>
+			<li><a href="/categories/其他/" title="其他">其他<sup>1</sup></a></li>
 		
-			<li><a href="/categories/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>107</sup></a></li>
+		
+			<li><a href="/categories/随笔/" title="随笔">随笔<sup>2</sup></a></li>
 		
 		</ul>
 </div>
@@ -197,7 +215,7 @@
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/PAT/" title="PAT">PAT<sup>108</sup></a></li>
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>107</sup></a></li>
 		
 			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
 		
@@ -205,9 +223,13 @@
 		
 			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
 		
-			<li><a href="/tags/甲级/" title="甲级">甲级<sup>13</sup></a></li>
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>12</sup></a></li>
 		
 			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
+		
+			<li><a href="/tags/算法笔记/" title="算法笔记">算法笔记<sup>1</sup></a></li>
+		
+			<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
 		
 		</ul>
 </div>
@@ -230,7 +252,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/%E4%B9%99%E7%BA%A7/" style="font-size: 16.67px;">乙级</a> <a href="/tags/%E5%8D%83%E4%B8%8E%E5%8D%83%E5%AF%BB/" style="font-size: 10px;">千与千寻</a> <a href="/tags/%E5%AE%AB%E5%B4%8E%E9%AA%8F/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/%E7%94%B2%E7%BA%A7/" style="font-size: 13.33px;">甲级</a> <a href="/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a>
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/%E4%B9%99%E7%BA%A7/" style="font-size: 16.67px;">乙级</a> <a href="/tags/%E5%8D%83%E4%B8%8E%E5%8D%83%E5%AF%BB/" style="font-size: 10px;">千与千寻</a> <a href="/tags/%E5%AE%AB%E5%B4%8E%E9%AA%8F/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/%E7%94%B2%E7%BA%A7/" style="font-size: 13.33px;">甲级</a> <a href="/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a> <a href="/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">算法笔记</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
     </div>
   </div>
 
@@ -240,7 +262,7 @@
     </div>
     <footer><div id="footer" >
     
-            <p class="copyright"> © 2021 
+            <p class="copyright"> © 2022 
 		
 		<a href="http://yoursite.com" target="_blank" title="YiHeng">YiHeng</a>
 		
