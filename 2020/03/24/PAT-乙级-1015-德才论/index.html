@@ -1,0 +1,483 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="baidu_union_verify" content="d1952c66cf48912e21c18c7c581f382a">
+  <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
+<meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
+  
+    <title>PAT-乙级-1015.德才论 | YiHeng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="YiHeng">
+    
+    <meta name="description" content="1015 德才论 （25 分)
+宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。”
+现给出一批考生的德才分数，请根据司马光的理论给出录取排名。
+输入格式：输入">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="YiHeng" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            var _bdId ='391982416296a0d54221f59fe35250d4';
+             hm.src = "//hm.baidu.com/hm.js?" + _bdId;
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+     
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="YiHeng">YiHeng</a></h1>
+				<a class="blog-motto"></a>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/categories/每日一题">每日一题</a></li>
+					
+						<li><a href="/categories/随笔">随笔</a></li>
+					
+						<li><a href="/categories/其他">其他</a></li>
+					
+					<li>
+					
+                                            <form class="search" action=https://mijisou.com/?q= target="_blank">
+                                            <label>Search</label>
+                                        <input name="s" type="hidden" value=  ><input type="text" name="q" size="30" placeholder="Search"><br>
+					
+					</li>
+				</ul>
+                            </nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2020/03/24/PAT-乙级-1015-德才论/" title="PAT-乙级-1015.德才论" itemprop="url">PAT-乙级-1015.德才论</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="YiHeng">YiHeng</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2020-03-24T09:18:30.000Z" itemprop="datePublished">2020-03-24</time>
+    Updated:<time datetime="2022-03-05T14:36:22.222Z" itemprop="dateModified">2022-03-05</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+		</div>
+		
+		<p>1015 德才论 （25 分)</p>
+<p>宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。”</p>
+<p>现给出一批考生的德才分数，请根据司马光的理论给出录取排名。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出 3 个正整数，分别为：N（≤105），即考生总数；L（≥60），为录取最低分数线，即德分和才分均不低于 L 的考生才有资格被考虑录取；H（&lt;100），为优先录取线——德分和才分均不低于此线的被定义为“才德全尽”，此类考生按德才总分从高到低排序；才分不到但德分到线的一类考生属于“德胜才”，也按总分排序，但排在第一类考生之后；德才分均低于 H，但是德分不低于才分的考生属于“才德兼亡”但尚有“德胜才”者，按总分排序，但排在第二类考生之后；其他达到最低线 L 的考生也按总分排序，但排在第三类考生之后。</p>
+<p>随后 N 行，每行给出一位考生的信息，包括：<code>准考证号 德分 才分</code>，其中<code>准考证号</code>为 8 位整数，德才分为区间 [0, 100] 内的整数。数字间以空格分隔。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>输出第一行首先给出达到最低分数线的考生人数 M，随后 M 行，每行按照输入格式输出一位考生的信息，考生按输入中说明的规则从高到低排序。当某类考生中有多人总分相同时，按其德分降序排列；若德分也并列，则按准考证号的升序输出。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>14 60 80<br>10000001 64 90<br>10000002 90 60<br>10000011 85 80<br>10000003 85 80<br>10000004 80 85<br>10000005 82 77<br>10000006 83 76<br>10000007 90 78<br>10000008 75 79<br>10000009 59 90<br>10000010 88 45<br>10000012 80 100<br>10000013 90 99<br>10000014 66 60</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>12<br>10000013 90 99<br>10000012 80 100<br>10000003 85 80<br>10000011 85 80<br>10000004 80 85<br>10000007 90 78<br>10000006 83 76<br>10000005 82 77<br>10000002 90 60<br>10000014 66 60<br>10000008 75 79<br>10000001 64 90</p>
+<p>分析：这题目主要是考察结构体的运用和根据自己的需要通过改写cmp进行排序。先定义一个结构体，把输入的参数通过结构体的形式存储起来。在cmp中，函数返回的是bool类型，return A.id &lt; B.id表示根据id升序排列（从小到大）；return A.moral_score &gt; B.moral_score;表示根据德分降序排列（从大到小）。在输入的时候就要判断该考生属于哪一类，放到对应的vector中，如果考生德分或者才分没有达到最底线，用count记录下来，n-count就是被录取的考生人数。最需要注意的一点是在输出的时候不能用cout，一定要用printf，否则会超时。</p>
+<p>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">int</span> moral_score;</span><br><span class="line">    <span class="keyword">int</span> tal_score;</span><br><span class="line">&#125;Student;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Student A,Student B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (A.moral_score + A.tal_score != B.moral_score + B.tal_score)</span><br><span class="line">        <span class="keyword">return</span> A.moral_score + A.tal_score &gt; B.moral_score + B.tal_score;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (A.moral_score != B.moral_score )</span><br><span class="line">            <span class="keyword">return</span> A.moral_score &gt; B.moral_score;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> A.id &lt; B.id;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,low,high,i,j,score1,score2,count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> id;</span><br><span class="line">    vector&lt;Student&gt;v[<span class="number">4</span>];</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; low &gt;&gt; high;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; id &gt;&gt; score1 &gt;&gt; score2;</span><br><span class="line">        Student s;</span><br><span class="line">        s.id = id;</span><br><span class="line">        s.moral_score = score1;</span><br><span class="line">        s.tal_score = score2;</span><br><span class="line">        <span class="keyword">if</span> (score1 &gt;= high &amp;&amp; score2 &gt;= high)</span><br><span class="line">            v[<span class="number">0</span>].<span class="built_in">push_back</span>(s);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> ((score2&gt;=low &amp;&amp; score2&lt;=high)  &amp;&amp; score1 &gt;= high)</span><br><span class="line">            v[<span class="number">1</span>].<span class="built_in">push_back</span>(s);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (score1&gt;=low &amp;&amp; score2 &gt;= low &amp;&amp; score1 &gt;= score2)</span><br><span class="line">            v[<span class="number">2</span>].<span class="built_in">push_back</span>(s);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (score1&gt;=low &amp;&amp; score2 &gt;= low)</span><br><span class="line">            v[<span class="number">3</span>].<span class="built_in">push_back</span>(s);</span><br><span class="line">        <span class="keyword">else</span> count++;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; n-count &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">sort</span>(v[i].<span class="built_in">begin</span>(),v[i].<span class="built_in">end</span>(),cmp);</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;v[i].<span class="built_in">size</span>();j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>,v[i][j].id,v[i][j].moral_score,v[i][j].tal_score);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/PAT/">PAT</a><a href="/tags/乙级/">乙级</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">每日一题</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2020/03/24/PAT-%E4%B9%99%E7%BA%A7-1015-%E5%BE%B7%E6%89%8D%E8%AE%BA/" data-title="PAT-乙级-1015.德才论 | YiHeng" data-tsina="" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2020/03/25/PAT-乙级-1016-部分A-B/" title="PAT-乙级-1016.部分A+B">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  PAT-乙级-1016.部分A+B</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2020/03/23/PAT-乙级-1014-福尔摩斯的约会/"  title="PAT-乙级-1014.福尔摩斯的约会">
+ <strong>NEXT:</strong><br/> 
+ <span>PAT-乙级-1014.福尔摩斯的约会
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="PAT-乙级-1015.德才论" data-thread-key="PAT-乙级-1015-德才论" data-author-key="YiHeng" data-url="http://yoursite.com/post/PAT-乙级-1015-德才论"></div>
+	
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">输入格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">输出格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">输入样例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">输出样例：</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+<div id="authorInfo">
+	
+		<div class="author-logo"></div>		
+	
+	<div class="social-list" class="clearfix">
+		
+		
+		
+		
+		
+	</div>
+</div>
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/其他/" title="其他">其他<sup>1</sup></a></li>
+		
+			<li><a href="/categories/每日一题/" title="每日一题">每日一题<sup>107</sup></a></li>
+		
+			<li><a href="/categories/随笔/" title="随笔">随笔<sup>2</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/PAT/" title="PAT">PAT<sup>107</sup></a></li>
+		
+			<li><a href="/tags/乙级/" title="乙级">乙级<sup>95</sup></a></li>
+		
+			<li><a href="/tags/千与千寻/" title="千与千寻">千与千寻<sup>1</sup></a></li>
+		
+			<li><a href="/tags/宫崎骏/" title="宫崎骏">宫崎骏<sup>1</sup></a></li>
+		
+			<li><a href="/tags/甲级/" title="甲级">甲级<sup>12</sup></a></li>
+		
+			<li><a href="/tags/电影/" title="电影">电影<sup>1</sup></a></li>
+		
+			<li><a href="/tags/算法笔记/" title="算法笔记">算法笔记<sup>1</sup></a></li>
+		
+			<li><a href="/tags/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+      <li><a href="http://hexo.io" target="_blank" title="Hexo">Hexo</a></li>
+      <li><a href="http://gengbiao.me" target="_blank" title="coney">coney's Blog</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">Tag Cloud</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/PAT/" style="font-size: 20px;">PAT</a> <a href="/tags/%E4%B9%99%E7%BA%A7/" style="font-size: 16.67px;">乙级</a> <a href="/tags/%E5%8D%83%E4%B8%8E%E5%8D%83%E5%AF%BB/" style="font-size: 10px;">千与千寻</a> <a href="/tags/%E5%AE%AB%E5%B4%8E%E9%AA%8F/" style="font-size: 10px;">宫崎骏</a> <a href="/tags/%E7%94%B2%E7%BA%A7/" style="font-size: 13.33px;">甲级</a> <a href="/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a> <a href="/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">算法笔记</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
+    </div>
+  </div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+    
+            <p class="copyright"> © 2022 
+		
+		<a href="http://yoursite.com" target="_blank" title="YiHeng">YiHeng</a>
+		
+            && Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> && Theme by <a href="http://gengbiao.me" target="_blank" title="coney">coney</a>
+            </div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:""};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+<script>
+    
+        var _bdImg = '4';
+    
+    window._bd_share_config={
+        "common":{
+            "bdSnsKey":{
+
+            },
+            "bdText":"",
+            "bdMini":"2",
+            "bdMiniList":[
+                "qzone",
+                "tsina",
+                "weixin",
+                "renren",
+                "tqq",
+                "tieba",
+                "douban",
+                "sqq",
+                "diandian",
+                "huaban",
+                "youdao",
+                "mail",
+                "ty",
+                "fbook",
+                "twi",
+                "linkedin",
+                "copy",
+                "print"
+            ],
+            "bdPic":"",
+            "bdStyle":"0",
+            "bdSize":"16"
+        },
+        "slide":{
+            "type":"slide",
+            "bdImg":_bdImg,
+            "bdPos":"right",
+            "bdTop":"350"
+        },
+        "image":{
+            "viewList":[
+                "weixin",
+                "qzone",
+                "tsina",
+                "renren",
+                "douban",
+                "tqq"
+            ],
+            "viewText":"分享：",
+            "viewSize":"16"
+        },
+        "selectShare":{
+            "bdContainerClass":null,
+            "bdSelectMiniList":[
+                "weixin",
+                "qzone",
+                "tsina",
+                "renren",
+                "douban",
+                "tqq"
+            ]
+        }
+    };
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+
+
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', '', '');  
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+</html>
+
